@@ -5,9 +5,18 @@
 
 A demo iOS app that shows cryptocurrency prices, charts and other info. Built with Messari API.
 
-It has two modules: AssetsList and AssetDetails.
+It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is loaded in batches.
 
 There are two versions of implementation: without coordinator (MVVM) and with coordinator (MVVM-C).
+
+<table> 
+  <tr>
+    <td> <img src="Screenshots/1 Cryptocurrency-Info - iPhone 11 - 2021-02-10.png" width = 190px></td>
+    <td> <img src="Screenshots/2 Cryptocurrency-Info - iPhone 11 - 2021-02-10.png" width = 190px></td>
+    <td> <img src="Screenshots/3 Cryptocurrency-Info - iPhone 11 - 2021-02-10.png" width = 190px></td>
+    <td> <img src="Screenshots/4 Cryptocurrency-Info - iPhone 11 - 2021-02-10.png" width = 190px></td>
+  </tr>
+</table>
 
 #### Architecture concepts:
 - MVVM
