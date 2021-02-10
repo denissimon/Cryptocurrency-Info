@@ -1,0 +1,30 @@
+PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - SwiftEvents (1.1.1)
+  - Toast-Swift (5.0.1)
+  - UAObfuscatedString (0.5.1)
+
+DEPENDENCIES:
+  - Charts
+  - SwiftEvents (~> 1.1.1)
+  - Toast-Swift
+  - UAObfuscatedString
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - SwiftEvents
+    - Toast-Swift
+    - UAObfuscatedString
+
+SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  SwiftEvents: 8cefdbeb4e59647e4bca42d6fdd188609ff82684
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  UAObfuscatedString: 34850d89100c7aff99129ee56acd433fa5ed3aef
+
+PODFILE CHECKSUM: 78ac4de26e06dbb5337a4425d697f307518e8b3c
+
+COCOAPODS: 1.10.0
