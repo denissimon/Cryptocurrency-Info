@@ -18,6 +18,8 @@ class AssetsListViewModel {
         }
     }
     
+    private(set) var dataCopy = [Asset]()
+        
     private(set) var priceCurrency: PriceCurrency = .usd {
         didSet {
             setPriceCurrency.trigger(self.priceCurrency)
@@ -76,6 +78,7 @@ class AssetsListViewModel {
                 if assets.data.count > 0 {
                     self.data += assets.data
                     self.currentPage = page
+                    self.dataCopy = self.data
                 }
                 self.activityIndicatorVisibility.value = false
             case .error(let error):
@@ -102,5 +105,25 @@ class AssetsListViewModel {
     
     func setAssetsAreLoadingFromServer(_ newValue: Bool) {
         self.assetsAreLoadingFromServer = newValue
+    }
+    
+    func searchAsset(_ searchText: String) {
+        if searchText.isEmpty {
+            resetSearch()
+            return
+        }
+        
+        var resultData = [Asset]()
+        for asset in dataCopy {
+            let editedSearchText = searchText.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+            if asset.symbol.lowercased().contains(editedSearchText) || asset.name.lowercased().contains(editedSearchText) {
+                resultData.append(asset)
+            }
+        }
+        data = resultData
+    }
+    
+    func resetSearch() {
+        data = dataCopy
     }
 }

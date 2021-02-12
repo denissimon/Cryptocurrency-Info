@@ -12,17 +12,22 @@
         <!--Today's Cryptocurrency Info-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="AllCryptocurrencies" id="BYZ-38-t0r" customClass="AssetsListViewController" customModule="TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllCryptocurrencies" id="BYZ-38-t0r" customClass="AssetsListViewController" customModule="CryptocurrencyInfo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" estimatedRowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RV2-Ty-P41">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" estimatedRowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RV2-Ty-P41">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="cLe-N9-Nng">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AssetCell" id="Pfm-wV-8wF" customClass="AssetCell" customModule="TestTask" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="58"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AssetCell" id="Pfm-wV-8wF" customClass="AssetCell" customModule="CryptocurrencyInfo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pfm-wV-8wF" id="a8u-KH-seQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
@@ -80,6 +85,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Today's Cryptocurrency Info" id="uZt-nx-oSk"/>
                     <connections>
+                        <outlet property="searchBar" destination="cLe-N9-Nng" id="LRl-bZ-HCe"/>
                         <outlet property="tableView" destination="RV2-Ty-P41" id="m9S-kB-GAV"/>
                     </connections>
                 </viewController>

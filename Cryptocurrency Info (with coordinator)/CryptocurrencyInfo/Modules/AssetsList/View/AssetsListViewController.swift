@@ -11,6 +11,7 @@ import Toast_Swift
 class AssetsListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var viewModel = AssetsListViewModel(networkService: NetworkService())
     
@@ -41,6 +42,8 @@ class AssetsListViewController: UIViewController {
         dataSource = viewModel.getDataSource()
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
+        
+        searchBar.delegate = self
         
         // Delegates
         viewModel.updateData.addSubscriber(target: self) { (self, data) in
@@ -91,7 +94,7 @@ class AssetsListViewController: UIViewController {
         
         // Other
         // Configure Refresh Control
-        refreshControl.addTarget(self, action: #selector(refreshImageData(_:)), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
     }
     
     private func prepareUI() {
@@ -109,12 +112,42 @@ class AssetsListViewController: UIViewController {
         self.navigationItem.backBarButtonItem = backItem
     }
     
-    @objc private func refreshImageData(_ sender: Any) {
+    @objc private func refreshData(_ sender: Any) {
         viewModel.clearData()
         viewModel.getAssets(page: 1)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.refreshControl.endRefreshing()
+            self.resetSearch()
         }
     }
 }
 
+extension AssetsListViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchAsset(searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        resetSearch()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func resetSearch() {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        viewModel.resetSearch()
+    }
+}
