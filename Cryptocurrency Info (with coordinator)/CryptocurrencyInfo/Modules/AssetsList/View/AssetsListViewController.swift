@@ -110,14 +110,16 @@ class AssetsListViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         self.navigationItem.backBarButtonItem = backItem
+        
+        searchBar.sizeToFit()
     }
     
     @objc private func refreshData(_ sender: Any) {
+        resetSearch()
         viewModel.clearData()
         viewModel.getAssets(page: 1)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.refreshControl.endRefreshing()
-            self.resetSearch()
         }
     }
 }
@@ -125,6 +127,7 @@ class AssetsListViewController: UIViewController {
 extension AssetsListViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        viewModel.searchMode = true
         searchBar.setShowsCancelButton(true, animated: true)
     }
     

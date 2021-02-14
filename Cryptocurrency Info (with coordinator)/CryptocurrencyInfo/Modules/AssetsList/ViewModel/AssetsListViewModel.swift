@@ -34,6 +34,8 @@ class AssetsListViewModel {
     
     private(set) var assetsAreLoadingFromServer = false
     
+    var searchMode = false
+    
     // Delegates
     let updateData = Event<[Asset]>()
     let showToast = Event<String>()
@@ -59,6 +61,8 @@ class AssetsListViewModel {
     }
     
     func getAssets(page: Int) {
+        guard searchMode == false || (searchMode && data.count == dataCopy.count) else { return } // If the search mode is enabled and there are some results, do not load new batches of assets
+        
         assetsAreLoadingFromServer = true
         
         activityIndicatorVisibility.value = true
@@ -109,7 +113,7 @@ class AssetsListViewModel {
     
     func searchAsset(_ searchText: String) {
         if searchText.isEmpty {
-            resetSearch()
+            data = dataCopy
             return
         }
         
@@ -125,5 +129,6 @@ class AssetsListViewModel {
     
     func resetSearch() {
         data = dataCopy
+        searchMode = false
     }
 }
