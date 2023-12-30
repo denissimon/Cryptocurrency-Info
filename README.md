@@ -1,5 +1,5 @@
 # Cryptocurrency Info
-[![Swift Version](https://img.shields.io/badge/Swift-5.3-F16D39.svg?style=flat)](https://swift.org)
+[![Swift Version](https://img.shields.io/badge/Swift-5-F16D39.svg?style=flat)](https://swift.org)
 [![Platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg)](https://developer.apple.com/swift/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/denissimon/Cryptocurrency-Info/blob/master/LICENSE)
 
@@ -20,7 +20,7 @@ Includes unit tests.
   </tr>
 </table>
 
-#### Architecture concepts:
+#### Architecture concepts used here:
 - MVVM using lightweight Observable\<T\> and Event\<T\>
 - Flow coordinator implemented with closure-based actions
 - DIContainer
