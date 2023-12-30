@@ -3,11 +3,13 @@
 [![Platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg)](https://developer.apple.com/swift/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/denissimon/Cryptocurrency-Info/blob/master/LICENSE)
 
-A demo iOS app that shows cryptocurrency prices, charts and other info. Built with Messari API.
+Example iOS app designed using MVVM-C and Clean Architecture. Uses Swift Concurrency.
+
+The app shows cryptocurrency prices, charts and other info. Built with Messari API.
 
 It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is loaded in batches.
 
-There are two versions of implementation: without coordinator (MVVM) and with coordinator (MVVM-C).
+Includes unit tests.
 
 <table> 
   <tr>
@@ -19,15 +21,21 @@ There are two versions of implementation: without coordinator (MVVM) and with co
 </table>
 
 #### Architecture concepts:
-- MVVM
-- Coordinator
-- Multiple Storyboards
-- Dependency Injection
+- MVVM using lightweight Observable\<T\> and Event\<T\>
+- Flow coordinator implemented with closure-based actions
+- DIContainer
 - Data Binding
-- Event-based (pub-sub) communication between instances
+- Clean Architecture
+- Dependency Inversion Principle
+- Dependency Injection, protocol composition
+- Reusable and universal NetworkService based on URLSession
+- async-await with remaining the transport layer implemented on callbacks without changes
 - Reusable data source for UITableView
-- Reusable and universal networking
+- Multiple storyboards
 - Codable
+
+#### Requirements:
+iOS version support: 15.0+
 
 #### Built with:
 - [SwiftEvents](https://github.com/denissimon/SwiftEvents) - A lightweight library for creating and observing events.
