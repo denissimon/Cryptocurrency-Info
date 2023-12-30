@@ -47,10 +47,10 @@ extension DIContainer: MainCoordinatorDIContainer {
     
     // MARK: - View Controllers
     
-    func makeAssetsListViewController(actions: AssetsListCoordinatorActions) -> AssetsListViewController {
+    func makeAssetsListViewController(coordinator: AssetsListViewControllerCoordinatorDelegate) -> AssetsListViewController {
         let assetRepository = makeAssetRepository()
         let viewModel = AssetsListViewModel(assetRepository: assetRepository)
-        return AssetsListViewController.instantiate(viewModel: viewModel, actions: actions)
+        return AssetsListViewController.instantiate(viewModel: viewModel, coordinator: coordinator)
     }
     
     func makeAssetDetailsViewController(asset: Asset) -> AssetDetailsViewController {

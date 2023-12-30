@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainCoordinatorDIContainer {
-    func makeAssetsListViewController(actions: AssetsListCoordinatorActions) -> AssetsListViewController
+    func makeAssetsListViewController(coordinator: AssetsListViewControllerCoordinatorDelegate) -> AssetsListViewController
     func makeAssetDetailsViewController(asset: Asset) -> AssetDetailsViewController
 }
 
@@ -29,17 +29,19 @@ class MainCoordinator: Coordinator {
         showAssetsList()
     }
     
-    private func showAssetsList() {
-        let actions = AssetsListCoordinatorActions(
-            showAssetDetails: showAssetDetails
-        )
-        let assetsListVC = dependencyContainer.makeAssetsListViewController(actions: actions)
+    func showAssetsList() {
+        let assetsListVC = dependencyContainer.makeAssetsListViewController(coordinator: self)
         navigationController.pushViewController(assetsListVC, animated: false)
     }
     
-    private func showAssetDetails(asset: Asset) {
+    func showAssetDetails(_ asset: Asset) {
         let assetDetailsVC = dependencyContainer.makeAssetDetailsViewController(asset: asset)
         navigationController.pushViewController(assetDetailsVC, animated: true)
     }
 }
 
+extension MainCoordinator: AssetsListViewControllerCoordinatorDelegate {
+    func onAssetDetails(_ asset: Asset) {
+        showAssetDetails(asset)
+    }
+}

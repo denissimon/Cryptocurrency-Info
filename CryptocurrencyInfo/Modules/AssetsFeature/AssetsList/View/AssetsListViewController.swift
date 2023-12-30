@@ -9,8 +9,8 @@ import UIKit
 import Toast_Swift
 import SwiftEvents
 
-struct AssetsListCoordinatorActions {
-    let showAssetDetails: (Asset) -> ()
+protocol AssetsListViewControllerCoordinatorDelegate: AnyObject {
+    func onAssetDetails(_ asset: Asset)
 }
 
 class AssetsListViewController: UIViewController, Storyboarded {
@@ -22,16 +22,16 @@ class AssetsListViewController: UIViewController, Storyboarded {
         
     private var dataSource: AssetsListDataSource?
     
-    private var coordinatorActions: AssetsListCoordinatorActions?
+    private var coordinator: AssetsListViewControllerCoordinatorDelegate?
     
     private let refreshControl = UIRefreshControl()
     
     // MARK: - Initializer
     
-    static func instantiate(viewModel: AssetsListViewModel, actions: AssetsListCoordinatorActions) -> AssetsListViewController {
+    static func instantiate(viewModel: AssetsListViewModel, coordinator: AssetsListViewControllerCoordinatorDelegate) -> AssetsListViewController {
         let vc = Self.instantiate(from: .assetsList)
         vc.viewModel = viewModel
-        vc.coordinatorActions = actions
+        vc.coordinator = coordinator
         return vc
     }
     
@@ -104,7 +104,7 @@ class AssetsListViewController: UIViewController, Storyboarded {
         }
         
         dataSource?.didTapAssetDetails.subscribe(self, queue: .main) { [weak self] asset in
-            self?.coordinatorActions?.showAssetDetails(asset)
+            self?.coordinator?.onAssetDetails(asset)
         }
     }
     
