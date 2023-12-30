@@ -22,7 +22,7 @@ Includes unit tests.
 
 #### Architecture concepts used here:
 - MVVM using lightweight Observable\<T\> and Event\<T\>
-- Flow coordinator implemented with closure-based actions
+- Flow coordinator
 - DIContainer
 - Data Binding
 - Clean Architecture
