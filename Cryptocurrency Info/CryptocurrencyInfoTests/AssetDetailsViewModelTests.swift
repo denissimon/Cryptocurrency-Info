@@ -26,26 +26,26 @@ class AssetDetailsViewModelTests: XCTestCase {
         let asset = Asset(symbol: "ETH", name: "Ethereum", metrics: Metrics(marketData: MarketData(priceUsd: 700.0)))
         assetDetailsViewModel = AssetDetailsViewModel(networkService: NetworkService(), asset: asset)
         
-        assetDetailsViewModel.updateData.addSubscriber(target: self) { (self, data) in
+        assetDetailsViewModel.updateData.subscribe(self) { (self, data) in
             self.updateDataResult = data
         }
         
-        assetDetailsViewModel.showToast.addSubscriber(target: self) { (self, text) in
+        assetDetailsViewModel.showToast.subscribe(self) { (self, text) in
             if !text.isEmpty {
                 self.showToastResult = text
             }
         }
         
-        assetDetailsViewModel.setPriceCurrency.addSubscriber(target: self) { (self, priceCurrency) in
+        assetDetailsViewModel.setPriceCurrency.subscribe(self) { (self, priceCurrency) in
             self.setPriceCurrencyResult = priceCurrency
         }
         
-        assetDetailsViewModel.activityIndicatorVisibility.didChanged.addSubscriber(target: self) { (self, value) in
-            self.activityIndicatorVisibilityResult = value.new
+        assetDetailsViewModel.activityIndicatorVisibility.bind(self) { (self, value) in
+            self.activityIndicatorVisibilityResult = value
         }
         
-        assetDetailsViewModel.chartSpinnerVisibility.didChanged.addSubscriber(target: self) { (self, value) in
-            self.chartSpinnerVisibilityResult = value.new
+        assetDetailsViewModel.chartSpinnerVisibility.bind(self) { (self, value) in
+            self.chartSpinnerVisibilityResult = value
         }
     }
 
@@ -77,14 +77,14 @@ class AssetDetailsViewModelTests: XCTestCase {
         assetDetailsViewModel.setPriceCurrency.trigger(.euro)
         XCTAssertEqual(setPriceCurrencyResult, .euro)
         
-        assetDetailsViewModel.activityIndicatorVisibility.didChanged.trigger((new: false, old: true))
+        assetDetailsViewModel.activityIndicatorVisibility.value = false
         XCTAssertEqual(activityIndicatorVisibilityResult, false)
-        assetDetailsViewModel.activityIndicatorVisibility.didChanged.trigger((new: true, old: false))
+        assetDetailsViewModel.activityIndicatorVisibility.value = true
         XCTAssertEqual(activityIndicatorVisibilityResult, true)
         
-        assetDetailsViewModel.chartSpinnerVisibility.didChanged.trigger((new: false, old: true))
+        assetDetailsViewModel.chartSpinnerVisibility.value = false
         XCTAssertEqual(chartSpinnerVisibilityResult, false)
-        assetDetailsViewModel.chartSpinnerVisibility.didChanged.trigger((new: true, old: false))
+        assetDetailsViewModel.chartSpinnerVisibility.value = true
         XCTAssertEqual(chartSpinnerVisibilityResult, true)
     }
 

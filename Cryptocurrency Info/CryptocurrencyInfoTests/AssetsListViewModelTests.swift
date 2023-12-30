@@ -25,26 +25,26 @@ class AssetsListViewModelTests: XCTestCase {
         
         assetsListViewModel = AssetsListViewModel(networkService: NetworkService())
         
-        assetsListViewModel.updateData.addSubscriber(target: self) { (self, data) in
-            self.updateDataResult = data
+        assetsListViewModel.data.bind(self) { [weak self] data in
+            self?.updateDataResult = data
         }
         
-        assetsListViewModel.showToast.addSubscriber(target: self) { (self, text) in
+        assetsListViewModel.showToast.bind(self) { [weak self] text in
             if !text.isEmpty {
-                self.showToastResult = text
+                self?.showToastResult = text
             }
         }
         
-        assetsListViewModel.setPriceCurrency.addSubscriber(target: self) { (self, priceCurrency) in
-            self.setPriceCurrencyResult = priceCurrency
+        assetsListViewModel.priceCurrency.bind(self) { [weak self] priceCurrency in
+            self?.setPriceCurrencyResult = priceCurrency
         }
         
-        assetsListViewModel.getAssetsCompletionHandler.addSubscriber(target: self) { (self, value) in
-            self.getAssetsCompletionHandlerResult = value
+        assetsListViewModel.getAssetsCompletionHandler.bind(self) { [weak self] value in
+            self?.getAssetsCompletionHandlerResult = value
         }
         
-        assetsListViewModel.activityIndicatorVisibility.didChanged.addSubscriber(target: self) { (self, value) in
-                self.activityIndicatorVisibilityResult = value.new
+        assetsListViewModel.activityIndicatorVisibility.bind(self) { [weak self] value in
+                self?.activityIndicatorVisibilityResult = value
         }
     }
 
@@ -67,22 +67,22 @@ class AssetsListViewModelTests: XCTestCase {
         assetArr.append(Asset(symbol: "BTC", name: "Bitcoin", metrics: Metrics(marketData: MarketData(priceUsd: 27000.0))))
         assetArr.append(Asset(symbol: "ETH", name: "Ethereum", metrics: Metrics(marketData: MarketData(priceUsd: 700.0))))
         
-        assetsListViewModel.updateData.trigger(assetArr)
+        assetsListViewModel.data.value = assetArr
         XCTAssertNotNil(updateDataResult)
         XCTAssertEqual(updateDataResult!.count, 2)
         
-        assetsListViewModel.showToast.trigger("Some text for toast")
+        assetsListViewModel.showToast.value = "Some text for toast"
         XCTAssertEqual(showToastResult, "Some text for toast")
         
-        assetsListViewModel.setPriceCurrency.trigger(.euro)
+        assetsListViewModel.priceCurrency.value = .euro
         XCTAssertEqual(setPriceCurrencyResult, .euro)
         
-        assetsListViewModel.getAssetsCompletionHandler.trigger(true)
+        assetsListViewModel.getAssetsCompletionHandler.value = true
         XCTAssertEqual(getAssetsCompletionHandlerResult, true)
         
-        assetsListViewModel.activityIndicatorVisibility.didChanged.trigger((new: false, old: true))
+        assetsListViewModel.activityIndicatorVisibility.value = false
         XCTAssertEqual(activityIndicatorVisibilityResult, false)
-        assetsListViewModel.activityIndicatorVisibility.didChanged.trigger((new: true, old: false))
+        assetsListViewModel.activityIndicatorVisibility.value = true
         XCTAssertEqual(activityIndicatorVisibilityResult, true)
     }
 

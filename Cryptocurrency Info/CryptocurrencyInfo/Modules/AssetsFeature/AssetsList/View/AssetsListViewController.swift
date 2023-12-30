@@ -1,0 +1,169 @@
+//
+//  AssetsListViewController.swift
+//  CryptocurrencyInfo
+//
+//  Created by Denis Simon on 19.12.2020.
+//
+
+import UIKit
+import Toast_Swift
+import SwiftEvents
+
+struct AssetsListCoordinatorActions {
+    let showAssetDetails: (Asset) -> ()
+}
+
+class AssetsListViewController: UIViewController, Storyboarded {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    private var viewModel: AssetsListViewModel!
+        
+    private var dataSource: AssetsListDataSource?
+    
+    private var coordinatorActions: AssetsListCoordinatorActions?
+    
+    private let refreshControl = UIRefreshControl()
+    
+    // MARK: - Initializer
+    
+    static func instantiate(viewModel: AssetsListViewModel, actions: AssetsListCoordinatorActions) -> AssetsListViewController {
+        let vc = Self.instantiate(from: .assetsList)
+        vc.viewModel = viewModel
+        vc.coordinatorActions = actions
+        return vc
+    }
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setup()
+        prepareUI()
+        
+        // Get page 1 at the app's start
+        viewModel.getAssets(page: 1)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: indexPathForSelectedRow, animated: true)
+        }
+    }
+    
+    private func setup() {
+        dataSource = viewModel.getDataSource()
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        
+        searchBar.delegate = self
+        
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        
+        bind(to: viewModel, dataSource: dataSource)
+    }
+    
+    private func bind(to viewModel: AssetsListViewModel, dataSource: AssetsListDataSource?) {
+        viewModel.data.bind(self, queue: .main) { [weak self] data in
+            self?.dataSource?.updateData(data)
+            self?.tableView.reloadData()
+        }
+        
+        viewModel.showToast.bind(self, queue: .main) { [weak self] text in
+            if !text.isEmpty {
+                self?.view.makeToast(text, duration: AppConfiguration.Other.toastDuration, position: .bottom)
+            }
+        }
+        
+        viewModel.priceCurrency.bind(self) { [weak self] priceCurrency in
+            self?.dataSource?.setPriceCurrency(priceCurrency)
+        }
+        
+        viewModel.getAssetsCompletionHandler.bind(self) { [weak self] data in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self?.viewModel.setAssetsAreLoadingFromServer(false)
+            }
+        }
+        
+        viewModel.activityIndicatorVisibility.bind(self, queue: .main) { [weak self] value in
+            if value {
+                self?.view.makeToastActivity(.center)
+            } else {
+                self?.view.hideToastActivity()
+            }
+        }
+        
+        dataSource?.didScrollToLastCell.subscribe(self) { [weak self] _ in
+            guard let self = self else { return }
+            if !self.viewModel.assetsAreLoadingFromServer {
+                self.viewModel.getAssets(page: self.viewModel.currentPage + 1)
+            }
+        }
+        
+        dataSource?.didTapAssetDetails.subscribe(self, queue: .main) { [weak self] asset in
+            self?.coordinatorActions?.showAssetDetails(asset)
+        }
+    }
+    
+    // MARK: - Private
+    
+    private func prepareUI() {
+        tableView.rowHeight = CGFloat(AppConfiguration.Other.tableCellDefaultHeight)
+        tableView.estimatedRowHeight = CGFloat(AppConfiguration.Other.tableCellDefaultHeight)
+        
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        self.navigationItem.backBarButtonItem = backItem
+        
+        searchBar.sizeToFit()
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        resetSearch()
+        viewModel.clearData()
+        viewModel.getAssets(page: 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.refreshControl.endRefreshing()
+        }
+    }
+}
+
+extension AssetsListViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        viewModel.searchMode = true
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchAsset(searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        resetSearch()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func resetSearch() {
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        viewModel.resetSearch()
+    }
+}
