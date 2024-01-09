@@ -30,7 +30,7 @@ Includes unit tests.
 - Dependency Injection, protocol composition
 - Reusable and universal NetworkService based on URLSession
 - async-await with remaining the transport layer implemented on callbacks without changes
-- Closure-based delegation using lightweight Event<T>
+- Closure-based delegation using lightweight Event\<T\>
 - Reusable data source for UITableView
 - Multiple storyboards
 - Codable
