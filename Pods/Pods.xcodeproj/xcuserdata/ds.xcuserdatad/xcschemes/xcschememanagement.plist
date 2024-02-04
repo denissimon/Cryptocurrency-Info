@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Charts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-CryptocurrencyInfo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -30,6 +25,11 @@
 			<false/>
 		</dict>
 		<key>UAObfuscatedString.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>URLSessionAdapter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

@@ -1,30 +1,28 @@
 PODS:
-  - Charts (3.6.0):
-    - Charts/Core (= 3.6.0)
-  - Charts/Core (3.6.0)
-  - SwiftEvents (1.1.1)
-  - Toast-Swift (5.0.1)
+  - SwiftEvents (2.1.1)
+  - Toast-Swift (5.1.0)
   - UAObfuscatedString (0.5.1)
+  - URLSessionAdapter (1.1.0)
 
 DEPENDENCIES:
-  - Charts
-  - SwiftEvents (~> 1.1.1)
+  - SwiftEvents (~> 2.1)
   - Toast-Swift
   - UAObfuscatedString
+  - URLSessionAdapter (~> 1.1)
 
 SPEC REPOS:
   trunk:
-    - Charts
     - SwiftEvents
     - Toast-Swift
     - UAObfuscatedString
+    - URLSessionAdapter
 
 SPEC CHECKSUMS:
-  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
-  SwiftEvents: 8cefdbeb4e59647e4bca42d6fdd188609ff82684
-  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  SwiftEvents: 062176b8a4c40a51d1f1e76e18e41c62db2cf029
+  Toast-Swift: dd369e68ee529f542c65bd0d0c6c50cd743cf6f2
   UAObfuscatedString: 34850d89100c7aff99129ee56acd433fa5ed3aef
+  URLSessionAdapter: 7c1b89ae20bbda44650416a774fa8374471e2b99
 
-PODFILE CHECKSUM: 78ac4de26e06dbb5337a4425d697f307518e8b3c
+PODFILE CHECKSUM: ec5fd5d9bb59f1feb1a7b8389bd455b55d9778af
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.13.0

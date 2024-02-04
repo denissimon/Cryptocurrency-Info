@@ -3,7 +3,8 @@
 //  https://github.com/denissimon/SwiftEvents
 //
 //  Created by Denis Simon on 05/29/2019.
-//  Copyright © 2019 SwiftEvents. All rights reserved.
+//
+//  MIT License (https://github.com/denissimon/SwiftEvents/blob/master/LICENSE)
 //
 
 import Foundation
@@ -53,10 +54,10 @@ final public class Event<T> {
         subscribers.append(subscriber)
     }
     
-    /// Triggers the Event, calls all handlers
+    /// Triggers the Event, calls all handlers, notifies all subscribers
     ///
     /// - Parameter data: The data to trigger the Event with
-    public func trigger(_ data: T) {
+    public func notify(_ data: T) {
         triggersCount += 1
         for subscriber in subscribers {
             if subscriber.target != nil {
@@ -100,7 +101,7 @@ final public class Observable<T> {
     
     public var value: T {
         didSet {
-            didChanged.trigger(value)
+            didChanged.notify(value)
         }
     }
     
@@ -114,7 +115,7 @@ extension Observable {
     /// The number of observers of the Observable
     public var observersCount: Int { didChanged.subscribersCount }
     
-    /// The number of times the Observable was triggered
+    /// The number of times the Observable's value was changed and the Observable was triggered
     public var triggersCount: Int { didChanged.triggersCount }
     
     /// - Parameter target: The target object that binds to the Observable
@@ -189,10 +190,10 @@ final public class EventTS<T> {
         }
     }
     
-    /// Triggers the Event, calls all handlers
+    /// Triggers the Event, calls all handlers, notifies all subscribers
     ///
     /// - Parameter data: The data to trigger the Event with
-    public func trigger(_ data: T) {
+    public func notify(_ data: T) {
         serialQueue.sync {
             self._triggersCount += 1
         }
@@ -265,7 +266,7 @@ final public class ObservableTS<T> {
             didChanged.serialQueue.sync {
                 self._value = newValue
             }
-            didChanged.trigger(_value)
+            didChanged.notify(_value)
         }
     }
     
@@ -281,7 +282,7 @@ extension ObservableTS {
     /// The number of observers of the Observable
     public var observersCount: Int { didChanged.subscribersCount }
     
-    /// The number of times the Observable was triggered
+    /// The number of times the Observable's value was changed and the Observable was triggered
     public var triggersCount: Int { didChanged.triggersCount }
     
     /// - Parameter target: The target object that binds to the Observable
