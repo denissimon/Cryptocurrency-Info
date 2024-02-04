@@ -253,6 +253,7 @@
 		419D4FC025991B9C00C6F1A3 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				414A53012AE3445900F92F38 /* DIContainer */,
 				419D4FC125991BC200C6F1A3 /* Coordinator.swift */,
 				419D4FC625991C1E00C6F1A3 /* AppCoordinator.swift */,
 				414A52FB2ADC90AD00F92F38 /* MainCoordinator.swift */,
@@ -374,7 +375,6 @@
 		41DF4285258E34CC005EBE0E /* CryptocurrencyInfo */ = {
 			isa = PBXGroup;
 			children = (
-				414A53012AE3445900F92F38 /* DIContainer */,
 				419D4FC025991B9C00C6F1A3 /* Coordinator */,
 				41DF42E0258E37EC005EBE0E /* Common */,
 				41DF42FA258E6185005EBE0E /* Modules */,
