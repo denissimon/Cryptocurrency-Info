@@ -250,6 +250,15 @@
 			path = DIContainer;
 			sourceTree = "<group>";
 		};
+		414D910A2B6F61C7009F37CA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				419B5BB125D30BAE00443960 /* Supportive.swift */,
+				411EE4772597E81F005A79F3 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		419D4FC025991B9C00C6F1A3 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,8 +429,7 @@
 			children = (
 				41DF4286258E34CC005EBE0E /* AppDelegate.swift */,
 				41DF42F5258E5DE1005EBE0E /* AppConfiguration.swift */,
-				419B5BB125D30BAE00443960 /* Supportive.swift */,
-				411EE4772597E81F005A79F3 /* Extensions.swift */,
+				414D910A2B6F61C7009F37CA /* Utils */,
 			);
 			path = Common;
 			sourceTree = "<group>";
