@@ -12,7 +12,7 @@ protocol MainCoordinatorDIContainer {
     func makeAssetDetailsViewController(asset: Asset) -> AssetDetailsViewController
 }
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: FlowCoordinator {
     
     // MARK: - Properties
     let navigationController: UINavigationController

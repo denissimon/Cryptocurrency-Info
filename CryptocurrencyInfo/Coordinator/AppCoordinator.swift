@@ -8,7 +8,7 @@
 import UIKit
 
 // Handles the app's flow
-class AppCoordinator: Coordinator {
+class AppCoordinator: FlowCoordinator {
     
     // MARK: - Properties
     lazy var navigationController = UINavigationController()
