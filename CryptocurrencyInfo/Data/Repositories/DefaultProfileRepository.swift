@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import URLSessionAdapter
 
 class DefaultProfileRepository: ProfileRepository {
     

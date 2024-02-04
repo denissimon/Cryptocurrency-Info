@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import URLSessionAdapter
 
 class DIContainer {
   

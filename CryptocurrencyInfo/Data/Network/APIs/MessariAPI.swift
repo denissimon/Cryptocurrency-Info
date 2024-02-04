@@ -8,15 +8,16 @@
 // https://messari.io/api/docs
 
 import Foundation
+import URLSessionAdapter
 
 struct MessariAPI {
     
     static let baseURL = AppConfiguration.ProductionServer.messariBaseURL
     
     static let defaultParams = HTTPParams(httpBody: nil, cachePolicy: nil, timeoutInterval: 10.0, headerValues:[
-        (value: ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue),
-        (value: ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue),
-        (value: AppConfiguration.ProductionServer.messariApiKey, forHTTPHeaderField: HTTPHeaderField.xMessariApiKey.rawValue)])
+        (value: ContentType.applicationJson.rawValue, forHTTPHeaderField: HTTPHeaderField.accept.rawValue),
+        (value: ContentType.applicationJson.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue),
+        (value: AppConfiguration.ProductionServer.messariApiKey, forHTTPHeaderField: "x-messari-api-key")])
     
     static func assets(page: Int) -> EndpointType {
         let path = "/v2/assets?page=\(page)&limit=\(AppConfiguration.ProductionServer.limitOnPage)&with-metrics&fields=id,name,symbol,metrics/market_data/price_usd"

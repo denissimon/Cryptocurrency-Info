@@ -15,7 +15,6 @@
 		411B60DC2B08858400185132 /* DefaultProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60DB2B08858400185132 /* DefaultProfileRepository.swift */; };
 		411B60E22B0890F800185132 /* PriceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60E12B0890F800185132 /* PriceRepository.swift */; };
 		411B60E42B08915D00185132 /* DefaultPriceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60E32B08915D00185132 /* DefaultPriceRepository.swift */; };
-		411B60E62B0940A400185132 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60E52B0940A400185132 /* Cancellable.swift */; };
 		411EE4782597E81F005A79F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411EE4772597E81F005A79F3 /* Extensions.swift */; };
 		412BF6FD2592D37900F11969 /* AssetDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BF6FC2592D37900F11969 /* AssetDetailsDataSource.swift */; };
 		412BF7052593F75B00F11969 /* TaglineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BF7042593F75B00F11969 /* TaglineCell.swift */; };
@@ -45,8 +44,6 @@
 		41DF4293258E34D0005EBE0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41DF4291258E34D0005EBE0E /* LaunchScreen.storyboard */; };
 		41DF429E258E34D1005EBE0E /* AssetsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF429D258E34D1005EBE0E /* AssetsListViewModelTests.swift */; };
 		41DF42A9258E34D1005EBE0E /* CryptocurrencyInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF42A8258E34D1005EBE0E /* CryptocurrencyInfoUITests.swift */; };
-		41DF42D8258E37AB005EBE0E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF42D3258E37AA005EBE0E /* NetworkService.swift */; };
-		41DF42DC258E37AB005EBE0E /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF42D7258E37AB005EBE0E /* RequestFactory.swift */; };
 		41DF42E8258E5D8D005EBE0E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF42E7258E5D8D005EBE0E /* Assets.swift */; };
 		41DF42EE258E5DAE005EBE0E /* MessariAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF42ED258E5DAE005EBE0E /* MessariAPI.swift */; };
 		41DF42F6258E5DE1005EBE0E /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF42F5258E5DE1005EBE0E /* AppConfiguration.swift */; };
@@ -84,7 +81,6 @@
 		411B60DB2B08858400185132 /* DefaultProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProfileRepository.swift; sourceTree = "<group>"; };
 		411B60E12B0890F800185132 /* PriceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRepository.swift; sourceTree = "<group>"; };
 		411B60E32B08915D00185132 /* DefaultPriceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPriceRepository.swift; sourceTree = "<group>"; };
-		411B60E52B0940A400185132 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		411EE4772597E81F005A79F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		412BF6FC2592D37900F11969 /* AssetDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsDataSource.swift; sourceTree = "<group>"; };
 		412BF7042593F75B00F11969 /* TaglineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaglineCell.swift; sourceTree = "<group>"; };
@@ -120,8 +116,6 @@
 		41DF42A4258E34D1005EBE0E /* CryptocurrencyInfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptocurrencyInfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DF42A8258E34D1005EBE0E /* CryptocurrencyInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocurrencyInfoUITests.swift; sourceTree = "<group>"; };
 		41DF42AA258E34D1005EBE0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41DF42D3258E37AA005EBE0E /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		41DF42D7258E37AB005EBE0E /* RequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		41DF42E7258E5D8D005EBE0E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		41DF42ED258E5DAE005EBE0E /* MessariAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessariAPI.swift; sourceTree = "<group>"; };
 		41DF42F5258E5DE1005EBE0E /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
@@ -194,7 +188,6 @@
 		411B60C22B081B3400185132 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				41DF42D1258E376E005EBE0E /* NetworkService */,
 				411B60CF2B08274600185132 /* APIInteractor */,
 				41DF42EC258E5DAE005EBE0E /* APIs */,
 			);
@@ -397,16 +390,6 @@
 				41DF42AA258E34D1005EBE0E /* Info.plist */,
 			);
 			path = CryptocurrencyInfoUITests;
-			sourceTree = "<group>";
-		};
-		41DF42D1258E376E005EBE0E /* NetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				41DF42D3258E37AA005EBE0E /* NetworkService.swift */,
-				41DF42D7258E37AB005EBE0E /* RequestFactory.swift */,
-				411B60E52B0940A400185132 /* Cancellable.swift */,
-			);
-			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		41DF42E0258E37EC005EBE0E /* Common */ = {
@@ -674,14 +657,11 @@
 				419B5BB225D30BAE00443960 /* Supportive.swift in Sources */,
 				41DF42EE258E5DAE005EBE0E /* MessariAPI.swift in Sources */,
 				412BF7122594080A00F11969 /* AboutAssetCell.swift in Sources */,
-				41DF42DC258E37AB005EBE0E /* RequestFactory.swift in Sources */,
 				41C7B5E3259181E7001305A3 /* Profile.swift in Sources */,
 				411B60D32B08279D00185132 /* URLSessionAPIInteractor.swift in Sources */,
 				412BF6FD2592D37900F11969 /* AssetDetailsDataSource.swift in Sources */,
 				414A53002ADDD2D300F92F38 /* DIContainer.swift in Sources */,
-				41DF42D8258E37AB005EBE0E /* NetworkService.swift in Sources */,
 				41C7B5D425917E12001305A3 /* AssetDetailsViewController.swift in Sources */,
-				411B60E62B0940A400185132 /* Cancellable.swift in Sources */,
 				411B60E42B08915D00185132 /* DefaultPriceRepository.swift in Sources */,
 				412BF7052593F75B00F11969 /* TaglineCell.swift in Sources */,
 				419D4FC725991C1E00C6F1A3 /* AppCoordinator.swift in Sources */,
