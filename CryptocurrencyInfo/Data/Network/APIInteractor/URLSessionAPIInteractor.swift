@@ -15,15 +15,11 @@ class URLSessionAPIInteractor: APIInteractor {
         self.urlSessionAdapter = networkService
     }
     
-    func requestEndpoint(_ endpoint: EndpointType, completion: @escaping (Result<Data, NetworkError>) -> Void) -> Cancellable? {
-        let networkTask = RepositoryTask()
-        networkTask.networkTask = urlSessionAdapter.requestEndpoint(endpoint, completion: completion)
-        return networkTask
+    func requestEndpoint(_ endpoint: EndpointType, completion: @escaping (Result<Data, NetworkError>) -> Void) -> NetworkCancellable? {
+        return urlSessionAdapter.requestEndpoint(endpoint, completion: completion)
     }
     
-    func requestEndpoint<T: Decodable>(_ endpoint: EndpointType, type: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) -> Cancellable? {
-        let networkTask = RepositoryTask()
-        networkTask.networkTask = urlSessionAdapter.requestEndpoint(endpoint, type: type, completion: completion)
-        return networkTask
+    func requestEndpoint<T: Decodable>(_ endpoint: EndpointType, type: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable? {
+        return urlSessionAdapter.requestEndpoint(endpoint, type: type, completion: completion)
     }
 }
