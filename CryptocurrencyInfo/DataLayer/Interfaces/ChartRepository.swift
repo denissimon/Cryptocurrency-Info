@@ -7,6 +7,6 @@
 
 protocol ChartRepository {
     typealias ChartResult = Result<Chart, NetworkError>
-    //func getChart(input: TimeSeriesInputData, completionHandler: @escaping (ChartResult) -> Void)
+    
     func getChart(input: TimeSeriesInputData) async -> ChartResult
 }

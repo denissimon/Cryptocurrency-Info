@@ -7,6 +7,6 @@
 
 protocol PriceRepository {
     typealias PriceResult = Result<Price, NetworkError>
-    //func getPrice(asset: String, completionHandler: @escaping (PriceResult) -> Void)
+    
     func getPrice(asset: String) async -> PriceResult
 }

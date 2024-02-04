@@ -7,6 +7,6 @@
 
 protocol ProfileRepository {
     typealias ProfileResult = Result<Profile, NetworkError>
-    //func getProfile(asset: String, completionHandler: @escaping (ProfileResult) -> Void)
+    
     func getProfile(asset: String) async -> ProfileResult
 }
