@@ -181,14 +181,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		411B60C02B081AC800185132 /* DataLayer */ = {
+		411B60C02B081AC800185132 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				411B60E72B09DE4F00185132 /* Interfaces */,
 				411B60C12B081B0200185132 /* Repositories */,
 				411B60C22B081B3400185132 /* Network */,
 			);
-			path = DataLayer;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		411B60C12B081B0200185132 /* Repositories */ = {
@@ -387,7 +387,7 @@
 				419D4FC025991B9C00C6F1A3 /* Coordinator */,
 				41DF42E0258E37EC005EBE0E /* Common */,
 				41DF42FA258E6185005EBE0E /* Modules */,
-				411B60C02B081AC800185132 /* DataLayer */,
+				411B60C02B081AC800185132 /* Data */,
 				41B115C72B409D9C0062CD5F /* Resources */,
 				41DF4291258E34D0005EBE0E /* LaunchScreen.storyboard */,
 				41DF4294258E34D0005EBE0E /* Info.plist */,
