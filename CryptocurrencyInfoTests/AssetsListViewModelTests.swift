@@ -8,39 +8,39 @@
 import XCTest
 @testable import CryptocurrencyInfo
 
-// Tests for AssetsListViewModel
 class AssetsListViewModelTests: XCTestCase {
 
+    private(set) var dependencyContainer = DIContainer()
+    
     var assetsListViewModel: AssetsListViewModel!
     
-    var updateDataResult: [Asset]? = nil
-    var showToastResult: String? = nil
-    var setPriceCurrencyResult: PriceCurrency? = nil
-    var getAssetsCompletionHandlerResult: Bool? = nil
+    var data: [Asset]? = nil
+    var toastResult: String? = nil
+    var priceCurrencyResult: PriceCurrency? = nil
+    var assetsCompletionHandlerResult: Bool? = nil
     var activityIndicatorVisibilityResult: Bool? = nil
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
         
-        assetsListViewModel = AssetsListViewModel(networkService: NetworkService())
+        assetsListViewModel = AssetsListViewModel(assetRepository: dependencyContainer.makeAssetRepository())
         
         assetsListViewModel.data.bind(self) { [weak self] data in
-            self?.updateDataResult = data
+            self?.data = data
         }
         
         assetsListViewModel.showToast.bind(self) { [weak self] text in
             if !text.isEmpty {
-                self?.showToastResult = text
+                self?.toastResult = text
             }
         }
         
         assetsListViewModel.priceCurrency.bind(self) { [weak self] priceCurrency in
-            self?.setPriceCurrencyResult = priceCurrency
+            self?.priceCurrencyResult = priceCurrency
         }
         
         assetsListViewModel.getAssetsCompletionHandler.bind(self) { [weak self] value in
-            self?.getAssetsCompletionHandlerResult = value
+            self?.assetsCompletionHandlerResult = value
         }
         
         assetsListViewModel.activityIndicatorVisibility.bind(self) { [weak self] value in
@@ -49,36 +49,33 @@ class AssetsListViewModelTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         try super.tearDownWithError()
         
         assetsListViewModel = nil
-        updateDataResult = nil
-        showToastResult = nil
-        setPriceCurrencyResult = nil
-        getAssetsCompletionHandlerResult = nil
+        data = nil
+        toastResult = nil
+        priceCurrencyResult = nil
+        assetsCompletionHandlerResult = nil
         activityIndicatorVisibilityResult = nil
     }
 
-    func testTriggerEvents() throws {
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+    func testObservables() throws {
         var assetArr = [Asset]()
         assetArr.append(Asset(symbol: "BTC", name: "Bitcoin", metrics: Metrics(marketData: MarketData(priceUsd: 27000.0))))
         assetArr.append(Asset(symbol: "ETH", name: "Ethereum", metrics: Metrics(marketData: MarketData(priceUsd: 700.0))))
         
         assetsListViewModel.data.value = assetArr
-        XCTAssertNotNil(updateDataResult)
-        XCTAssertEqual(updateDataResult!.count, 2)
+        XCTAssertNotNil(data)
+        XCTAssertEqual(data!.count, 2)
         
         assetsListViewModel.showToast.value = "Some text for toast"
-        XCTAssertEqual(showToastResult, "Some text for toast")
+        XCTAssertEqual(toastResult, "Some text for toast")
         
         assetsListViewModel.priceCurrency.value = .euro
-        XCTAssertEqual(setPriceCurrencyResult, .euro)
+        XCTAssertEqual(priceCurrencyResult, .euro)
         
         assetsListViewModel.getAssetsCompletionHandler.value = true
-        XCTAssertEqual(getAssetsCompletionHandlerResult, true)
+        XCTAssertEqual(assetsCompletionHandlerResult, true)
         
         assetsListViewModel.activityIndicatorVisibility.value = false
         XCTAssertEqual(activityIndicatorVisibilityResult, false)
@@ -88,7 +85,7 @@ class AssetsListViewModelTests: XCTestCase {
 
     func testOnNetworkError() {
         assetsListViewModel.onNetworkError("Some message")
-        XCTAssertEqual(showToastResult, "Some message")
+        XCTAssertEqual(toastResult, "Some message")
         XCTAssertEqual(activityIndicatorVisibilityResult, false)
     }
 }

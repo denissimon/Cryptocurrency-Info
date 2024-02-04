@@ -8,89 +8,75 @@
 import XCTest
 @testable import CryptocurrencyInfo
 
-// Tests for AssetDetailsViewModel
 class AssetDetailsViewModelTests: XCTestCase {
 
+    private(set) var dependencyContainer = DIContainer()
+    
     var assetDetailsViewModel: AssetDetailsViewModel!
     
-    var updateDataResult: Details? = nil
-    var showToastResult: String? = nil
-    var setPriceCurrencyResult: PriceCurrency? = nil
+    var data: Details? = nil
+    var toastResult: String? = nil
+    var priceCurrencyResult: PriceCurrency? = nil
     var activityIndicatorVisibilityResult: Bool? = nil
-    var chartSpinnerVisibilityResult: Bool? = nil
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
         
         let asset = Asset(symbol: "ETH", name: "Ethereum", metrics: Metrics(marketData: MarketData(priceUsd: 700.0)))
-        assetDetailsViewModel = AssetDetailsViewModel(networkService: NetworkService(), asset: asset)
+        assetDetailsViewModel = AssetDetailsViewModel(asset: asset, profileRepository: dependencyContainer.makeProfileRepository(), priceRepository: dependencyContainer.makePriceRepository())
         
-        assetDetailsViewModel.updateData.subscribe(self) { (self, data) in
-            self.updateDataResult = data
+        assetDetailsViewModel.data.bind(self) { (data) in
+            self.data = data
         }
         
-        assetDetailsViewModel.showToast.subscribe(self) { (self, text) in
+        assetDetailsViewModel.showToast.bind(self) { (text) in
             if !text.isEmpty {
-                self.showToastResult = text
+                self.toastResult = text
             }
         }
         
-        assetDetailsViewModel.setPriceCurrency.subscribe(self) { (self, priceCurrency) in
-            self.setPriceCurrencyResult = priceCurrency
+        assetDetailsViewModel.priceCurrency.bind(self) { (priceCurrency) in
+            self.priceCurrencyResult = priceCurrency
         }
         
-        assetDetailsViewModel.activityIndicatorVisibility.bind(self) { (self, value) in
+        assetDetailsViewModel.activityIndicatorVisibility.bind(self) { (value) in
             self.activityIndicatorVisibilityResult = value
-        }
-        
-        assetDetailsViewModel.chartSpinnerVisibility.bind(self) { (self, value) in
-            self.chartSpinnerVisibilityResult = value
         }
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         try super.tearDownWithError()
         
         assetDetailsViewModel = nil
-        updateDataResult = nil
-        showToastResult = nil
-        setPriceCurrencyResult = nil
+        data = nil
+        toastResult = nil
+        priceCurrencyResult = nil
         activityIndicatorVisibilityResult = nil
-        chartSpinnerVisibilityResult = nil
     }
 
-    func testTriggerEvents() throws {
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+    func testObservables() throws {
         let asset = Asset(symbol: "BTC", name: "Bitcoin", metrics: Metrics(marketData: MarketData(priceUsd: 27000.0)))
-        let detailsData = Details(asset: asset, profile: nil, chartData: nil)
+        let detailsData = Details(asset: asset, profile: nil)
         
-        assetDetailsViewModel.updateData.trigger(detailsData)
-        XCTAssertNotNil(updateDataResult)
-        XCTAssertEqual(updateDataResult!.asset?.name, "Bitcoin")
+        assetDetailsViewModel.data.value = detailsData
+        XCTAssertNotNil(data)
+        XCTAssertEqual(data!.asset?.name, "Bitcoin")
         
-        assetDetailsViewModel.showToast.trigger("Some new text for toast")
-        XCTAssertEqual(showToastResult, "Some new text for toast")
+        assetDetailsViewModel.showToast.value = "Some new text for toast"
+        XCTAssertEqual(toastResult, "Some new text for toast")
         
-        assetDetailsViewModel.setPriceCurrency.trigger(.euro)
-        XCTAssertEqual(setPriceCurrencyResult, .euro)
+        assetDetailsViewModel.priceCurrency.value = .euro
+        XCTAssertEqual(priceCurrencyResult, .euro)
         
         assetDetailsViewModel.activityIndicatorVisibility.value = false
         XCTAssertEqual(activityIndicatorVisibilityResult, false)
         assetDetailsViewModel.activityIndicatorVisibility.value = true
         XCTAssertEqual(activityIndicatorVisibilityResult, true)
-        
-        assetDetailsViewModel.chartSpinnerVisibility.value = false
-        XCTAssertEqual(chartSpinnerVisibilityResult, false)
-        assetDetailsViewModel.chartSpinnerVisibility.value = true
-        XCTAssertEqual(chartSpinnerVisibilityResult, true)
     }
 
     func testOnNetworkError() {
         assetDetailsViewModel.onNetworkError("Some new message")
-        XCTAssertEqual(showToastResult, "Some new message")
+        XCTAssertEqual(toastResult, "Some new message")
     }
     
     func testRegex() {
