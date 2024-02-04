@@ -7,16 +7,13 @@
 
 import UIKit
 import Toast_Swift
-import Charts
 
 class AssetDetailsViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var tableView: UITableView!
     
     private var viewModel: AssetDetailsViewModel!
-    
     private var dataSource: AssetDetailsDataSource?
-    
     private let refreshControl = UIRefreshControl()
     
     // MARK: - Initializer
@@ -37,7 +34,6 @@ class AssetDetailsViewController: UIViewController, Storyboarded {
         
         if let asset = dataSource?.data.asset {
             viewModel.getProfile(asset: asset.symbol)
-            viewModel.getChart(input: TimeSeriesInputData(asset: asset.symbol, period: viewModel.chartPeriod, interval: viewModel.chartInterval))
         }
     }
     
@@ -74,11 +70,6 @@ class AssetDetailsViewController: UIViewController, Storyboarded {
                 self?.view.hideToastActivity()
             }
         }
-        
-        viewModel.chartSpinnerVisibility.bind(self, queue: .main) { [weak self] value in
-            self?.dataSource?.setChartSpinnerVisibility(value)
-            self?.tableView.reloadData()
-        }
     }
     
     // MARK: - Private
@@ -102,28 +93,14 @@ class AssetDetailsViewController: UIViewController, Storyboarded {
         tableView.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
     }
     
-    private func resetChartZoom() {
-        let chartView = self.view.viewWithTag(10) as? LineChartView
-        chartView?.zoomToCenter(scaleX: 0, scaleY: 0)
-    }
-    
     @objc private func updateData(_ sender: Any) {
-        resetChartZoom()
         if let asset = dataSource?.data.asset {
             viewModel.getPrice(asset: asset.symbol)
             viewModel.getProfile(asset: asset.symbol)
-            viewModel.getChart(input: TimeSeriesInputData(asset: asset.symbol, period: viewModel.chartPeriod, interval: viewModel.chartInterval))
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.refreshControl.endRefreshing()
         }
-    }
-    
-    // MARK: - Actions
-    
-    @IBAction func onPeriodSegmentedControlChanged(_ sender: UISegmentedControl) {
-        resetChartZoom()
-        viewModel.onPeriodSegmentedControlChanged(sender.selectedSegmentIndex)
     }
 }
 

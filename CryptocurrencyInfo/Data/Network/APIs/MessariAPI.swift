@@ -42,18 +42,6 @@ struct MessariAPI {
             params: params)
     }
     
-    static func timeSeries(data: TimeSeriesInputData) -> EndpointType {
-        let path = "/v1/assets/\(data.asset)/metrics/price/time-series?after=\(data.date())&interval=\(data.interval.rawValue)&columns=timestamp,close" // as an option: columns=timestamp,open,close (this will require to change 'value[1]' to 'value[2]' in setChartData() in DetailsDataSource.swift)
-        
-        let params = MessariAPI.defaultParams
-        
-        return Endpoint(
-            method: .GET,
-            baseURL: MessariAPI.baseURL,
-            path: path,
-            params: params)
-    }
-    
     static func price(asset: String) -> EndpointType {
         let path = "/v1/assets/\(asset)/metrics/market-data"
         

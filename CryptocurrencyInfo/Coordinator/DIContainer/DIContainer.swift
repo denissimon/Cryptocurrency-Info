@@ -27,10 +27,6 @@ class DIContainer {
        return DefaultProfileRepository(apiInteractor: apiInteractor)
     }
     
-    func makeChartRepository() -> ChartRepository {
-       return DefaultChartRepository(apiInteractor: apiInteractor)
-    }
-    
     func makePriceRepository() -> PriceRepository {
        return DefaultPriceRepository(apiInteractor: apiInteractor)
     }
@@ -55,9 +51,8 @@ extension DIContainer: MainCoordinatorDIContainer {
     
     func makeAssetDetailsViewController(asset: Asset) -> AssetDetailsViewController {
         let profileRepository = makeProfileRepository()
-        let chartRepository = makeChartRepository()
         let priceRepository = makePriceRepository()
-        let viewModel = AssetDetailsViewModel(asset: asset, profileRepository: profileRepository, chartRepository: chartRepository, priceRepository: priceRepository)
+        let viewModel = AssetDetailsViewModel(asset: asset, profileRepository: profileRepository, priceRepository: priceRepository)
         return AssetDetailsViewController.instantiate(viewModel: viewModel)
     }
 }

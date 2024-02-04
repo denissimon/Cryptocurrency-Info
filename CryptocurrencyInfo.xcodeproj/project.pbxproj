@@ -13,15 +13,12 @@
 		411B60D52B082B9100185132 /* APIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60D42B082B9100185132 /* APIInteractor.swift */; };
 		411B60DA2B08850B00185132 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60D92B08850B00185132 /* ProfileRepository.swift */; };
 		411B60DC2B08858400185132 /* DefaultProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60DB2B08858400185132 /* DefaultProfileRepository.swift */; };
-		411B60DE2B088ADE00185132 /* ChartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60DD2B088ADE00185132 /* ChartRepository.swift */; };
-		411B60E02B088B1200185132 /* DefaultChartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60DF2B088B1200185132 /* DefaultChartRepository.swift */; };
 		411B60E22B0890F800185132 /* PriceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60E12B0890F800185132 /* PriceRepository.swift */; };
 		411B60E42B08915D00185132 /* DefaultPriceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60E32B08915D00185132 /* DefaultPriceRepository.swift */; };
 		411B60E62B0940A400185132 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60E52B0940A400185132 /* Cancellable.swift */; };
 		411EE4782597E81F005A79F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411EE4772597E81F005A79F3 /* Extensions.swift */; };
 		412BF6FD2592D37900F11969 /* AssetDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BF6FC2592D37900F11969 /* AssetDetailsDataSource.swift */; };
 		412BF7052593F75B00F11969 /* TaglineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BF7042593F75B00F11969 /* TaglineCell.swift */; };
-		412BF70D2594059600F11969 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BF70C2594059600F11969 /* ChartCell.swift */; };
 		412BF7122594080A00F11969 /* AboutAssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BF7112594080A00F11969 /* AboutAssetCell.swift */; };
 		414A52FA2ADC259300F92F38 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A52F92ADC259300F92F38 /* Storyboarded.swift */; };
 		414A52FC2ADC90AD00F92F38 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A52FB2ADC90AD00F92F38 /* MainCoordinator.swift */; };
@@ -39,9 +36,7 @@
 		41C7B5D925918122001305A3 /* AssetDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7B5D825918122001305A3 /* AssetDetailsViewModel.swift */; };
 		41C7B5DE2591817A001305A3 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7B5DD2591817A001305A3 /* Details.swift */; };
 		41C7B5E3259181E7001305A3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7B5E2259181E7001305A3 /* Profile.swift */; };
-		41C7B5E825918400001305A3 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C7B5E725918400001305A3 /* Chart.swift */; };
 		41D3B58225945259007E76EF /* LinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D3B58125945259007E76EF /* LinkCell.swift */; };
-		41D3B58A2597605B007E76EF /* TimeSeriesInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D3B5892597605B007E76EF /* TimeSeriesInputData.swift */; };
 		41D3B58F25977BDE007E76EF /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D3B58E25977BDE007E76EF /* Price.swift */; };
 		41DF4287258E34CC005EBE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF4286258E34CC005EBE0E /* AppDelegate.swift */; };
 		41DF428B258E34CC005EBE0E /* AssetsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DF428A258E34CC005EBE0E /* AssetsListViewController.swift */; };
@@ -87,15 +82,12 @@
 		411B60D42B082B9100185132 /* APIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractor.swift; sourceTree = "<group>"; };
 		411B60D92B08850B00185132 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		411B60DB2B08858400185132 /* DefaultProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProfileRepository.swift; sourceTree = "<group>"; };
-		411B60DD2B088ADE00185132 /* ChartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartRepository.swift; sourceTree = "<group>"; };
-		411B60DF2B088B1200185132 /* DefaultChartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChartRepository.swift; sourceTree = "<group>"; };
 		411B60E12B0890F800185132 /* PriceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRepository.swift; sourceTree = "<group>"; };
 		411B60E32B08915D00185132 /* DefaultPriceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPriceRepository.swift; sourceTree = "<group>"; };
 		411B60E52B0940A400185132 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		411EE4772597E81F005A79F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		412BF6FC2592D37900F11969 /* AssetDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsDataSource.swift; sourceTree = "<group>"; };
 		412BF7042593F75B00F11969 /* TaglineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaglineCell.swift; sourceTree = "<group>"; };
-		412BF70C2594059600F11969 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		412BF7112594080A00F11969 /* AboutAssetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAssetCell.swift; sourceTree = "<group>"; };
 		414A52F92ADC259300F92F38 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		414A52FB2ADC90AD00F92F38 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -113,9 +105,7 @@
 		41C7B5D825918122001305A3 /* AssetDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsViewModel.swift; sourceTree = "<group>"; };
 		41C7B5DD2591817A001305A3 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		41C7B5E2259181E7001305A3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		41C7B5E725918400001305A3 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		41D3B58125945259007E76EF /* LinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkCell.swift; sourceTree = "<group>"; };
-		41D3B5892597605B007E76EF /* TimeSeriesInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesInputData.swift; sourceTree = "<group>"; };
 		41D3B58E25977BDE007E76EF /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		41DF4283258E34CC005EBE0E /* CryptocurrencyInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptocurrencyInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DF4286258E34CC005EBE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,7 +186,6 @@
 			children = (
 				411B60C42B081BC400185132 /* DefaultAssetRepository.swift */,
 				411B60DB2B08858400185132 /* DefaultProfileRepository.swift */,
-				411B60DF2B088B1200185132 /* DefaultChartRepository.swift */,
 				411B60E32B08915D00185132 /* DefaultPriceRepository.swift */,
 			);
 			path = Repositories;
@@ -226,7 +215,6 @@
 			children = (
 				411B60CC2B08250500185132 /* AssetRepository.swift */,
 				411B60D92B08850B00185132 /* ProfileRepository.swift */,
-				411B60DD2B088ADE00185132 /* ChartRepository.swift */,
 				411B60E12B0890F800185132 /* PriceRepository.swift */,
 			);
 			path = Interfaces;
@@ -332,8 +320,6 @@
 			children = (
 				41C7B5DD2591817A001305A3 /* Details.swift */,
 				41C7B5E2259181E7001305A3 /* Profile.swift */,
-				41C7B5E725918400001305A3 /* Chart.swift */,
-				41D3B5892597605B007E76EF /* TimeSeriesInputData.swift */,
 				41D3B58E25977BDE007E76EF /* Price.swift */,
 			);
 			path = Models;
@@ -344,7 +330,6 @@
 			children = (
 				41C7B5CE2590B7C2001305A3 /* HatCell.swift */,
 				412BF7042593F75B00F11969 /* TaglineCell.swift */,
-				412BF70C2594059600F11969 /* ChartCell.swift */,
 				412BF7112594080A00F11969 /* AboutAssetCell.swift */,
 				41D3B58125945259007E76EF /* LinkCell.swift */,
 			);
@@ -692,20 +677,16 @@
 				41DF42DC258E37AB005EBE0E /* RequestFactory.swift in Sources */,
 				41C7B5E3259181E7001305A3 /* Profile.swift in Sources */,
 				411B60D32B08279D00185132 /* URLSessionAPIInteractor.swift in Sources */,
-				41D3B58A2597605B007E76EF /* TimeSeriesInputData.swift in Sources */,
 				412BF6FD2592D37900F11969 /* AssetDetailsDataSource.swift in Sources */,
 				414A53002ADDD2D300F92F38 /* DIContainer.swift in Sources */,
 				41DF42D8258E37AB005EBE0E /* NetworkService.swift in Sources */,
 				41C7B5D425917E12001305A3 /* AssetDetailsViewController.swift in Sources */,
-				411B60E02B088B1200185132 /* DefaultChartRepository.swift in Sources */,
-				412BF70D2594059600F11969 /* ChartCell.swift in Sources */,
 				411B60E62B0940A400185132 /* Cancellable.swift in Sources */,
 				411B60E42B08915D00185132 /* DefaultPriceRepository.swift in Sources */,
 				412BF7052593F75B00F11969 /* TaglineCell.swift in Sources */,
 				419D4FC725991C1E00C6F1A3 /* AppCoordinator.swift in Sources */,
 				41DF4287258E34CC005EBE0E /* AppDelegate.swift in Sources */,
 				41C7B5C1258F1057001305A3 /* PriceCurrency.swift in Sources */,
-				411B60DE2B088ADE00185132 /* ChartRepository.swift in Sources */,
 				411B60C52B081BC400185132 /* DefaultAssetRepository.swift in Sources */,
 				41C7B5CF2590B7C2001305A3 /* HatCell.swift in Sources */,
 				411B60CD2B08250500185132 /* AssetRepository.swift in Sources */,
@@ -717,7 +698,6 @@
 				411EE4782597E81F005A79F3 /* Extensions.swift in Sources */,
 				41DF42E8258E5D8D005EBE0E /* Assets.swift in Sources */,
 				41D3B58F25977BDE007E76EF /* Price.swift in Sources */,
-				41C7B5E825918400001305A3 /* Chart.swift in Sources */,
 				41C7B5B7258F0A39001305A3 /* AssetsListDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -944,7 +924,7 @@
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CryptocurrencyInfoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -968,7 +948,7 @@
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CryptocurrencyInfoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -989,6 +969,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				INFOPLIST_FILE = CryptocurrencyInfoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1009,6 +990,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				INFOPLIST_FILE = CryptocurrencyInfoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

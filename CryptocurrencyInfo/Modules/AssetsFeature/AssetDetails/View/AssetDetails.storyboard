@@ -88,56 +88,8 @@
                                             <outlet property="tagline" destination="wFi-IB-us9" id="qVk-b6-bPl"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChartCell" rowHeight="230" id="CKF-hq-Z9t" customClass="ChartCell" customModule="CryptocurrencyInfo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="211.5" width="414" height="230"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CKF-hq-Z9t" id="meR-2G-zga">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="owy-mE-clj">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="32"/>
-                                                    <segments>
-                                                        <segment title="1M"/>
-                                                        <segment title="3M"/>
-                                                        <segment title="6M"/>
-                                                    </segments>
-                                                    <connections>
-                                                        <action selector="onPeriodSegmentedControlChanged:" destination="auU-Zk-wBy" eventType="valueChanged" id="qRA-Em-K6i"/>
-                                                    </connections>
-                                                </segmentedControl>
-                                                <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXr-Ze-6Oe" customClass="LineChartView" customModule="Charts">
-                                                    <rect key="frame" x="20" y="31" width="374" height="199"/>
-                                                    <subviews>
-                                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="vL7-W2-n1o">
-                                                            <rect key="frame" x="177" y="89.5" width="20" height="20"/>
-                                                        </activityIndicatorView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <constraints>
-                                                        <constraint firstItem="vL7-W2-n1o" firstAttribute="centerY" secondItem="lXr-Ze-6Oe" secondAttribute="centerY" id="TUt-Xe-BMl"/>
-                                                        <constraint firstItem="vL7-W2-n1o" firstAttribute="centerX" secondItem="lXr-Ze-6Oe" secondAttribute="centerX" id="XuM-iN-zkz"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="lXr-Ze-6Oe" firstAttribute="top" secondItem="owy-mE-clj" secondAttribute="bottom" id="4fw-oM-SEs"/>
-                                                <constraint firstAttribute="bottom" secondItem="lXr-Ze-6Oe" secondAttribute="bottom" id="6TH-FW-Ike"/>
-                                                <constraint firstAttribute="trailing" secondItem="lXr-Ze-6Oe" secondAttribute="trailing" constant="20" id="S9D-91-78C"/>
-                                                <constraint firstItem="owy-mE-clj" firstAttribute="leading" secondItem="meR-2G-zga" secondAttribute="leading" constant="20" id="XqI-3D-aQx"/>
-                                                <constraint firstAttribute="trailing" secondItem="owy-mE-clj" secondAttribute="trailing" constant="20" id="ckE-nE-Zgw"/>
-                                                <constraint firstItem="owy-mE-clj" firstAttribute="top" secondItem="meR-2G-zga" secondAttribute="top" id="jvO-UC-g3Y"/>
-                                                <constraint firstItem="lXr-Ze-6Oe" firstAttribute="leading" secondItem="meR-2G-zga" secondAttribute="leading" constant="20" id="ukV-j2-EK4"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="chartSpinner" destination="vL7-W2-n1o" id="Luc-T5-w1E"/>
-                                            <outlet property="chartView" destination="lXr-Ze-6Oe" id="8cZ-SR-jEQ"/>
-                                            <outlet property="periodSegmentedControl" destination="owy-mE-clj" id="8Yj-sb-0Ob"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AboutAssetCell" rowHeight="80" id="tcr-OM-QAz" customClass="AboutAssetCell" customModule="CryptocurrencyInfo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="441.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="211.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tcr-OM-QAz" id="AHR-C3-mWa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -162,7 +114,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LinkCell" rowHeight="48" id="qgs-mD-MYa" customClass="LinkCell" customModule="CryptocurrencyInfo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="521.5" width="414" height="48"/>
+                                        <rect key="frame" x="0.0" y="291.5" width="414" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qgs-mD-MYa" id="2MY-1w-4Es">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>

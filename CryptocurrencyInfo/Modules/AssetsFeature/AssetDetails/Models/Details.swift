@@ -8,5 +8,4 @@
 struct Details {
     var asset: Asset?
     var profile: Profile?
-    var chartData: Chart?
 }
