@@ -69,7 +69,7 @@ extension AssetsListDataSource: UITableViewDataSource {
 extension AssetsListDataSource: UITableViewDelegate {
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didTapAssetDetails.trigger(data[indexPath.item])
+        didTapAssetDetails.notify(data[indexPath.item])
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -78,7 +78,7 @@ extension AssetsListDataSource: UITableViewDelegate {
 
         let ret = contentOffsetMaxY > contentHeight
         if ret {
-            didScrollToLastCell.trigger(nil)
+            didScrollToLastCell.notify(nil)
         }
     }
 }
