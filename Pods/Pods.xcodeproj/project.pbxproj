@@ -113,11 +113,11 @@
 		76A50F93B8A39FE2FBFA69EA9CD9D82B /* SwiftEvents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftEvents-dummy.m"; sourceTree = "<group>"; };
 		7B073B00CA09570A34D6178EA4E58435 /* URLSessionAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "URLSessionAdapter-dummy.m"; sourceTree = "<group>"; };
 		7C3BD0176F83FBC20D753028482E78E1 /* Pods-CryptocurrencyInfoTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CryptocurrencyInfoTests"; path = Pods_CryptocurrencyInfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84ECC0EAA5B37B7A45BAE62FDFD3206F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Toast/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		84ECC0EAA5B37B7A45BAE62FDFD3206F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Toast/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UAObfuscatedString; path = UAObfuscatedString.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DED2AD07E1BD2E333C8C5F0655A77D5 /* Pods-CryptocurrencyInfo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CryptocurrencyInfo-umbrella.h"; sourceTree = "<group>"; };
 		9B02F05BDC9088A436443DC1DF08D875 /* Pods-CryptocurrencyInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptocurrencyInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1A0007D7483194E0F65E3870E691262 /* Pods-CryptocurrencyInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptocurrencyInfoTests.release.xcconfig"; sourceTree = "<group>"; };
 		A979C163F098D5353E04584B3E952BC1 /* URLSessionAdapter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URLSessionAdapter-umbrella.h"; sourceTree = "<group>"; };
 		AACAE0B1B37897067F738D7CD0536003 /* Pods-CryptocurrencyInfo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CryptocurrencyInfo-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -213,9 +213,9 @@
 			isa = PBXGroup;
 			children = (
 				8524FED241772C5F45EF10BBCDC34DD1 /* SwiftEvents */,
-				854B0BD23507024C51B44D212823919B /* URLSessionAdapter */,
 				54A08FEFC9258B336E1C973FAD579EE8 /* Toast-Swift */,
 				C9295651D8F6468F029657DEE3C8C68D /* UAObfuscatedString */,
+				854B0BD23507024C51B44D212823919B /* URLSessionAdapter */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -265,6 +265,7 @@
 				36F3031F6F61A2554D5BCD2693024654 /* Resources */,
 				0924FD0219D1A77E4C1D80DB8440E4EC /* Support Files */,
 			);
+			name = "Toast-Swift";
 			path = "Toast-Swift";
 			sourceTree = "<group>";
 		};
@@ -289,6 +290,7 @@
 				BA2AE2B993CF44A5094EFCAB5220D81B /* SwiftEvents.swift */,
 				D6A531743BDBBF42D07FAA718CCD3C32 /* Support Files */,
 			);
+			name = SwiftEvents;
 			path = SwiftEvents;
 			sourceTree = "<group>";
 		};
@@ -302,6 +304,7 @@
 				B705AD41CC63A0CB074D920C0A44D15A /* RequestFactory.swift */,
 				70E46D652F66CAF64CC601A22B27A37F /* Support Files */,
 			);
+			name = URLSessionAdapter;
 			path = URLSessionAdapter;
 			sourceTree = "<group>";
 		};
@@ -311,6 +314,7 @@
 				7120AB3A4F66A9CD6374C0EA9B001231 /* UAObfuscatedString.swift */,
 				D0B20A573FAED4A6E76E76E130B3B4AD /* Support Files */,
 			);
+			name = UAObfuscatedString;
 			path = UAObfuscatedString;
 			sourceTree = "<group>";
 		};

@@ -5,7 +5,7 @@
 
 A Codable wrapper around URLSession for networking.
 
-Usage examples can be found in [iOS-MVVM-Clean-Architecture](https://github.com/denissimon/iOS-MVVM-Clean-Architecture).
+Usage examples can be found in [iOS-MVVM-Clean-Architecture](https://github.com/denissimon/iOS-MVVM-Clean-Architecture), [Cryptocurrency Info](https://github.com/denissimon/Cryptocurrency-Info).
 
 Installation
 ------------
@@ -24,7 +24,7 @@ Enter Package URL: https://github.com/denissimon/URLSessionAdapter
 To install URLSessionAdapter using [CocoaPods](https://cocoapods.org), add this line to your `Podfile`:
 
 ```ruby
-pod 'URLSessionAdapter', '~> 1.1'
+pod 'URLSessionAdapter', '~> 1.2'
 ```
 
 #### Carthage

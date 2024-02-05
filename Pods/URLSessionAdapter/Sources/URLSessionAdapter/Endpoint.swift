@@ -10,7 +10,7 @@
 import Foundation
 
 public protocol EndpointType {
-    var method: Method { get }
+    var method: HTTPMethod { get }
     var path: String { get }
     var baseURL: String { get }
     var params: HTTPParams? { get set }
@@ -18,12 +18,12 @@ public protocol EndpointType {
 
 public class Endpoint: EndpointType {
     
-    public var method: Method
-    public var baseURL: String
-    public var path: String
+    public let method: HTTPMethod
+    public let baseURL: String
+    public let path: String
     public var params: HTTPParams?
     
-    public init(method: Method, baseURL: String, path: String, params: HTTPParams?) {
+    public init(method: HTTPMethod, baseURL: String, path: String, params: HTTPParams?) {
         self.method = method
         self.baseURL = baseURL
         self.path = path
