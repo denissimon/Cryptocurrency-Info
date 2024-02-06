@@ -18,7 +18,7 @@ class DefaultProfileRepository: ProfileRepository {
     
     private func getProfile(asset: String, completionHandler: @escaping (Result<Profile, NetworkError>) -> Void) {
         let endpoint = MessariAPI.profile(asset: asset)
-        apiInteractor.requestEndpoint(endpoint, type: Profile.self) { result in
+        apiInteractor.request(endpoint, type: Profile.self) { result in
             completionHandler(result)
         }
     }

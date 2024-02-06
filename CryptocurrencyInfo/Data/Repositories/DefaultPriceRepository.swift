@@ -18,7 +18,7 @@ class DefaultPriceRepository: PriceRepository {
     
     private func getPrice(asset: String, completionHandler: @escaping (Result<Price, NetworkError>) -> Void) {
         let endpoint = MessariAPI.price(asset: asset)
-        apiInteractor.requestEndpoint(endpoint, type: Price.self) { result in
+        apiInteractor.request(endpoint, type: Price.self) { result in
             completionHandler(result)
         }
     }
