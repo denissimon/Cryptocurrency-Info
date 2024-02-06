@@ -234,10 +234,19 @@
 		414D910A2B6F61C7009F37CA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				414D910E2B72BD74009F37CA /* Protocols */,
 				419B5BB125D30BAE00443960 /* Supportive.swift */,
 				411EE4772597E81F005A79F3 /* Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		414D910E2B72BD74009F37CA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				414A52F92ADC259300F92F38 /* Storyboarded.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		419D4FC025991B9C00C6F1A3 /* Coordinator */ = {
@@ -247,7 +256,6 @@
 				419D4FC125991BC200C6F1A3 /* FlowCoordinator.swift */,
 				419D4FC625991C1E00C6F1A3 /* AppCoordinator.swift */,
 				414A52FB2ADC90AD00F92F38 /* MainCoordinator.swift */,
-				414A52F92ADC259300F92F38 /* Storyboarded.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
