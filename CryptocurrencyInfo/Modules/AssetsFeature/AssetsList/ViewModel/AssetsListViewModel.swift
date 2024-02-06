@@ -10,7 +10,7 @@ import SwiftEvents
 
 class AssetsListViewModel {
     
-    var assetRepository: AssetRepository
+    private var assetRepository: AssetRepository
     
     // Bindings
     var data: Observable<[Asset]> = Observable([])
@@ -28,15 +28,15 @@ class AssetsListViewModel {
         self.assetRepository = assetRepository
     }
     
-    func getDataSource() -> AssetsListDataSource {
-        return AssetsListDataSource(with: data.value)
-    }
-    
-    func onNetworkError(_ msg: String = "") {
+    private func onNetworkError(_ msg: String = "") {
         if !msg.isEmpty {
             showToast.value = msg
         }
         self.activityIndicatorVisibility.value = false
+    }
+    
+    func getDataSource() -> AssetsListDataSource {
+        return AssetsListDataSource(with: data.value)
     }
     
     func getAssets(page: Int) {

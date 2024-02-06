@@ -25,15 +25,15 @@ class AssetDetailsViewModel {
         self.priceRepository = priceRepository
     }
     
-    func getDataSource() -> AssetDetailsDataSource {
-        return AssetDetailsDataSource(with: data.value)
-    }
-    
-    func onNetworkError(_ msg: String = "") {
+    private func onNetworkError(_ msg: String = "") {
         if !msg.isEmpty {
             showToast.value = msg
         }
         self.activityIndicatorVisibility.value = false
+    }
+    
+    func getDataSource() -> AssetDetailsDataSource {
+        return AssetDetailsDataSource(with: data.value)
     }
     
     func getProfile(asset: String) {

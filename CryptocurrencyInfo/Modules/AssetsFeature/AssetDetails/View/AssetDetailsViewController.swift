@@ -10,7 +10,7 @@ import Toast_Swift
 
 class AssetDetailsViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     private var viewModel: AssetDetailsViewModel!
     private var dataSource: AssetDetailsDataSource?

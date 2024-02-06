@@ -15,14 +15,14 @@ protocol AssetsListViewControllerCoordinatorDelegate: AnyObject {
 
 class AssetsListViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var searchBar: UISearchBar!
     
     private var viewModel: AssetsListViewModel!
         
     private var dataSource: AssetsListDataSource?
     
-    private var coordinator: AssetsListViewControllerCoordinatorDelegate?
+    private weak var coordinator: AssetsListViewControllerCoordinatorDelegate?
     
     private let refreshControl = UIRefreshControl()
     
@@ -45,6 +45,8 @@ class AssetsListViewController: UIViewController, Storyboarded {
         
         // Get page 1 at the app's start
         viewModel.getAssets(page: 1)
+        
+        //self.coordinator?.onAssetDetails(Asset(symbol: "BTC", name: "Bitcoin", metrics: Metrics(marketData: MarketData(priceUsd: 27000))))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -136,6 +138,8 @@ class AssetsListViewController: UIViewController, Storyboarded {
         }
     }
 }
+
+// MARK: - UISearchBarDelegate
 
 extension AssetsListViewController: UISearchBarDelegate {
     

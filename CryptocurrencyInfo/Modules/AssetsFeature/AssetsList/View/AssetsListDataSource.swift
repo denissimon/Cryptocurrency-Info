@@ -10,8 +10,7 @@ import SwiftEvents
 
 class AssetsListDataSource: NSObject {
     
-    var data = [Asset]()
-    
+    private(set) var data = [Asset]()
     private(set) var priceCurrency: PriceCurrency = .usd
     
     // Bindings

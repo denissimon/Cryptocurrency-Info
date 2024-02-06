@@ -10,8 +10,7 @@ import SwiftEvents
 
 class AssetDetailsDataSource: NSObject {
     
-    var data: Details
-    
+    private(set) var data: Details
     private(set) var priceCurrency: PriceCurrency = .usd
     
     init(with data: Details) {
@@ -70,7 +69,6 @@ extension AssetDetailsDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 {
             if indexPath.item == 0 {
                 let hatCell = tableView.dequeueReusableCell(withIdentifier: "HatCell", for: indexPath) as! HatCell
