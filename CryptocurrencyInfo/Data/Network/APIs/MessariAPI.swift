@@ -15,8 +15,8 @@ struct MessariAPI {
     static let baseURL = AppConfiguration.ProductionServer.messariBaseURL
     
     static let defaultParams = HTTPParams(httpBody: nil, cachePolicy: nil, timeoutInterval: 10.0, headerValues:[
-        (value: ContentType.applicationJson.rawValue, forHTTPHeaderField: HTTPHeaderField.accept.rawValue),
-        (value: ContentType.applicationJson.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue),
+        (value: ContentType.applicationJson.rawValue, forHTTPHeaderField: HTTPHeader.accept.rawValue),
+        (value: ContentType.applicationJson.rawValue, forHTTPHeaderField: HTTPHeader.contentType.rawValue),
         (value: AppConfiguration.ProductionServer.messariApiKey, forHTTPHeaderField: "x-messari-api-key")])
     
     static func assets(page: Int) -> EndpointType {
