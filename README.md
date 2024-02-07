@@ -5,11 +5,11 @@
 
 Example iOS app designed using MVVM-C and Layered Architecture. Uses Swift Concurrency.
 
-The app shows cryptocurrency prices, charts and other info. Built with [Messari API](https://messari.io/api).
+The app shows cryptocurrency prices and other related info. Built with Messari API.
 
 It has two MVVM modules: AssetsList and AssetDetails. The list of cryptocurrencies is loaded in batches.
 
-Includes [unit tests](https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfoTests).
+Includes unit tests.
 
 <table> 
   <tr>
@@ -22,16 +22,13 @@ Includes [unit tests](https://github.com/denissimon/Cryptocurrency-Info/tree/mas
 
 #### Architecture concepts used here:
 - [MVVM][MVVMLink]
-- [Flow coordinator][FlowCoordinatorLink] implemented with protocol-based delegates
+- [Flow coordinator][FlowCoordinatorLink] implemented with protocol-based delegation
 - [Dependency Injection][DIContainerLink], DIContainer
-- [Data Binding][DataBindingLink] using lightweight Observable\<T\>
+- [Data Binding][DataBindingLink] using the lightweight Observable\<T\>
 - [Layered Architecture][LayeredArchitectureLink]
-- [Protocol-Oriented Programming][POPLink]
-- Reusable and universal [NetworkService][NetworkServiceLink] based on URLSession
-- [async/await][AsyncAwaitLink] with remaining the Transport Layer implemented on callbacks without changes
-- [Closure-based delegation][ClosureBasedDelegationLink] using lightweight Event\<T\>
+- [async/await][AsyncAwaitLink] with the remaining existing Transport Layer unchanged
+- [Closure-based delegation][ClosureBasedDelegationLink] using the lightweight Event\<T\>
 - Reusable data source for [UITableView][UITableViewDataSourceLink]
-- [Multiple storyboards][MultipleStoryboardsLink]
 - [Codable][CodableLink]
 
 [MVVMLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails
@@ -39,13 +36,9 @@ Includes [unit tests](https://github.com/denissimon/Cryptocurrency-Info/tree/mas
 [DIContainerLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Coordinator/DIContainer/DIContainer.swift
 [DataBindingLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/ViewModel/AssetsListViewModel.swift
 [LayeredArchitectureLink]: https://en.wikipedia.org/wiki/Multitier_architecture
-[NetworkServiceLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Data/Network/NetworkService
-[DependencyInversionPrincipleLink]: https://en.wikipedia.org/wiki/Dependency_inversion_principle
-[POPLink]: https://betterprogramming.pub/difference-between-protocol-oriented-programming-pop-and-object-oriented-programming-oop-in-swift-2dc3048b4fd
 [AsyncAwaitLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Data/Repositories
 [ClosureBasedDelegationLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
 [UITableViewDataSourceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
-[MultipleStoryboardsLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Modules/AssetsFeature
 [CodableLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails/Models/Profile.swift
 
 #### Requirements:
@@ -53,7 +46,7 @@ iOS version support: 15.0+
 
 #### Built with:
 - [SwiftEvents](https://github.com/denissimon/SwiftEvents) - The easiest way to implement data binding and notifications. Includes Event\<T\> and Observable\<T\>. Has a thread-safe version.
-- [Charts](https://github.com/danielgindi/Charts) - Beautiful charts for iOS/tvOS/OSX! The Apple side of the crossplatform MPAndroidChart.
+- [URLSessionAdapter](https://github.com/denissimon/URLSessionAdapter) - A Codable wrapper around URLSession for networking.
 - [Toast-Swift](https://github.com/scalessec/Toast-Swift) - A Swift extension that adds toast notifications to the UIView object class.
 - [UAObfuscatedString](https://github.com/UrbanApps/UAObfuscatedString) - A simple category to hide sensitive strings from appearing in your binary.
 
