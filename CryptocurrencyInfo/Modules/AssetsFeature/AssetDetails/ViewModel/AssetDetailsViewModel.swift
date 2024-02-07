@@ -10,8 +10,8 @@ import SwiftEvents
 
 class AssetDetailsViewModel {
     
-    let profileRepository: ProfileRepository
-    let priceRepository: PriceRepository
+    private let profileRepository: ProfileRepository
+    private let priceRepository: PriceRepository
     
     // Bindings
     let data: Observable<Details> = Observable(Details())
@@ -83,7 +83,7 @@ class AssetDetailsViewModel {
     }
     
     func getPrice(asset: String) {
-        
+
         Task.detached {
             let result = await self.priceRepository.getPrice(asset: asset)
             
