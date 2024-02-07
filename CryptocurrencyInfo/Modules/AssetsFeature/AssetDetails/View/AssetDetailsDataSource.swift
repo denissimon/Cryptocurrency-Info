@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftEvents
 
 class AssetDetailsDataSource: NSObject {
     
