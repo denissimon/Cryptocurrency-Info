@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import Toast_Swift
 
-class AssetDetailsViewController: UIViewController, Storyboarded {
+class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -53,10 +52,9 @@ class AssetDetailsViewController: UIViewController, Storyboarded {
             self?.tableView.reloadData()
         }
         
-        viewModel.showToast.bind(self, queue: .main) { [weak self] text in
-            if !text.isEmpty {
-                self?.view.makeToast(text, duration: AppConfiguration.Other.toastDuration, position: .bottom)
-            }
+        viewModel.showToast.bind(self, queue: .main) { [weak self] message in
+            guard !message.isEmpty else { return }
+            self?.makeToast(message: message)
         }
         
         viewModel.priceCurrency.bind(self) { [weak self] priceCurrency in
@@ -65,9 +63,9 @@ class AssetDetailsViewController: UIViewController, Storyboarded {
         
         viewModel.activityIndicatorVisibility.bind(self, queue: .main) { [weak self] value in
             if value {
-                self?.view.makeToastActivity(.center)
+                self?.makeToastActivity()
             } else {
-                self?.view.hideToastActivity()
+                self?.hideToastActivity()
             }
         }
     }

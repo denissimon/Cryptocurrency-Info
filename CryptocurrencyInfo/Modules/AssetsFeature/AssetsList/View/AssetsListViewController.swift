@@ -6,14 +6,12 @@
 //
 
 import UIKit
-import Toast_Swift
-import SwiftEvents
 
 protocol AssetsListViewControllerCoordinatorDelegate: AnyObject {
     func onAssetDetails(_ asset: Asset)
 }
 
-class AssetsListViewController: UIViewController, Storyboarded {
+class AssetsListViewController: UIViewController, Storyboarded, Alertable {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
@@ -45,8 +43,6 @@ class AssetsListViewController: UIViewController, Storyboarded {
         
         // Get page 1 at the app's start
         viewModel.getAssets(page: 1)
-        
-        //self.coordinator?.onAssetDetails(Asset(symbol: "BTC", name: "Bitcoin", metrics: Metrics(marketData: MarketData(priceUsd: 27000))))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,10 +70,9 @@ class AssetsListViewController: UIViewController, Storyboarded {
             self?.tableView.reloadData()
         }
         
-        viewModel.showToast.bind(self, queue: .main) { [weak self] text in
-            if !text.isEmpty {
-                self?.view.makeToast(text, duration: AppConfiguration.Other.toastDuration, position: .bottom)
-            }
+        viewModel.showToast.bind(self, queue: .main) { [weak self] message in
+            guard !message.isEmpty else { return }
+            self?.makeToast(message: message)
         }
         
         viewModel.priceCurrency.bind(self) { [weak self] priceCurrency in
@@ -92,9 +87,9 @@ class AssetsListViewController: UIViewController, Storyboarded {
         
         viewModel.activityIndicatorVisibility.bind(self, queue: .main) { [weak self] value in
             if value {
-                self?.view.makeToastActivity(.center)
+                self?.makeToastActivity()
             } else {
-                self?.view.hideToastActivity()
+                self?.hideToastActivity()
             }
         }
         
