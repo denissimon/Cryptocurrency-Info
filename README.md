@@ -26,7 +26,7 @@ Includes unit tests.
 - [Dependency Injection][DIContainerLink], DIContainer
 - [Data Binding][DataBindingLink] using the lightweight Observable\<T\>
 - [Layered Architecture][LayeredArchitectureLink]
-- [async/await][AsyncAwaitLink] with the remaining existing Transport Layer unchanged
+- [async/await][AsyncAwaitLink] with the existing Transport Layer remaining unchanged
 - [Closure-based delegation][ClosureBasedDelegationLink] using the lightweight Event\<T\>
 - Reusable data source for [UITableView][UITableViewDataSourceLink]
 - [Codable][CodableLink]
