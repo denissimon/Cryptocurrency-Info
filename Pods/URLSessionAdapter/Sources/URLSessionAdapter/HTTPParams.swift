@@ -11,7 +11,6 @@ import Foundation
 
 /// httpBody can be accepted as Data or Encodable
 public struct HTTPParams {
-    
     public var httpBody: Any?
     public var cachePolicy: URLRequest.CachePolicy?
     public var timeoutInterval: TimeInterval?
@@ -23,4 +22,22 @@ public struct HTTPParams {
         self.timeoutInterval = timeoutInterval
         self.headerValues = headerValues
     }
+}
+
+public enum HTTPHeader: String {
+    case authentication = "Authorization"
+    case contentType = "Content-Type"
+    case accept = "Accept"
+    case acceptEncoding = "Accept-Encoding"
+    case acceptLanguage = "Accept-Language"
+    case connection = "Connection"
+}
+
+public enum ContentType: String {
+    case applicationJson = "application/json"
+    case applicationFormUrlencoded = "application/x-www-form-urlencoded"
+    case multipartFormData = "multipart/form-data"
+    case textPlain = "text/plain"
+    case applicationXML = "application/xml"
+    case applicationQuery = "application/query"
 }

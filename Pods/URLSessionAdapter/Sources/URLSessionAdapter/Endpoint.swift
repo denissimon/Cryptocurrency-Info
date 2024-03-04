@@ -17,7 +17,6 @@ public protocol EndpointType {
 }
 
 public class Endpoint: EndpointType {
-    
     public let method: HTTPMethod
     public let baseURL: String
     public let path: String
