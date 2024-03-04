@@ -18,5 +18,6 @@ struct AppConfiguration {
     struct Other {
         static let toastDuration = 3.0
         static let tableCellDefaultHeight: Float = 58
+        static let selectedCurrency: PriceCurrency = .USD
     }
 }

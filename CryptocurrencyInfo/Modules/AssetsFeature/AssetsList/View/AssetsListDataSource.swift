@@ -11,7 +11,7 @@ import SwiftEvents
 class AssetsListDataSource: NSObject {
     
     private(set) var data = [Asset]()
-    private(set) var priceCurrency: PriceCurrency = .usd
+    private(set) var priceCurrency: PriceCurrency = AppConfiguration.Other.selectedCurrency
     
     // Bindings
     let didScrollToLastCell: Event<Bool?> = Event()

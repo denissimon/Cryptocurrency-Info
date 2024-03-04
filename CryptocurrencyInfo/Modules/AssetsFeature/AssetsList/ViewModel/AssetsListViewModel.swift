@@ -15,7 +15,7 @@ class AssetsListViewModel {
     // Bindings
     var data: Observable<[Asset]> = Observable([])
     private var dataCopy = [Asset]()
-    var priceCurrency: Observable<PriceCurrency> = Observable(.usd)
+    var priceCurrency: Observable<PriceCurrency> = Observable(AppConfiguration.Other.selectedCurrency)
     let showToast: Observable<String> = Observable("")
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
     let getAssetsCompletionHandler: Observable<Bool?> = Observable(nil)

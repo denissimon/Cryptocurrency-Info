@@ -10,7 +10,7 @@ import UIKit
 class AssetDetailsDataSource: NSObject {
     
     private(set) var data: Details
-    private(set) var priceCurrency: PriceCurrency = .usd
+    private(set) var priceCurrency: PriceCurrency = AppConfiguration.Other.selectedCurrency
     
     init(with data: Details) {
         self.data = data

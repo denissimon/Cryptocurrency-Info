@@ -16,7 +16,7 @@ class AssetDetailsViewModel {
     // Bindings
     let data: Observable<Details> = Observable(Details())
     let showToast: Observable<String> = Observable("")
-    let priceCurrency: Observable<PriceCurrency> = Observable(.usd)
+    let priceCurrency: Observable<PriceCurrency> = Observable(AppConfiguration.Other.selectedCurrency)
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
     
     init(asset: Asset, profileRepository: ProfileRepository, priceRepository: PriceRepository) {
