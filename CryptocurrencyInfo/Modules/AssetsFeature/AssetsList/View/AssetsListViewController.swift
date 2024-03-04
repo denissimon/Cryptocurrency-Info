@@ -20,7 +20,7 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
         
     private var dataSource: AssetsListDataSource?
     
-    private weak var coordinator: AssetsListViewControllerCoordinatorDelegate?
+    private var coordinator: AssetsListViewControllerCoordinatorDelegate?
     
     private let refreshControl = UIRefreshControl()
     
