@@ -5,7 +5,7 @@
 //  Created by Denis Simon on 20.12.2020.
 //
 
-enum PriceCurrency: String {
+enum PriceCurrency: String, CustomStringConvertible {
     case AED = "د.إ" // UAE dirham
     case ARS = "ARG$" // Argentine peso
     case AUD = "A$" // Australian dollar
@@ -46,4 +46,49 @@ enum PriceCurrency: String {
     case TWD = "NT$" // New Taiwan dollar
     case ZAR = "R" // South African rand
     case USD = "$" // U.S. dollar
+    
+    var description: String {
+        switch self {
+        case .AED: return "AED"
+        case .ARS: return "ARS"
+        case .AUD: return "AUD"
+        case .BGN: return "BGN"
+        case .BHD: return "BHD"
+        case .BRL: return "BRL"
+        case .CAD: return "CAD"
+        case .CHF: return "CHF"
+        case .CLP: return "CLP"
+        case .CNH: return "CNH"
+        case .CNY: return "CNY"
+        case .COP: return "COP"
+        case .CZK: return "CZK"
+        case .DKK: return "DKK"
+        case .EUR: return "EUR"
+        case .GBP: return "GBP"
+        case .HKD: return "HKD"
+        case .HUF: return "HUF"
+        case .IDR: return "IDR"
+        case .ILS: return "ILS"
+        case .INR: return "INR"
+        case .JPY: return "JPY"
+        case .KRW: return "KRW"
+        case .MXN: return "MXN"
+        case .MYR: return "MYR"
+        case .NOK: return "NOK"
+        case .NZD: return "NZD"
+        case .PEN: return "PEN"
+        case .PHP: return "PHP"
+        case .PLN: return "PLN"
+        case .RON: return "RON"
+        case .RUB: return "RUB"
+        case .SAR: return "SAR"
+        case .SEK: return "SEK"
+        case .SGD: return "SGD"
+        case .THB: return "THB"
+        case .TRY: return "TRY"
+        case .TWD: return "TWD"
+        case .ZAR: return "ZAR"
+        case .USD: return "USD"
+        }
+    }
 }
