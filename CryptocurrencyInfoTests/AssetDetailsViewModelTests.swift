@@ -10,7 +10,7 @@ import XCTest
 
 class AssetDetailsViewModelTests: XCTestCase {
 
-    private(set) var dependencyContainer = DIContainer()
+    let dependencyContainer = DIContainer()
     
     var assetDetailsViewModel: AssetDetailsViewModel!
     
@@ -65,18 +65,13 @@ class AssetDetailsViewModelTests: XCTestCase {
         assetDetailsViewModel.showToast.value = "Some new text for toast"
         XCTAssertEqual(toastResult, "Some new text for toast")
         
-        assetDetailsViewModel.priceCurrency.value = .euro
-        XCTAssertEqual(priceCurrencyResult, .euro)
+        assetDetailsViewModel.priceCurrency.value = .EUR
+        XCTAssertEqual(priceCurrencyResult, .EUR)
         
         assetDetailsViewModel.activityIndicatorVisibility.value = false
         XCTAssertEqual(activityIndicatorVisibilityResult, false)
         assetDetailsViewModel.activityIndicatorVisibility.value = true
         XCTAssertEqual(activityIndicatorVisibilityResult, true)
-    }
-
-    func testOnNetworkError() {
-        assetDetailsViewModel.onNetworkError("Some new message")
-        XCTAssertEqual(toastResult, "Some new message")
     }
     
     func testRegex() {

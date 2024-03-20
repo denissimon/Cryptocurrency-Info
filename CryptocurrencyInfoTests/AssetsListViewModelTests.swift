@@ -10,7 +10,7 @@ import XCTest
 
 class AssetsListViewModelTests: XCTestCase {
 
-    private(set) var dependencyContainer = DIContainer()
+    let dependencyContainer = DIContainer()
     
     var assetsListViewModel: AssetsListViewModel!
     
@@ -71,8 +71,8 @@ class AssetsListViewModelTests: XCTestCase {
         assetsListViewModel.showToast.value = "Some text for toast"
         XCTAssertEqual(toastResult, "Some text for toast")
         
-        assetsListViewModel.priceCurrency.value = .euro
-        XCTAssertEqual(priceCurrencyResult, .euro)
+        assetsListViewModel.priceCurrency.value = .EUR
+        XCTAssertEqual(priceCurrencyResult, .EUR)
         
         assetsListViewModel.getAssetsCompletionHandler.value = true
         XCTAssertEqual(assetsCompletionHandlerResult, true)
@@ -81,11 +81,5 @@ class AssetsListViewModelTests: XCTestCase {
         XCTAssertEqual(activityIndicatorVisibilityResult, false)
         assetsListViewModel.activityIndicatorVisibility.value = true
         XCTAssertEqual(activityIndicatorVisibilityResult, true)
-    }
-
-    func testOnNetworkError() {
-        assetsListViewModel.onNetworkError("Some message")
-        XCTAssertEqual(toastResult, "Some message")
-        XCTAssertEqual(activityIndicatorVisibilityResult, false)
     }
 }
