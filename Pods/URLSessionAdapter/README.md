@@ -35,7 +35,7 @@ To install URLSessionAdapter using [Carthage](https://github.com/Carthage/Cartha
 github "denissimon/URLSessionAdapter"
 ```
 
-### Manually
+#### Manually
 
 Copy folder `URLSessionAdapter` into your project.
 

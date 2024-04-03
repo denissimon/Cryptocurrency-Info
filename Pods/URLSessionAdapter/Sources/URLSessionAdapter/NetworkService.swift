@@ -11,15 +11,24 @@ import Foundation
 
 public struct NetworkError: Error {
     public let error: Error?
-    public let code: Int? // the response’s HTTP status code
+    public let statusCode: Int?
+    public let data: Data?
     
-    public init(error: Error?, code: Int?) {
+    public init(error: Error?, statusCode: Int?, data: Data?) {
         self.error = error
-        self.code = code
+        self.statusCode = statusCode
+        self.data = data
     }
 }
 
-open class NetworkService {
+protocol NetworkServiceType {
+    var urlSession: URLSession { get }
+    func request(_ endpoint: EndpointType, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable?
+    func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable?
+    func fetchFile(url: URL, completion: @escaping (Data?) -> Void) -> NetworkCancellable?
+}
+
+open class NetworkService: NetworkServiceType {
        
     public private(set) var urlSession: URLSession
     
@@ -27,10 +36,10 @@ open class NetworkService {
         self.urlSession = urlSession
     }
     
-    public func request(_ endpoint: EndpointType, completion: @escaping (Result<Data, NetworkError>) -> Void) -> NetworkCancellable? {
+    public func request(_ endpoint: EndpointType, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable? {
         
         guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            completion(.failure(NetworkError(error: nil, code: nil)))
+            completion(.failure(NetworkError(error: nil, statusCode: nil, data: nil)))
             return nil
         }
         
@@ -38,18 +47,13 @@ open class NetworkService {
         log("\nNetworkService request \(endpoint.method.rawValue), url: \(url)")
         
         let dataTask = urlSession.dataTask(with: request) { (data, response, error) in
-            let response = response as? HTTPURLResponse
-            let statusCode = response?.statusCode
-            
-            if data != nil && error == nil {
-                completion(.success(data!))
+            if error == nil {
+                completion(.success(data))
                 return
             }
-            if error != nil {
-                completion(.failure(NetworkError(error: error!, code: statusCode)))
-            } else {
-                completion(.failure(NetworkError(error: nil, code: statusCode)))
-            }
+            let response = response as? HTTPURLResponse
+            let statusCode = response?.statusCode
+            completion(.failure(NetworkError(error: error, statusCode: statusCode, data: data)))
         }
         
         dataTask.resume()
@@ -60,7 +64,7 @@ open class NetworkService {
     public func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable? {
         
         guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            completion(.failure(NetworkError(error: nil, code: nil)))
+            completion(.failure(NetworkError(error: nil, statusCode: nil, data: nil)))
             return nil
         }
         
@@ -71,20 +75,16 @@ open class NetworkService {
             let response = response as? HTTPURLResponse
             let statusCode = response?.statusCode
             
-            if data != nil && error == nil {
-                guard let decoded = ResponseDecodable.decode(type, data: data!) else {
-                    completion(.failure(NetworkError(error: nil, code: statusCode)))
+            if error == nil {
+                guard let data = data, let decoded = ResponseDecodable.decode(type, data: data) else {
+                    completion(.failure(NetworkError(error: nil, statusCode: statusCode, data: data)))
                     return
                 }
                 completion(.success(decoded))
                 return
             }
             
-            if error != nil {
-                completion(.failure(NetworkError(error: error!, code: statusCode)))
-            } else {
-                completion(.failure(NetworkError(error: nil, code: statusCode)))
-            }
+            completion(.failure(NetworkError(error: error, statusCode: statusCode, data: data)))
         }
 
         dataTask.resume()

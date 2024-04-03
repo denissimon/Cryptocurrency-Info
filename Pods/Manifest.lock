@@ -2,7 +2,7 @@ PODS:
   - SwiftEvents (2.1.1)
   - Toast-Swift (5.1.0)
   - UAObfuscatedString (0.5.1)
-  - URLSessionAdapter (1.2.1)
+  - URLSessionAdapter (1.2.2)
 
 DEPENDENCIES:
   - SwiftEvents (~> 2.1)
@@ -21,7 +21,7 @@ SPEC CHECKSUMS:
   SwiftEvents: 062176b8a4c40a51d1f1e76e18e41c62db2cf029
   Toast-Swift: dd369e68ee529f542c65bd0d0c6c50cd743cf6f2
   UAObfuscatedString: 34850d89100c7aff99129ee56acd433fa5ed3aef
-  URLSessionAdapter: bf58217458685512c23a3d2a30e69ce140d4fb98
+  URLSessionAdapter: 59d7a606ec9b676969298dee8fae7d0761142efd
 
 PODFILE CHECKSUM: 4d970fb5f738448e4fb9e0322f7e4c8da6eaeaf7
 
