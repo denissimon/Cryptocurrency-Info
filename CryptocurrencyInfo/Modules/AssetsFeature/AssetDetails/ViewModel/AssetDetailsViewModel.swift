@@ -55,8 +55,8 @@ class AssetDetailsViewModel {
             case .failure(let error):
                 if error.error != nil {
                     self.onNetworkError(error.error!.localizedDescription)
-                } else if error.code != nil {
-                    if error.code! == 404 {
+                } else if error.statusCode != nil {
+                    if error.statusCode! == 404 {
                         self.onNetworkError("Profile data not found")
                     } else {
                         self.onNetworkError()
@@ -95,8 +95,8 @@ class AssetDetailsViewModel {
             case .failure(let error):
                 if error.error != nil {
                     self.onNetworkError(error.error!.localizedDescription)
-                } else if error.code != nil {
-                    if error.code! == 404 {
+                } else if error.statusCode != nil {
+                    if error.statusCode! == 404 {
                         self.onNetworkError("Asset data not found")
                     } else {
                         self.onNetworkError()
