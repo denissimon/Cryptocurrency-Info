@@ -21,7 +21,7 @@ public struct NetworkError: Error {
     }
 }
 
-protocol NetworkServiceType {
+public protocol NetworkServiceType {
     var urlSession: URLSession { get }
     
     func request(_ endpoint: EndpointType, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable?
