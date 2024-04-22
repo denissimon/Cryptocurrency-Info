@@ -20,6 +20,7 @@ Includes unit tests.
 </table>
 
 #### Architecture concepts used here:
+
 - [MVVM][MVVMLink]
 - [Flow coordinator][FlowCoordinatorLink] implemented with protocol-based delegation
 - [Dependency Injection][DIContainerLink], DIContainer
@@ -40,13 +41,17 @@ Includes unit tests.
 [UITableViewDataSourceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
 [CodableLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails/Models/Profile.swift
 
-#### Requirements:
-iOS version support: 15.0+
-
 #### Built with:
+
 - [SwiftEvents](https://github.com/denissimon/SwiftEvents) - The easiest way to implement data binding and notifications. Includes Event\<T\> and Observable\<T\>. Has a thread-safe version.
 - [URLSessionAdapter](https://github.com/denissimon/URLSessionAdapter) - A Codable wrapper around URLSession for networking.
 - [Toast-Swift](https://github.com/scalessec/Toast-Swift) - A Swift extension that adds toast notifications to the UIView object class.
 - [UAObfuscatedString](https://github.com/UrbanApps/UAObfuscatedString) - A simple category to hide sensitive strings from appearing in your binary.
 
 The dependency manager is [CocoaPods](https://cocoapods.org). Run `pod update` to update pods.
+
+#### Requirements:
+
+iOS version support: 15.0+
+
+Xcode 13.0+, Swift 5.5+
