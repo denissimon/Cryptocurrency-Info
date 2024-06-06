@@ -6,7 +6,7 @@ target 'CryptocurrencyInfo' do
   use_frameworks!
 
   pod 'SwiftEvents', '~> 2.1'
-  pod 'URLSessionAdapter', '~> 1.4'
+  pod 'URLSessionAdapter', '~> 1.6'
   pod 'Toast-Swift'
   pod 'UAObfuscatedString'
   
