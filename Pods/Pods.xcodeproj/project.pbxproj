@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0DD4544F638F232287D498D0DF7848AC /* Pods-CryptocurrencyInfo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B37978D8E37A836E1C1216BB0CDB89 /* Pods-CryptocurrencyInfo-dummy.m */; };
 		15F04D15A4DC87FF877C2857720F8D72 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E1C36A9C24EFB3C25DB137BCE96C27 /* Toast-Swift-dummy.m */; };
-		237A96A092EA5A5B0CB41160BEA22E16 /* Toast-Swift-Toast-Swift in Resources */ = {isa = PBXBuildFile; fileRef = 13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */; };
+		237A96A092EA5A5B0CB41160BEA22E16 /* Toast-Swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 13FD39576595D8A884BF5166065C5236 /* Toast-Swift.bundle */; };
 		27D1BEAD00F7BFABC16EECE54D3B5750 /* URLSessionAdapter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A979C163F098D5353E04584B3E952BC1 /* URLSessionAdapter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30C2C848D7B33737DF8248F9639EECA3 /* SwiftEvents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C495ECC0B3F7F05E564E6F079311B273 /* SwiftEvents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44CA9C1AC8ABB8ED1DD53DB29D2AC599 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF269CE314D5532A96472EFEB0444F7 /* Endpoint.swift */; };
@@ -86,9 +86,9 @@
 /* Begin PBXFileReference section */
 		00A437B2F5B2DD12EED3BB352595347C /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
 		11E1C36A9C24EFB3C25DB137BCE96C27 /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
-		126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftEvents; path = SwiftEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Toast-Swift-Toast-Swift"; path = "Toast-Swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		15F69F3C73197C9FCA0624B6EF63CB89 /* URLSessionAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = URLSessionAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13FD39576595D8A884BF5166065C5236 /* Toast-Swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toast-Swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15F69F3C73197C9FCA0624B6EF63CB89 /* URLSessionAdapter */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = URLSessionAdapter; path = URLSessionAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E5683330AC50C87B197220E9E581CCF /* Pods-CryptocurrencyInfoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CryptocurrencyInfoTests-Info.plist"; sourceTree = "<group>"; };
 		1F540849FD9D30087C0F6886F8AAD6AA /* UAObfuscatedString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UAObfuscatedString-prefix.pch"; sourceTree = "<group>"; };
 		20DB27D727791A1E35B3585CC8E47BF0 /* Pods-CryptocurrencyInfo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CryptocurrencyInfo-Info.plist"; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		C8041E4C21792C16F3E0CCBB3EFC9A8C /* EncodeDecode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EncodeDecode.swift; path = Sources/URLSessionAdapter/EncodeDecode.swift; sourceTree = "<group>"; };
 		CD07FF2CF645B0EEDFB898AA76815B56 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Toast/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		CF483F2BEE0708631865B20F322D9A4D /* Toast-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Toast-Swift"; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85816126BE40683E673D6428A4AF8EA /* Pods-CryptocurrencyInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptocurrencyInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		DCCBD5BCDFD6695BD0E9C6162069012D /* SwiftEvents-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftEvents-Info.plist"; sourceTree = "<group>"; };
 		E1631B3DD71356A08E71275427A6BD24 /* UAObfuscatedString-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UAObfuscatedString-umbrella.h"; sourceTree = "<group>"; };
@@ -261,11 +261,11 @@
 			children = (
 				448F2BA7CAFE3BCF8E4C05FB6F90F8B8 /* Pods-CryptocurrencyInfo */,
 				7C3BD0176F83FBC20D753028482E78E1 /* Pods-CryptocurrencyInfoTests */,
-				126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents */,
-				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */,
-				13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */,
+				126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents.framework */,
+				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */,
+				13FD39576595D8A884BF5166065C5236 /* Toast-Swift.bundle */,
 				89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString.framework */,
-				15F69F3C73197C9FCA0624B6EF63CB89 /* URLSessionAdapter.framework */,
+				15F69F3C73197C9FCA0624B6EF63CB89 /* URLSessionAdapter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -507,7 +507,7 @@
 			);
 			name = SwiftEvents;
 			productName = SwiftEvents;
-			productReference = 126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents */;
+			productReference = 126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7E775F2D6ACC74E5533826C21A4B84AE /* URLSessionAdapter */ = {
@@ -525,7 +525,7 @@
 			);
 			name = URLSessionAdapter;
 			productName = URLSessionAdapter;
-			productReference = 15F69F3C73197C9FCA0624B6EF63CB89 /* URLSessionAdapter.framework */;
+			productReference = 15F69F3C73197C9FCA0624B6EF63CB89 /* URLSessionAdapter */;
 			productType = "com.apple.product-type.framework";
 		};
 		9F9ABD9F5E3640132B6DD64FAB89AE3A /* Pods-CryptocurrencyInfoTests */ = {
@@ -581,7 +581,7 @@
 			);
 			name = "Toast-Swift";
 			productName = Toast_Swift;
-			productReference = D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */;
+			productReference = D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C344E85893FCDEE5B70436E0A4A3472B /* Toast-Swift-Toast-Swift */ = {
@@ -598,7 +598,7 @@
 			);
 			name = "Toast-Swift-Toast-Swift";
 			productName = "Toast-Swift";
-			productReference = 13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */;
+			productReference = 13FD39576595D8A884BF5166065C5236 /* Toast-Swift.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -682,7 +682,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				237A96A092EA5A5B0CB41160BEA22E16 /* Toast-Swift-Toast-Swift in Resources */,
+				237A96A092EA5A5B0CB41160BEA22E16 /* Toast-Swift.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,6 +794,77 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0ECDD02A6527E59E162A41BB587752F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B22AFBB0C9AB8C0A25D7DE7BA6A5DE6 /* URLSessionAdapter.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/URLSessionAdapter/URLSessionAdapter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter.modulemap";
+				PRODUCT_MODULE_NAME = URLSessionAdapter;
+				PRODUCT_NAME = URLSessionAdapter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1B5AF907D15FA38FDA654F92244DC96E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1DDEAD9CD2FA19DC24493E70B4CAAD1 /* URLSessionAdapter.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/URLSessionAdapter/URLSessionAdapter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter.modulemap";
+				PRODUCT_MODULE_NAME = URLSessionAdapter;
+				PRODUCT_NAME = URLSessionAdapter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		2547B4596836362666D8AACCB98A02EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2464A103F3B823DEFED237514F43AE19 /* UAObfuscatedString.debug.xcconfig */;
@@ -809,7 +880,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UAObfuscatedString/UAObfuscatedString-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UAObfuscatedString/UAObfuscatedString-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -844,7 +915,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -863,41 +934,6 @@
 			};
 			name = Debug;
 		};
-		35638896A5CDC0BFCE71CAA436B3DE2E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B22AFBB0C9AB8C0A25D7DE7BA6A5DE6 /* URLSessionAdapter.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/URLSessionAdapter/URLSessionAdapter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter.modulemap";
-				PRODUCT_MODULE_NAME = URLSessionAdapter;
-				PRODUCT_NAME = URLSessionAdapter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		587F6847DBCBE9579002441D0DB73E24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C3DD9B6C88C6EBFD15B6B9774F52BD9D /* Toast-Swift.release.xcconfig */;
@@ -914,7 +950,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -987,7 +1023,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UAObfuscatedString/UAObfuscatedString-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UAObfuscatedString/UAObfuscatedString-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1081,7 +1117,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Toast-Swift";
 				IBSC_MODULE = Toast_Swift;
 				INFOPLIST_FILE = "Target Support Files/Toast-Swift/ResourceBundle-Toast-Swift-Toast-Swift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_NAME = "Toast-Swift";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1160,7 +1196,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Toast-Swift";
 				IBSC_MODULE = Toast_Swift;
 				INFOPLIST_FILE = "Target Support Files/Toast-Swift/ResourceBundle-Toast-Swift-Toast-Swift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_NAME = "Toast-Swift";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1168,40 +1204,6 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
-		};
-		AC2D4181143E781E9D2C5ABAF544508E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1DDEAD9CD2FA19DC24493E70B4CAAD1 /* URLSessionAdapter.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/URLSessionAdapter/URLSessionAdapter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter.modulemap";
-				PRODUCT_MODULE_NAME = URLSessionAdapter;
-				PRODUCT_NAME = URLSessionAdapter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		B7B18F02F286948AD0CB7CDD22A6895B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1256,7 +1258,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftEvents/SwiftEvents-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftEvents/SwiftEvents-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1366,7 +1368,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftEvents/SwiftEvents-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftEvents/SwiftEvents-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1428,8 +1430,8 @@
 		AF77A9E1E18CEF819A0C42C5DDF6AA13 /* Build configuration list for PBXNativeTarget "URLSessionAdapter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC2D4181143E781E9D2C5ABAF544508E /* Debug */,
-				35638896A5CDC0BFCE71CAA436B3DE2E /* Release */,
+				1B5AF907D15FA38FDA654F92244DC96E /* Debug */,
+				0ECDD02A6527E59E162A41BB587752F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
