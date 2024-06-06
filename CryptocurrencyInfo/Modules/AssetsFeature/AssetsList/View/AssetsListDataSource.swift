@@ -72,8 +72,8 @@ extension AssetsListDataSource: UITableViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffsetMaxY: Float = Float(scrollView.contentOffset.y + scrollView.bounds.size.height)
-        let contentHeight: Float = Float(scrollView.contentSize.height)
+        let contentOffsetMaxY = Float(scrollView.contentOffset.y + scrollView.bounds.size.height)
+        let contentHeight = Float(scrollView.contentSize.height)
 
         let ret = contentOffsetMaxY > contentHeight
         if ret {
