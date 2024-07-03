@@ -10,7 +10,7 @@ import UIKit
 class AssetDetailsDataSource: NSObject {
     
     private(set) var data: Details
-    private(set) var priceCurrency: PriceCurrency = AppConfiguration.Other.selectedCurrency
+    private(set) var priceCurrency = AppConfiguration.Other.selectedCurrency
     
     init(with data: Details) {
         self.data = data
@@ -28,7 +28,7 @@ class AssetDetailsDataSource: NSObject {
     @objc func onButtonTap(sender: UIButton){
         let buttonTag = sender.tag
         
-        guard let officialLinks = data.profile?.data.profile.general.overview.officialLinks else {
+        guard let officialLinks = data.profile?.officialLinks else {
             return
         }
         
@@ -58,7 +58,7 @@ extension AssetDetailsDataSource: UITableViewDataSource {
         } else if section == 1 {
             return 1
         } else if section == 2 {
-            if let officialLinks = data.profile?.data.profile.general.overview.officialLinks {
+            if let officialLinks = data.profile?.officialLinks {
                 return officialLinks.count
             } else {
                 return 0
@@ -75,7 +75,7 @@ extension AssetDetailsDataSource: UITableViewDataSource {
                 hatCell.name.text = data.asset?.name
                 hatCell.symbol.text = data.asset?.symbol
                 
-                if let priceUsd = data.asset?.metrics.marketData.priceUsd {
+                if let priceUsd = data.asset?.priceUsd {
                     hatCell.price.text = Supportive.getPriceStr(priceUsd, currency: priceCurrency)
                 } else {
                     hatCell.price.text = ""
@@ -86,7 +86,7 @@ extension AssetDetailsDataSource: UITableViewDataSource {
             } else if indexPath.item == 1 {
                 let taglineCell = tableView.dequeueReusableCell(withIdentifier: "TaglineCell", for: indexPath) as! TaglineCell
 
-                if let tagline = data.profile?.data.profile.general.overview.tagline {
+                if let tagline = data.profile?.tagline {
                     taglineCell.tagline.text = tagline
                 } else {
                     taglineCell.tagline.text = ""
@@ -97,7 +97,7 @@ extension AssetDetailsDataSource: UITableViewDataSource {
         } else if indexPath.section == 1 {
             let aboutCell = tableView.dequeueReusableCell(withIdentifier: "AboutAssetCell", for: indexPath) as! AboutAssetCell
 
-            if let about = data.profile?.data.profile.general.overview.projectDetails {
+            if let about = data.profile?.projectDetails {
                 aboutCell.about.text = about
             } else {
                 aboutCell.about.text = ""
@@ -108,7 +108,7 @@ extension AssetDetailsDataSource: UITableViewDataSource {
             let linkCell = tableView.dequeueReusableCell(withIdentifier: "LinkCell", for: indexPath) as! LinkCell
 
             var title = ""
-            if let officialLinks = data.profile?.data.profile.general.overview.officialLinks, let linkName = officialLinks[indexPath.item].name {
+            if let officialLinks = data.profile?.officialLinks, let linkName = officialLinks[indexPath.item].name {
                 title = linkName
             }
             linkCell.link.setTitle(title, for: .normal)

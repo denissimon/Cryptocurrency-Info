@@ -11,7 +11,7 @@ import SwiftEvents
 class AssetsListDataSource: NSObject {
     
     private(set) var data = [Asset]()
-    private(set) var priceCurrency: PriceCurrency = AppConfiguration.Other.selectedCurrency
+    private(set) var priceCurrency = AppConfiguration.Other.selectedCurrency
     
     // Bindings
     let didScrollToLastCell: Event<Bool?> = Event()
@@ -49,7 +49,7 @@ extension AssetsListDataSource: UITableViewDataSource {
         cell.name.text = data[indexPath.item].name
         cell.symbol.text = data[indexPath.item].symbol
         
-        if let priceUsd = data[indexPath.item].metrics.marketData.priceUsd {
+        if let priceUsd = data[indexPath.item].priceUsd {
             cell.price.text = Supportive.getPriceStr(priceUsd, currency: priceCurrency)
         } else {
             cell.price.text = ""
