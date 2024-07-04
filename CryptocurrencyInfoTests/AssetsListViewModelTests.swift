@@ -61,8 +61,8 @@ class AssetsListViewModelTests: XCTestCase {
 
     func testObservables() throws {
         var assetArr = [Asset]()
-        assetArr.append(Asset(symbol: "BTC", name: "Bitcoin", metrics: Metrics(marketData: MarketData(priceUsd: 27000.0))))
-        assetArr.append(Asset(symbol: "ETH", name: "Ethereum", metrics: Metrics(marketData: MarketData(priceUsd: 700.0))))
+        assetArr.append(Asset(symbol: "BTC", name: "Bitcoin", priceUsd: 27000.0))
+        assetArr.append(Asset(symbol: "ETH", name: "Ethereum", priceUsd: 700.0))
         
         assetsListViewModel.data.value = assetArr
         XCTAssertNotNil(data)

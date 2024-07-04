@@ -22,7 +22,7 @@ class AssetDetailsViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        let asset = Asset(symbol: "ETH", name: "Ethereum", metrics: Metrics(marketData: MarketData(priceUsd: 700.0)))
+        let asset = Asset(symbol: "ETH", name: "Ethereum", priceUsd: 700.0)
         assetDetailsViewModel = AssetDetailsViewModel(asset: asset, profileRepository: dependencyContainer.makeProfileRepository(), priceRepository: dependencyContainer.makePriceRepository())
         
         assetDetailsViewModel.data.bind(self) { (data) in
@@ -55,7 +55,7 @@ class AssetDetailsViewModelTests: XCTestCase {
     }
 
     func testObservables() throws {
-        let asset = Asset(symbol: "BTC", name: "Bitcoin", metrics: Metrics(marketData: MarketData(priceUsd: 27000.0)))
+        let asset = Asset(symbol: "BTC", name: "Bitcoin", priceUsd: 27000.0)
         let detailsData = Details(asset: asset, profile: nil)
         
         assetDetailsViewModel.data.value = detailsData
