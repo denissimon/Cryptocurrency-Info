@@ -93,8 +93,7 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
     
     @objc private func updateData(_ sender: Any) {
         if let asset = dataSource?.data.asset {
-            viewModel.getPrice(asset: asset.symbol)
-            viewModel.getProfile(asset: asset.symbol)
+            viewModel.updateData(asset: asset.symbol)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.refreshControl.endRefreshing()
