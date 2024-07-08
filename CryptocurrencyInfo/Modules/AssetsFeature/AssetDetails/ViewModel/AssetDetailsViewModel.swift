@@ -119,6 +119,9 @@ class AssetDetailsViewModel {
             switch details.price {
             case .success(let price):
                 updatedPrice = price.priceUsd
+                if updatedPrice != nil, updatedPrice != self.data.value.asset?.priceUsd, let symbol = self.data.value.asset?.symbol {
+                    SharedEvents.get.priceChanged.notify((symbol: symbol, priceUsd: updatedPrice!))
+                }
             case .failure(let error):
                 if error.error != nil {
                     self.onNetworkError(error.error!.localizedDescription)
@@ -134,7 +137,7 @@ class AssetDetailsViewModel {
                 return
             }
             
-            var updatedAsset = self.data.value.asset
+            let updatedAsset = self.data.value.asset
             updatedAsset?.priceUsd = updatedPrice
             self.data.value = Details(asset: updatedAsset, profile: updatedProfile)
             

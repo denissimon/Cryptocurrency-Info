@@ -5,7 +5,7 @@
 //  Created by Denis Simon on 19.12.2020.
 //
 
-struct Asset: Codable {
+class Asset: Codable {
     let symbol: String
     let name: String
     var priceUsd: Double?
@@ -30,7 +30,7 @@ struct Asset: Codable {
         self.priceUsd = priceUsd
     }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         symbol = try values.decode(String.self, forKey: .symbol)
         name = try values.decode(String.self, forKey: .name)

@@ -26,6 +26,20 @@ class AssetsListViewModel {
     
     init(assetRepository: AssetRepository) {
         self.assetRepository = assetRepository
+        bind()
+    }
+    
+    private func bind() {
+        SharedEvents.get.priceChanged.subscribe(self, queue: .main) { [weak self] assetPrice in
+            guard let self = self else { return }
+            let data = self.data.value
+            for asset in data {
+                if asset.symbol == assetPrice.symbol {
+                    asset.priceUsd = assetPrice.priceUsd
+                }
+            }
+            self.data.value = data
+        }
     }
     
     private func onNetworkError(_ msg: String = "") {
