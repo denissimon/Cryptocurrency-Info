@@ -3,11 +3,11 @@
 [![Platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg)](https://developer.apple.com/swift/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/denissimon/Cryptocurrency-Info/blob/master/LICENSE)
 
-Example iOS app designed using MVVM-C and Layered Architecture. Uses Swift Concurrency.
+Example iOS app designed using Layered Architecture and MVVM-C. Uses Swift Concurrency.
 
 The app shows cryptocurrency prices and other related info. Built with Messari API.
 
-It has two MVVM modules: AssetsList and AssetDetails. The list of cryptocurrencies is loaded in batches.
+It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is loaded in batches.
 
 Includes unit tests.
 
@@ -21,23 +21,23 @@ Includes unit tests.
 
 #### Architecture concepts used here:
 
+- [Layered Architecture][LayeredArchitectureLink]
 - [MVVM][MVVMLink]
 - [Flow coordinator][FlowCoordinatorLink] implemented with protocol-based delegation
 - [Dependency Injection][DIContainerLink], DIContainer
 - [Data Binding][DataBindingLink] using the lightweight Observable\<T\>
-- [Layered Architecture][LayeredArchitectureLink]
-- [async/await][AsyncAwaitLink] with the existing Transport Layer remaining unchanged
 - [Closure-based delegation][ClosureBasedDelegationLink] using the lightweight Event\<T\>
+- [async/await][AsyncAwaitLink] with the existing Transport Layer remaining unchanged
 - Reusable data source for [UITableView][UITableViewDataSourceLink]
 - [Codable][CodableLink]
 
+[LayeredArchitectureLink]: https://en.wikipedia.org/wiki/Multitier_architecture
 [MVVMLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails
 [FlowCoordinatorLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Coordinator
 [DIContainerLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Coordinator/DIContainer/DIContainer.swift
 [DataBindingLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/ViewModel/AssetsListViewModel.swift
-[LayeredArchitectureLink]: https://en.wikipedia.org/wiki/Multitier_architecture
-[AsyncAwaitLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Data/Repositories
 [ClosureBasedDelegationLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
+[AsyncAwaitLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Data/Repositories
 [UITableViewDataSourceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
 [CodableLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails/Models/Profile.swift
 
@@ -52,6 +52,4 @@ The dependency manager is [CocoaPods](https://cocoapods.org). Run `pod update` t
 
 #### Requirements:
 
-iOS version support: 15.0+
-
-Xcode 13.0+, Swift 5.5+
+iOS version support: 15.0+. Xcode 13.0+, Swift 5.5+
