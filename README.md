@@ -3,7 +3,7 @@
 [![Platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg)](https://developer.apple.com/swift/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/denissimon/Cryptocurrency-Info/blob/master/LICENSE)
 
-Example iOS app designed using Layered Architecture and MVVM-C. Uses Swift Concurrency.
+Example iOS app designed using MVVM-C and Layered Architecture. Uses Swift Concurrency.
 
 The app shows cryptocurrency prices and other related info. Built with Messari API.
 
