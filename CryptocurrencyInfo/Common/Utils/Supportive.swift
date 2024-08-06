@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftEvents
 
 class Supportive {
     
@@ -20,13 +19,4 @@ class Supportive {
             return currency.rawValue + separator +  String(format: "%.2f", price)
         }
     }
-}
-
-class SharedEvents {
-    
-    public static let get = SharedEvents()
-    
-    private init() {}
-    
-    public let priceChanged = Event<(symbol: String, priceUsd: Double)>()
 }
