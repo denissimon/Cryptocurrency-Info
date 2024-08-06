@@ -8,159 +8,161 @@
 
 /* Begin PBXBuildFile section */
 		0DD4544F638F232287D498D0DF7848AC /* Pods-CryptocurrencyInfo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B37978D8E37A836E1C1216BB0CDB89 /* Pods-CryptocurrencyInfo-dummy.m */; };
-		15F04D15A4DC87FF877C2857720F8D72 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E1C36A9C24EFB3C25DB137BCE96C27 /* Toast-Swift-dummy.m */; };
-		237A96A092EA5A5B0CB41160BEA22E16 /* Toast-Swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 13FD39576595D8A884BF5166065C5236 /* Toast-Swift.bundle */; };
-		27D1BEAD00F7BFABC16EECE54D3B5750 /* URLSessionAdapter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A979C163F098D5353E04584B3E952BC1 /* URLSessionAdapter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		30C2C848D7B33737DF8248F9639EECA3 /* SwiftEvents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C495ECC0B3F7F05E564E6F079311B273 /* SwiftEvents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		44CA9C1AC8ABB8ED1DD53DB29D2AC599 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF269CE314D5532A96472EFEB0444F7 /* Endpoint.swift */; };
+		15F04D15A4DC87FF877C2857720F8D72 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E46C93310DA0C725F22D4BD388FB2FE /* Toast-Swift-dummy.m */; };
+		196DE3D8014217B1CCE539CDC844BAF0 /* EncodeDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153F280D8128196062998740432D3CA4 /* EncodeDecode.swift */; };
+		2231DD70DFC470F0165956259885EE13 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B35B84CE1F60A0483686EA2B85BB90 /* RequestFactory.swift */; };
+		237A96A092EA5A5B0CB41160BEA22E16 /* Toast-Swift-Toast-Swift in Resources */ = {isa = PBXBuildFile; fileRef = 13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */; };
+		24A18CA0801B220FA450EB3241C5FB90 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7E7338BE89BE1AFCBB7D7E13F9A990AF /* PrivacyInfo.xcprivacy */; };
+		30C2C848D7B33737DF8248F9639EECA3 /* SwiftEvents-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE841A4CF8EE04F4DE5C879E79F0DB21 /* SwiftEvents-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		325F55FD8C93E242AE57ED25BC74BBD6 /* HTTPParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970D67B4527ED6AEC80672C3DE5446F /* HTTPParams.swift */; };
+		3C520D8B02CCC2E654F03C96410D28C7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28C17B48792C9A69596D67A15EE6FCF /* Endpoint.swift */; };
 		4CB96E23D5D0D0A988D37A1674F12DCA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
-		5267580156A2E9430E885FC87E280BE3 /* UAObfuscatedString-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F62017FA259A61AF2B8AD04F2135AEF /* UAObfuscatedString-dummy.m */; };
+		5267580156A2E9430E885FC87E280BE3 /* UAObfuscatedString-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BA84A994DF5A2CB38712A266575BC /* UAObfuscatedString-dummy.m */; };
 		59D76AD0378678CB0D3236021BF96A09 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEFE490E4A06D19E868B2B9014BB8BF /* QuartzCore.framework */; };
 		6089F263A82ABF858376E7DC63B62DC0 /* Pods-CryptocurrencyInfoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B79E779D8BA1B5E1AD84ADD2B494E957 /* Pods-CryptocurrencyInfoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		614F81A744D333408C65C0A29685A49F /* UAObfuscatedString-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E1631B3DD71356A08E71275427A6BD24 /* UAObfuscatedString-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6609F74CE0CB60608728F1A8FBC4A1AD /* HTTPParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73448FFDC1014D06DF0EF937270E34C /* HTTPParams.swift */; };
-		6E9AF07F3E37F4AD0C9EF0DB3C041E57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
+		614F81A744D333408C65C0A29685A49F /* UAObfuscatedString-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFAC1AB44541DD3F86F5CD1DCE3088F6 /* UAObfuscatedString-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EFFF3DB77CD128D0E7455C5ECE54E72 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE1CDE1FDB8A7F232C3FF01E85C4CD /* NetworkService.swift */; };
 		6F2EA886ADA7C8ADB9173D9DDF747299 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
 		7006E340414EF32F7ACF7EC4F937C18B /* Pods-CryptocurrencyInfo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DED2AD07E1BD2E333C8C5F0655A77D5 /* Pods-CryptocurrencyInfo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78587E346C773218D11A1933992A9116 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
-		84EEFCD135A4663848C4EA221BAB275D /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B705AD41CC63A0CB074D920C0A44D15A /* RequestFactory.swift */; };
-		95DD2390A16F28A4DA9D0E308DF629F9 /* SwiftEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2AE2B993CF44A5094EFCAB5220D81B /* SwiftEvents.swift */; };
+		7D765C33DB9E6760638B97B4CEB0B7E2 /* URLSessionAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0B3A39EA56639A073CE11BC3C1FEA1 /* URLSessionAdapter-dummy.m */; };
+		95DD2390A16F28A4DA9D0E308DF629F9 /* SwiftEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4182C22FF8BC29D6FC532F9D0E1425B /* SwiftEvents.swift */; };
 		9EAADEBE33D09119A82A98D77FD4E2F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
-		A2973FFE5FC594DAA9FA255AC2025C68 /* UAObfuscatedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7120AB3A4F66A9CD6374C0EA9B001231 /* UAObfuscatedString.swift */; };
+		A053F71CFA7D98F9EFE916E282D25CB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
+		A2973FFE5FC594DAA9FA255AC2025C68 /* UAObfuscatedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8DEC96D0C78926497016180B5A9CCC /* UAObfuscatedString.swift */; };
+		A8888532596197DFD740EDBBC83F2C2E /* URLSessionAdapter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A2DC2B596BFE898B14249F493BAFEA6 /* URLSessionAdapter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE5BDF5DE6FA48441A96849FFCAD8EF7 /* Pods-CryptocurrencyInfoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28894F203B2C6D4C6E5296255F606096 /* Pods-CryptocurrencyInfoTests-dummy.m */; };
-		CF9AD273E755A769451E1DE8B345D950 /* URLSessionAdapter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B073B00CA09570A34D6178EA4E58435 /* URLSessionAdapter-dummy.m */; };
-		D0C4151E739FFDD68A4A00C21B0E9E62 /* SwiftEvents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A50F93B8A39FE2FBFA69EA9CD9D82B /* SwiftEvents-dummy.m */; };
-		D181D49DE6D7885B2834AF4E96170171 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29337FF9971661C06C93920095396031 /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6C6F24EDCABF4EB94ADA378F14D3E0D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B1292D5C58E41334E4695381988732 /* NetworkService.swift */; };
-		DEDB200E91D4251B685140D1A148C080 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CD07FF2CF645B0EEDFB898AA76815B56 /* PrivacyInfo.xcprivacy */; };
-		E25ADD5381468FDF2325AD4DDD194275 /* EncodeDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8041E4C21792C16F3E0CCBB3EFC9A8C /* EncodeDecode.swift */; };
-		F912129FB7C53C428FE247D6ECF633AC /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1181508FFD2D77F0DD80B203C5F8E /* Toast.swift */; };
+		AF6E8D1448EC78ACD9BB57501E491C71 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B77259D79B964F228CCD22A2AA5F5 /* HTTPMethod.swift */; };
+		D0C4151E739FFDD68A4A00C21B0E9E62 /* SwiftEvents-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91283BAC96349C90DF1B88AA331DB3A4 /* SwiftEvents-dummy.m */; };
+		D181D49DE6D7885B2834AF4E96170171 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 04E13CE16871DC70859B0C091A21B889 /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F912129FB7C53C428FE247D6ECF633AC /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FEFDAD2D1B04DB0B4B9FDC87525BFC /* Toast.swift */; };
 		FB7D384E51C9E1ADAEE50C64A694BB61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6AA498AF8850D09FEFBFB78EC07C6DF8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
-			remoteInfo = "Toast-Swift";
-		};
-		76544974A69491B2D9467CD11F59C968 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E775F2D6ACC74E5533826C21A4B84AE;
-			remoteInfo = URLSessionAdapter;
-		};
-		77AE05BF1052FD797A86E959BA32C0F2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17762D8B30A3F7B89054F21E08E1F4B2;
-			remoteInfo = SwiftEvents;
-		};
-		DBB04F56FEC2122A13EACA3F25CE5D02 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B76CD0FDBDCCD714A37472070CA106F0;
-			remoteInfo = UAObfuscatedString;
-		};
-		F48B80ADDFD85007EBB59EB2E4CB9842 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C344E85893FCDEE5B70436E0A4A3472B;
-			remoteInfo = "Toast-Swift-Toast-Swift";
-		};
-		F8B7639AEA99A2EE17322E9E4FD659E3 /* PBXContainerItemProxy */ = {
+		0CC55E0DD8048776C77E15448221C214 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 172AF901AB0A9C187E3C79FB7E73CD5B;
 			remoteInfo = "Pods-CryptocurrencyInfo";
 		};
+		580A68262F7D76611988DF1BE8C9CEF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17762D8B30A3F7B89054F21E08E1F4B2;
+			remoteInfo = SwiftEvents;
+		};
+		609D5A6F430AC967C20FB3C0F1620273 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E775F2D6ACC74E5533826C21A4B84AE;
+			remoteInfo = URLSessionAdapter;
+		};
+		8FD5FAEBC7330F0A426C512A5AF9FF5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B76CD0FDBDCCD714A37472070CA106F0;
+			remoteInfo = UAObfuscatedString;
+		};
+		9C05CC2E26B0900954033F66893A6258 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C344E85893FCDEE5B70436E0A4A3472B;
+			remoteInfo = "Toast-Swift-Toast-Swift";
+		};
+		F9793886A55735CBD066772DF4E716AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
+			remoteInfo = "Toast-Swift";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00A437B2F5B2DD12EED3BB352595347C /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
-		11E1C36A9C24EFB3C25DB137BCE96C27 /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
-		126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		13FD39576595D8A884BF5166065C5236 /* Toast-Swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toast-Swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		024B77259D79B964F228CCD22A2AA5F5 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Sources/URLSessionAdapter/HTTPMethod.swift; sourceTree = "<group>"; };
+		04E13CE16871DC70859B0C091A21B889 /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
+		0947E255ABB9D51173AF7B9357239B98 /* ResourceBundle-Toast-Swift-Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Toast-Swift-Toast-Swift-Info.plist"; sourceTree = "<group>"; };
+		0A2432BC617C1FA2E94F3343C1755734 /* Toast-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		0C8DEC96D0C78926497016180B5A9CCC /* UAObfuscatedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UAObfuscatedString.swift; sourceTree = "<group>"; };
+		126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftEvents; path = SwiftEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Toast-Swift-Toast-Swift"; path = "Toast-Swift.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		153F280D8128196062998740432D3CA4 /* EncodeDecode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EncodeDecode.swift; path = Sources/URLSessionAdapter/EncodeDecode.swift; sourceTree = "<group>"; };
 		15F69F3C73197C9FCA0624B6EF63CB89 /* URLSessionAdapter */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = URLSessionAdapter; path = URLSessionAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2DC2B596BFE898B14249F493BAFEA6 /* URLSessionAdapter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URLSessionAdapter-umbrella.h"; sourceTree = "<group>"; };
 		1E5683330AC50C87B197220E9E581CCF /* Pods-CryptocurrencyInfoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CryptocurrencyInfoTests-Info.plist"; sourceTree = "<group>"; };
-		1F540849FD9D30087C0F6886F8AAD6AA /* UAObfuscatedString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UAObfuscatedString-prefix.pch"; sourceTree = "<group>"; };
+		1F10A0AFCBB07114CEB288AA1D42FB1B /* UAObfuscatedString.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UAObfuscatedString.modulemap; sourceTree = "<group>"; };
 		20DB27D727791A1E35B3585CC8E47BF0 /* Pods-CryptocurrencyInfo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CryptocurrencyInfo-Info.plist"; sourceTree = "<group>"; };
-		2464A103F3B823DEFED237514F43AE19 /* UAObfuscatedString.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UAObfuscatedString.debug.xcconfig; sourceTree = "<group>"; };
 		24D281DA3448C37104610759E4F78C1D /* Pods-CryptocurrencyInfoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CryptocurrencyInfoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		28894F203B2C6D4C6E5296255F606096 /* Pods-CryptocurrencyInfoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CryptocurrencyInfoTests-dummy.m"; sourceTree = "<group>"; };
 		2923EB715954B35077B1778AE789FC35 /* Pods-CryptocurrencyInfoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CryptocurrencyInfoTests.modulemap"; sourceTree = "<group>"; };
-		29337FF9971661C06C93920095396031 /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
 		294A3AEB02DF175DC124DE4D4E2DCCF4 /* Pods-CryptocurrencyInfo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CryptocurrencyInfo-frameworks.sh"; sourceTree = "<group>"; };
-		2CFE318B33BF9FDE90EE7BF5283F45BC /* URLSessionAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URLSessionAdapter-prefix.pch"; sourceTree = "<group>"; };
-		2DC1181508FFD2D77F0DD80B203C5F8E /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
-		2F62017FA259A61AF2B8AD04F2135AEF /* UAObfuscatedString-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UAObfuscatedString-dummy.m"; sourceTree = "<group>"; };
 		2FEFE490E4A06D19E868B2B9014BB8BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		3093A4E78742B39E896F592EA647CEA6 /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
 		31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3433ABD854947E3329BF61B23E84EAC1 /* URLSessionAdapter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "URLSessionAdapter-Info.plist"; sourceTree = "<group>"; };
-		3939D961F1636BE8538D5120374282F7 /* SwiftEvents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftEvents.debug.xcconfig; sourceTree = "<group>"; };
-		40AA69C15F84DD2C23BF825506E4AC19 /* SwiftEvents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftEvents-prefix.pch"; sourceTree = "<group>"; };
+		3A2BA84A994DF5A2CB38712A266575BC /* UAObfuscatedString-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UAObfuscatedString-dummy.m"; sourceTree = "<group>"; };
+		3FABAB4F9760C115559A8271242BA7D8 /* URLSessionAdapter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = URLSessionAdapter.modulemap; sourceTree = "<group>"; };
 		448F2BA7CAFE3BCF8E4C05FB6F90F8B8 /* Pods-CryptocurrencyInfo */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CryptocurrencyInfo"; path = Pods_CryptocurrencyInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EA268517EA18BBD1899A8E18233681E /* UAObfuscatedString.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UAObfuscatedString.release.xcconfig; sourceTree = "<group>"; };
-		52B1292D5C58E41334E4695381988732 /* NetworkService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = Sources/URLSessionAdapter/NetworkService.swift; sourceTree = "<group>"; };
-		5B22AFBB0C9AB8C0A25D7DE7BA6A5DE6 /* URLSessionAdapter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URLSessionAdapter.release.xcconfig; sourceTree = "<group>"; };
+		4AF563F0137C6354E68927FF2227398F /* UAObfuscatedString.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UAObfuscatedString.release.xcconfig; sourceTree = "<group>"; };
+		5A0B3A39EA56639A073CE11BC3C1FEA1 /* URLSessionAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "URLSessionAdapter-dummy.m"; sourceTree = "<group>"; };
 		5DE0E528C63769B810025905F5FF6067 /* Pods-CryptocurrencyInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptocurrencyInfo.release.xcconfig"; sourceTree = "<group>"; };
-		5DF269CE314D5532A96472EFEB0444F7 /* Endpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Sources/URLSessionAdapter/Endpoint.swift; sourceTree = "<group>"; };
-		63E7E3CCBAA52A47A257EEF2D563A6F7 /* SwiftEvents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftEvents.modulemap; sourceTree = "<group>"; };
+		64231AD005FB52A6B369CC6E198F378E /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
 		66B4C573AEDC9C39B4C8DF39890BE01E /* Pods-CryptocurrencyInfo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CryptocurrencyInfo.modulemap"; sourceTree = "<group>"; };
-		6DB664DDDE0337832420856D52E49CDD /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
-		7120AB3A4F66A9CD6374C0EA9B001231 /* UAObfuscatedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UAObfuscatedString.swift; sourceTree = "<group>"; };
-		7175497CA64A67E68A3D25F3FECFB721 /* UAObfuscatedString-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UAObfuscatedString-Info.plist"; sourceTree = "<group>"; };
-		72E2FB80AC0485BB693080C448295411 /* URLSessionAdapter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = URLSessionAdapter.modulemap; sourceTree = "<group>"; };
-		76A50F93B8A39FE2FBFA69EA9CD9D82B /* SwiftEvents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftEvents-dummy.m"; sourceTree = "<group>"; };
-		7B073B00CA09570A34D6178EA4E58435 /* URLSessionAdapter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "URLSessionAdapter-dummy.m"; sourceTree = "<group>"; };
+		67954F51AF396C2BC5C71263CF3CE62E /* URLSessionAdapter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URLSessionAdapter.debug.xcconfig; sourceTree = "<group>"; };
+		6CA2695893DFDC3013F468B187E0EA6E /* SwiftEvents-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftEvents-Info.plist"; sourceTree = "<group>"; };
+		6FE5AC375DF768D0F504996CF01B27F7 /* UAObfuscatedString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UAObfuscatedString-prefix.pch"; sourceTree = "<group>"; };
+		75F7BDBCD939ED5E5D1928E2E25FA501 /* URLSessionAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URLSessionAdapter-prefix.pch"; sourceTree = "<group>"; };
 		7C3BD0176F83FBC20D753028482E78E1 /* Pods-CryptocurrencyInfoTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CryptocurrencyInfoTests"; path = Pods_CryptocurrencyInfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UAObfuscatedString.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E7338BE89BE1AFCBB7D7E13F9A990AF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Toast/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		864E5E7601D27685AD63E699057D2A09 /* Toast-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		86B35B84CE1F60A0483686EA2B85BB90 /* RequestFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestFactory.swift; path = Sources/URLSessionAdapter/RequestFactory.swift; sourceTree = "<group>"; };
+		89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UAObfuscatedString; path = UAObfuscatedString.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AB6BF5F3691A798BCE0FF894763D75A /* SwiftEvents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftEvents-prefix.pch"; sourceTree = "<group>"; };
 		8DED2AD07E1BD2E333C8C5F0655A77D5 /* Pods-CryptocurrencyInfo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CryptocurrencyInfo-umbrella.h"; sourceTree = "<group>"; };
+		8E46C93310DA0C725F22D4BD388FB2FE /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
+		8EED831461A11A4B2EE5D94A44878A3E /* URLSessionAdapter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "URLSessionAdapter-Info.plist"; sourceTree = "<group>"; };
+		91283BAC96349C90DF1B88AA331DB3A4 /* SwiftEvents-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftEvents-dummy.m"; sourceTree = "<group>"; };
+		938D748997B04355C31EF258CF39F05C /* SwiftEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftEvents.release.xcconfig; sourceTree = "<group>"; };
+		9A645699642D1B137101D565B4B5B7E6 /* SwiftEvents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftEvents.modulemap; sourceTree = "<group>"; };
 		9B02F05BDC9088A436443DC1DF08D875 /* Pods-CryptocurrencyInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptocurrencyInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1A0007D7483194E0F65E3870E691262 /* Pods-CryptocurrencyInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptocurrencyInfoTests.release.xcconfig"; sourceTree = "<group>"; };
-		A979C163F098D5353E04584B3E952BC1 /* URLSessionAdapter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URLSessionAdapter-umbrella.h"; sourceTree = "<group>"; };
 		AACAE0B1B37897067F738D7CD0536003 /* Pods-CryptocurrencyInfo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CryptocurrencyInfo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		AD4D81BB6C5D20E2B4152C220F879746 /* SwiftEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftEvents.release.xcconfig; sourceTree = "<group>"; };
-		B608D97BD405FF6D9557F853046DE7C1 /* ResourceBundle-Toast-Swift-Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Toast-Swift-Toast-Swift-Info.plist"; sourceTree = "<group>"; };
-		B69926B45A4E94767EE822A781B3277F /* UAObfuscatedString.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UAObfuscatedString.modulemap; sourceTree = "<group>"; };
-		B705AD41CC63A0CB074D920C0A44D15A /* RequestFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestFactory.swift; path = Sources/URLSessionAdapter/RequestFactory.swift; sourceTree = "<group>"; };
+		B6644B18BFEB8BD933EE2DEDB622B88F /* UAObfuscatedString-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UAObfuscatedString-Info.plist"; sourceTree = "<group>"; };
 		B79E779D8BA1B5E1AD84ADD2B494E957 /* Pods-CryptocurrencyInfoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CryptocurrencyInfoTests-umbrella.h"; sourceTree = "<group>"; };
 		B9D878C29E371696266178B6B7CC2693 /* Pods-CryptocurrencyInfo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CryptocurrencyInfo-acknowledgements.plist"; sourceTree = "<group>"; };
-		BA2AE2B993CF44A5094EFCAB5220D81B /* SwiftEvents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftEvents.swift; path = Sources/SwiftEvents.swift; sourceTree = "<group>"; };
-		C1DDEAD9CD2FA19DC24493E70B4CAAD1 /* URLSessionAdapter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URLSessionAdapter.debug.xcconfig; sourceTree = "<group>"; };
-		C3DD9B6C88C6EBFD15B6B9774F52BD9D /* Toast-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.release.xcconfig"; sourceTree = "<group>"; };
-		C495ECC0B3F7F05E564E6F079311B273 /* SwiftEvents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftEvents-umbrella.h"; sourceTree = "<group>"; };
-		C8041E4C21792C16F3E0CCBB3EFC9A8C /* EncodeDecode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EncodeDecode.swift; path = Sources/URLSessionAdapter/EncodeDecode.swift; sourceTree = "<group>"; };
-		CD07FF2CF645B0EEDFB898AA76815B56 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Toast/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		CF483F2BEE0708631865B20F322D9A4D /* Toast-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.debug.xcconfig"; sourceTree = "<group>"; };
-		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0FEFDAD2D1B04DB0B4B9FDC87525BFC /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
+		C970D67B4527ED6AEC80672C3DE5446F /* HTTPParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPParams.swift; path = Sources/URLSessionAdapter/HTTPParams.swift; sourceTree = "<group>"; };
+		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Toast-Swift"; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85816126BE40683E673D6428A4AF8EA /* Pods-CryptocurrencyInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptocurrencyInfo.debug.xcconfig"; sourceTree = "<group>"; };
-		DCCBD5BCDFD6695BD0E9C6162069012D /* SwiftEvents-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftEvents-Info.plist"; sourceTree = "<group>"; };
-		E1631B3DD71356A08E71275427A6BD24 /* UAObfuscatedString-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UAObfuscatedString-umbrella.h"; sourceTree = "<group>"; };
+		DE841A4CF8EE04F4DE5C879E79F0DB21 /* SwiftEvents-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftEvents-umbrella.h"; sourceTree = "<group>"; };
+		E0015188508B1E59E1A05FF72E37CF35 /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
+		E28C17B48792C9A69596D67A15EE6FCF /* Endpoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Sources/URLSessionAdapter/Endpoint.swift; sourceTree = "<group>"; };
 		E2B37978D8E37A836E1C1216BB0CDB89 /* Pods-CryptocurrencyInfo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CryptocurrencyInfo-dummy.m"; sourceTree = "<group>"; };
+		E3AD5199347915BD7464215D1D289FD0 /* UAObfuscatedString.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UAObfuscatedString.debug.xcconfig; sourceTree = "<group>"; };
 		E5313DCE96C97660C0A3EB5BB7F947BD /* Pods-CryptocurrencyInfoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CryptocurrencyInfoTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		E73448FFDC1014D06DF0EF937270E34C /* HTTPParams.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPParams.swift; path = Sources/URLSessionAdapter/HTTPParams.swift; sourceTree = "<group>"; };
+		E5FB9D28DDAF9772B54434046CC83B9C /* SwiftEvents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftEvents.debug.xcconfig; sourceTree = "<group>"; };
+		E6AE1CDE1FDB8A7F232C3FF01E85C4CD /* NetworkService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = Sources/URLSessionAdapter/NetworkService.swift; sourceTree = "<group>"; };
+		EFAC1AB44541DD3F86F5CD1DCE3088F6 /* UAObfuscatedString-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UAObfuscatedString-umbrella.h"; sourceTree = "<group>"; };
+		F0EBC5E4B7B24721D1E549FB0BF37429 /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
+		F4182C22FF8BC29D6FC532F9D0E1425B /* SwiftEvents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftEvents.swift; path = Sources/SwiftEvents.swift; sourceTree = "<group>"; };
+		FDB9C7F8FB2AF736F9FA505C988C897A /* URLSessionAdapter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URLSessionAdapter.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		04372179D36221EE65CA4870C62BA00B /* Frameworks */ = {
+		0DEC4DEDF0E6D12B5E6829CD4EE960BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E9AF07F3E37F4AD0C9EF0DB3C041E57 /* Foundation.framework in Frameworks */,
+				A053F71CFA7D98F9EFE916E282D25CB0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AEFFC8AA4F783F7C3FA5B9595838E53 /* Frameworks */ = {
+		9FD8E521F59F3ED3197659DCB685267A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,33 +213,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0DF91FBBE14FC910C58312F9881D466F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B608D97BD405FF6D9557F853046DE7C1 /* ResourceBundle-Toast-Swift-Toast-Swift-Info.plist */,
-				6DB664DDDE0337832420856D52E49CDD /* Toast-Swift.modulemap */,
-				11E1C36A9C24EFB3C25DB137BCE96C27 /* Toast-Swift-dummy.m */,
-				00A437B2F5B2DD12EED3BB352595347C /* Toast-Swift-Info.plist */,
-				3093A4E78742B39E896F592EA647CEA6 /* Toast-Swift-prefix.pch */,
-				29337FF9971661C06C93920095396031 /* Toast-Swift-umbrella.h */,
-				CF483F2BEE0708631865B20F322D9A4D /* Toast-Swift.debug.xcconfig */,
-				C3DD9B6C88C6EBFD15B6B9774F52BD9D /* Toast-Swift.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Toast-Swift";
-			sourceTree = "<group>";
-		};
-		0FE10FA11DFD6D6C2165A149B510A893 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8524FED241772C5F45EF10BBCDC34DD1 /* SwiftEvents */,
-				16A3847BAD58CB5A0CB339F9266FEF83 /* Toast-Swift */,
-				C9295651D8F6468F029657DEE3C8C68D /* UAObfuscatedString */,
-				854B0BD23507024C51B44D212823919B /* URLSessionAdapter */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,28 +221,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		16A3847BAD58CB5A0CB339F9266FEF83 /* Toast-Swift */ = {
-			isa = PBXGroup;
-			children = (
-				2DC1181508FFD2D77F0DD80B203C5F8E /* Toast.swift */,
-				A4CC73CED7EF08AD82568D6D7AEAEB76 /* Resources */,
-				0DF91FBBE14FC910C58312F9881D466F /* Support Files */,
-			);
-			path = "Toast-Swift";
-			sourceTree = "<group>";
-		};
 		1775EF7BA2A85CDB9FB2FFDC3D7512B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				448F2BA7CAFE3BCF8E4C05FB6F90F8B8 /* Pods-CryptocurrencyInfo */,
 				7C3BD0176F83FBC20D753028482E78E1 /* Pods-CryptocurrencyInfoTests */,
-				126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents.framework */,
-				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */,
-				13FD39576595D8A884BF5166065C5236 /* Toast-Swift.bundle */,
-				89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString.framework */,
+				126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents */,
+				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */,
+				13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */,
+				89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString */,
 				15F69F3C73197C9FCA0624B6EF63CB89 /* URLSessionAdapter */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1784190C24610228F00CCA068F092B14 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F10A0AFCBB07114CEB288AA1D42FB1B /* UAObfuscatedString.modulemap */,
+				3A2BA84A994DF5A2CB38712A266575BC /* UAObfuscatedString-dummy.m */,
+				B6644B18BFEB8BD933EE2DEDB622B88F /* UAObfuscatedString-Info.plist */,
+				6FE5AC375DF768D0F504996CF01B27F7 /* UAObfuscatedString-prefix.pch */,
+				EFAC1AB44541DD3F86F5CD1DCE3088F6 /* UAObfuscatedString-umbrella.h */,
+				E3AD5199347915BD7464215D1D289FD0 /* UAObfuscatedString.debug.xcconfig */,
+				4AF563F0137C6354E68927FF2227398F /* UAObfuscatedString.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UAObfuscatedString";
+			sourceTree = "<group>";
+		};
+		1E4D71F65DCC34084D0A2775B9C56DA3 /* SwiftEvents */ = {
+			isa = PBXGroup;
+			children = (
+				F4182C22FF8BC29D6FC532F9D0E1425B /* SwiftEvents.swift */,
+				64FE1DE4E790DC584C67BF62000125E1 /* Support Files */,
+			);
+			name = SwiftEvents;
+			path = SwiftEvents;
 			sourceTree = "<group>";
 		};
 		2D20F5B380CF0B9A976A66EAAA6D065F /* Targets Support Files */ = {
@@ -279,58 +269,87 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		70E46D652F66CAF64CC601A22B27A37F /* Support Files */ = {
+		5D48BDE98EBE054A1240FE1DA699C082 /* Toast-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				72E2FB80AC0485BB693080C448295411 /* URLSessionAdapter.modulemap */,
-				7B073B00CA09570A34D6178EA4E58435 /* URLSessionAdapter-dummy.m */,
-				3433ABD854947E3329BF61B23E84EAC1 /* URLSessionAdapter-Info.plist */,
-				2CFE318B33BF9FDE90EE7BF5283F45BC /* URLSessionAdapter-prefix.pch */,
-				A979C163F098D5353E04584B3E952BC1 /* URLSessionAdapter-umbrella.h */,
-				C1DDEAD9CD2FA19DC24493E70B4CAAD1 /* URLSessionAdapter.debug.xcconfig */,
-				5B22AFBB0C9AB8C0A25D7DE7BA6A5DE6 /* URLSessionAdapter.release.xcconfig */,
+				C0FEFDAD2D1B04DB0B4B9FDC87525BFC /* Toast.swift */,
+				D30C9AA7B4D294761B6D0E904449A2B2 /* Resources */,
+				8E8C1F76099D1E0505B103FC9CAC62AC /* Support Files */,
+			);
+			name = "Toast-Swift";
+			path = "Toast-Swift";
+			sourceTree = "<group>";
+		};
+		64FE1DE4E790DC584C67BF62000125E1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A645699642D1B137101D565B4B5B7E6 /* SwiftEvents.modulemap */,
+				91283BAC96349C90DF1B88AA331DB3A4 /* SwiftEvents-dummy.m */,
+				6CA2695893DFDC3013F468B187E0EA6E /* SwiftEvents-Info.plist */,
+				8AB6BF5F3691A798BCE0FF894763D75A /* SwiftEvents-prefix.pch */,
+				DE841A4CF8EE04F4DE5C879E79F0DB21 /* SwiftEvents-umbrella.h */,
+				E5FB9D28DDAF9772B54434046CC83B9C /* SwiftEvents.debug.xcconfig */,
+				938D748997B04355C31EF258CF39F05C /* SwiftEvents.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftEvents";
+			sourceTree = "<group>";
+		};
+		8E8C1F76099D1E0505B103FC9CAC62AC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0947E255ABB9D51173AF7B9357239B98 /* ResourceBundle-Toast-Swift-Toast-Swift-Info.plist */,
+				64231AD005FB52A6B369CC6E198F378E /* Toast-Swift.modulemap */,
+				8E46C93310DA0C725F22D4BD388FB2FE /* Toast-Swift-dummy.m */,
+				E0015188508B1E59E1A05FF72E37CF35 /* Toast-Swift-Info.plist */,
+				F0EBC5E4B7B24721D1E549FB0BF37429 /* Toast-Swift-prefix.pch */,
+				04E13CE16871DC70859B0C091A21B889 /* Toast-Swift-umbrella.h */,
+				0A2432BC617C1FA2E94F3343C1755734 /* Toast-Swift.debug.xcconfig */,
+				864E5E7601D27685AD63E699057D2A09 /* Toast-Swift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Toast-Swift";
+			sourceTree = "<group>";
+		};
+		8F3E049184C9C77D332E83AF0D7B9036 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E4D71F65DCC34084D0A2775B9C56DA3 /* SwiftEvents */,
+				5D48BDE98EBE054A1240FE1DA699C082 /* Toast-Swift */,
+				F2658291090FB2A902F975B5A0E51374 /* UAObfuscatedString */,
+				C4CB1B4A8502A34B3AE86B9F9BE0287A /* URLSessionAdapter */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9280A72CEE8556B0C5A009B26A33D13D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FABAB4F9760C115559A8271242BA7D8 /* URLSessionAdapter.modulemap */,
+				5A0B3A39EA56639A073CE11BC3C1FEA1 /* URLSessionAdapter-dummy.m */,
+				8EED831461A11A4B2EE5D94A44878A3E /* URLSessionAdapter-Info.plist */,
+				75F7BDBCD939ED5E5D1928E2E25FA501 /* URLSessionAdapter-prefix.pch */,
+				1A2DC2B596BFE898B14249F493BAFEA6 /* URLSessionAdapter-umbrella.h */,
+				67954F51AF396C2BC5C71263CF3CE62E /* URLSessionAdapter.debug.xcconfig */,
+				FDB9C7F8FB2AF736F9FA505C988C897A /* URLSessionAdapter.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/URLSessionAdapter";
 			sourceTree = "<group>";
 		};
-		8524FED241772C5F45EF10BBCDC34DD1 /* SwiftEvents */ = {
+		C4CB1B4A8502A34B3AE86B9F9BE0287A /* URLSessionAdapter */ = {
 			isa = PBXGroup;
 			children = (
-				BA2AE2B993CF44A5094EFCAB5220D81B /* SwiftEvents.swift */,
-				D6A531743BDBBF42D07FAA718CCD3C32 /* Support Files */,
+				153F280D8128196062998740432D3CA4 /* EncodeDecode.swift */,
+				E28C17B48792C9A69596D67A15EE6FCF /* Endpoint.swift */,
+				024B77259D79B964F228CCD22A2AA5F5 /* HTTPMethod.swift */,
+				C970D67B4527ED6AEC80672C3DE5446F /* HTTPParams.swift */,
+				E6AE1CDE1FDB8A7F232C3FF01E85C4CD /* NetworkService.swift */,
+				86B35B84CE1F60A0483686EA2B85BB90 /* RequestFactory.swift */,
+				9280A72CEE8556B0C5A009B26A33D13D /* Support Files */,
 			);
-			path = SwiftEvents;
-			sourceTree = "<group>";
-		};
-		854B0BD23507024C51B44D212823919B /* URLSessionAdapter */ = {
-			isa = PBXGroup;
-			children = (
-				C8041E4C21792C16F3E0CCBB3EFC9A8C /* EncodeDecode.swift */,
-				5DF269CE314D5532A96472EFEB0444F7 /* Endpoint.swift */,
-				E73448FFDC1014D06DF0EF937270E34C /* HTTPParams.swift */,
-				52B1292D5C58E41334E4695381988732 /* NetworkService.swift */,
-				B705AD41CC63A0CB074D920C0A44D15A /* RequestFactory.swift */,
-				70E46D652F66CAF64CC601A22B27A37F /* Support Files */,
-			);
+			name = URLSessionAdapter;
 			path = URLSessionAdapter;
-			sourceTree = "<group>";
-		};
-		A4CC73CED7EF08AD82568D6D7AEAEB76 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CD07FF2CF645B0EEDFB898AA76815B56 /* PrivacyInfo.xcprivacy */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		C9295651D8F6468F029657DEE3C8C68D /* UAObfuscatedString */ = {
-			isa = PBXGroup;
-			children = (
-				7120AB3A4F66A9CD6374C0EA9B001231 /* UAObfuscatedString.swift */,
-				D0B20A573FAED4A6E76E76E130B3B4AD /* Support Files */,
-			);
-			path = UAObfuscatedString;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -338,7 +357,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				0FE10FA11DFD6D6C2165A149B510A893 /* Pods */,
+				8F3E049184C9C77D332E83AF0D7B9036 /* Pods */,
 				1775EF7BA2A85CDB9FB2FFDC3D7512B4 /* Products */,
 				2D20F5B380CF0B9A976A66EAAA6D065F /* Targets Support Files */,
 			);
@@ -361,19 +380,12 @@
 			path = "Target Support Files/Pods-CryptocurrencyInfo";
 			sourceTree = "<group>";
 		};
-		D0B20A573FAED4A6E76E76E130B3B4AD /* Support Files */ = {
+		D30C9AA7B4D294761B6D0E904449A2B2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B69926B45A4E94767EE822A781B3277F /* UAObfuscatedString.modulemap */,
-				2F62017FA259A61AF2B8AD04F2135AEF /* UAObfuscatedString-dummy.m */,
-				7175497CA64A67E68A3D25F3FECFB721 /* UAObfuscatedString-Info.plist */,
-				1F540849FD9D30087C0F6886F8AAD6AA /* UAObfuscatedString-prefix.pch */,
-				E1631B3DD71356A08E71275427A6BD24 /* UAObfuscatedString-umbrella.h */,
-				2464A103F3B823DEFED237514F43AE19 /* UAObfuscatedString.debug.xcconfig */,
-				4EA268517EA18BBD1899A8E18233681E /* UAObfuscatedString.release.xcconfig */,
+				7E7338BE89BE1AFCBB7D7E13F9A990AF /* PrivacyInfo.xcprivacy */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/UAObfuscatedString";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		D325A42620E7427FB70FB046C7B7B240 /* iOS */ = {
@@ -385,19 +397,14 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		D6A531743BDBBF42D07FAA718CCD3C32 /* Support Files */ = {
+		F2658291090FB2A902F975B5A0E51374 /* UAObfuscatedString */ = {
 			isa = PBXGroup;
 			children = (
-				63E7E3CCBAA52A47A257EEF2D563A6F7 /* SwiftEvents.modulemap */,
-				76A50F93B8A39FE2FBFA69EA9CD9D82B /* SwiftEvents-dummy.m */,
-				DCCBD5BCDFD6695BD0E9C6162069012D /* SwiftEvents-Info.plist */,
-				40AA69C15F84DD2C23BF825506E4AC19 /* SwiftEvents-prefix.pch */,
-				C495ECC0B3F7F05E564E6F079311B273 /* SwiftEvents-umbrella.h */,
-				3939D961F1636BE8538D5120374282F7 /* SwiftEvents.debug.xcconfig */,
-				AD4D81BB6C5D20E2B4152C220F879746 /* SwiftEvents.release.xcconfig */,
+				0C8DEC96D0C78926497016180B5A9CCC /* UAObfuscatedString.swift */,
+				1784190C24610228F00CCA068F092B14 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftEvents";
+			name = UAObfuscatedString;
+			path = UAObfuscatedString;
 			sourceTree = "<group>";
 		};
 		F47A00C71ACA479420155A6CBF286567 /* Pods-CryptocurrencyInfoTests */ = {
@@ -427,14 +434,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1280A5C8903545820E931BF85F40E493 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27D1BEAD00F7BFABC16EECE54D3B5750 /* URLSessionAdapter-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2C34B9D095E74A48E188D8400CB620BF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,6 +447,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7006E340414EF32F7ACF7EC4F937C18B /* Pods-CryptocurrencyInfo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B312F8C2D4100EEA565281AC29D3B6E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8888532596197DFD740EDBBC83F2C2E /* URLSessionAdapter-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,10 +489,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				1C13820995E6DB70F82B67389E5A9CA8 /* PBXTargetDependency */,
-				BDC39C71D6659B4246C8C87AF2936CF4 /* PBXTargetDependency */,
-				A7568B4109BF1521DF589761861468B3 /* PBXTargetDependency */,
-				C3A05C3E5C8790E0C991CF2F3A18F417 /* PBXTargetDependency */,
+				633A064FEAD149D7C9E5808A52B4F1F6 /* PBXTargetDependency */,
+				20428CB9035035629F0D108C8FB6CE0C /* PBXTargetDependency */,
+				C82F6C9C0653F0773600F10FC2A3EA07 /* PBXTargetDependency */,
+				36812DF07C396255E3899A95BB824189 /* PBXTargetDependency */,
 			);
 			name = "Pods-CryptocurrencyInfo";
 			productName = Pods_CryptocurrencyInfo;
@@ -507,17 +514,17 @@
 			);
 			name = SwiftEvents;
 			productName = SwiftEvents;
-			productReference = 126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents.framework */;
+			productReference = 126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents */;
 			productType = "com.apple.product-type.framework";
 		};
 		7E775F2D6ACC74E5533826C21A4B84AE /* URLSessionAdapter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF77A9E1E18CEF819A0C42C5DDF6AA13 /* Build configuration list for PBXNativeTarget "URLSessionAdapter" */;
+			buildConfigurationList = 788C624F667AC598A9CC55BBF0C85079 /* Build configuration list for PBXNativeTarget "URLSessionAdapter" */;
 			buildPhases = (
-				1280A5C8903545820E931BF85F40E493 /* Headers */,
-				D49ABDD5E888BE013B9795F996C9B268 /* Sources */,
-				04372179D36221EE65CA4870C62BA00B /* Frameworks */,
-				090CBAC48C749118121ACDE4F7BEBC6D /* Resources */,
+				6B312F8C2D4100EEA565281AC29D3B6E /* Headers */,
+				0C1BBFC73976AD9A79273D52A9A8572D /* Sources */,
+				0DEC4DEDF0E6D12B5E6829CD4EE960BC /* Frameworks */,
+				EC28244765A5F6E89C93A1BC49D21642 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -540,7 +547,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				F78EF9458E6970C6BAA0A9F381F5900B /* PBXTargetDependency */,
+				422A633ABF6E3DDD8E4647005A13D10F /* PBXTargetDependency */,
 			);
 			name = "Pods-CryptocurrencyInfoTests";
 			productName = Pods_CryptocurrencyInfoTests;
@@ -562,7 +569,7 @@
 			);
 			name = UAObfuscatedString;
 			productName = UAObfuscatedString;
-			productReference = 89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString.framework */;
+			productReference = 89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString */;
 			productType = "com.apple.product-type.framework";
 		};
 		B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */ = {
@@ -577,20 +584,20 @@
 			buildRules = (
 			);
 			dependencies = (
-				60F0FBBC402C125B112C8402E7AE34B5 /* PBXTargetDependency */,
+				8CA343E942E60A708A73C67EC3737832 /* PBXTargetDependency */,
 			);
 			name = "Toast-Swift";
 			productName = Toast_Swift;
-			productReference = D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */;
+			productReference = D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */;
 			productType = "com.apple.product-type.framework";
 		};
 		C344E85893FCDEE5B70436E0A4A3472B /* Toast-Swift-Toast-Swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF47D8D9148378D78ACED61ECE73A18A /* Build configuration list for PBXNativeTarget "Toast-Swift-Toast-Swift" */;
+			buildConfigurationList = 0E70757E684267213568EE30EA8A923F /* Build configuration list for PBXNativeTarget "Toast-Swift-Toast-Swift" */;
 			buildPhases = (
-				8B3380A5BD720A3B3E738539EA2A0DC5 /* Sources */,
-				5AEFFC8AA4F783F7C3FA5B9595838E53 /* Frameworks */,
-				D27310AFC62DE8E728BA9F7B45ED6FEB /* Resources */,
+				6C88E5D05B16018F7E0F30C3CB595EE9 /* Sources */,
+				9FD8E521F59F3ED3197659DCB685267A /* Frameworks */,
+				88271447B15A016F3AA0FECD7EA44033 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -598,7 +605,7 @@
 			);
 			name = "Toast-Swift-Toast-Swift";
 			productName = "Toast-Swift";
-			productReference = 13FD39576595D8A884BF5166065C5236 /* Toast-Swift.bundle */;
+			productReference = 13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -635,13 +642,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		090CBAC48C749118121ACDE4F7BEBC6D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1FE32D06E47F8CCE471A7C02D778206B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -663,6 +663,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		88271447B15A016F3AA0FECD7EA44033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24A18CA0801B220FA450EB3241C5FB90 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9225F1F34D7B3A50B297F6F7B6870B3C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -670,11 +678,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D27310AFC62DE8E728BA9F7B45ED6FEB /* Resources */ = {
+		EC28244765A5F6E89C93A1BC49D21642 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDB200E91D4251B685140D1A148C080 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,19 +689,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				237A96A092EA5A5B0CB41160BEA22E16 /* Toast-Swift.bundle in Resources */,
+				237A96A092EA5A5B0CB41160BEA22E16 /* Toast-Swift-Toast-Swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0C1BBFC73976AD9A79273D52A9A8572D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				196DE3D8014217B1CCE539CDC844BAF0 /* EncodeDecode.swift in Sources */,
+				3C520D8B02CCC2E654F03C96410D28C7 /* Endpoint.swift in Sources */,
+				AF6E8D1448EC78ACD9BB57501E491C71 /* HTTPMethod.swift in Sources */,
+				325F55FD8C93E242AE57ED25BC74BBD6 /* HTTPParams.swift in Sources */,
+				6EFFF3DB77CD128D0E7455C5ECE54E72 /* NetworkService.swift in Sources */,
+				2231DD70DFC470F0165956259885EE13 /* RequestFactory.swift in Sources */,
+				7D765C33DB9E6760638B97B4CEB0B7E2 /* URLSessionAdapter-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13C5F240F8D39EE11E8E48310FE556B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F912129FB7C53C428FE247D6ECF633AC /* Toast.swift in Sources */,
 				15F04D15A4DC87FF877C2857720F8D72 /* Toast-Swift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C88E5D05B16018F7E0F30C3CB595EE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,32 +743,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B3380A5BD720A3B3E738539EA2A0DC5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A5D1ED79ACB6C9F49135B93D98888A90 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				95DD2390A16F28A4DA9D0E308DF629F9 /* SwiftEvents.swift in Sources */,
 				D0C4151E739FFDD68A4A00C21B0E9E62 /* SwiftEvents-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D49ABDD5E888BE013B9795F996C9B268 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E25ADD5381468FDF2325AD4DDD194275 /* EncodeDecode.swift in Sources */,
-				44CA9C1AC8ABB8ED1DD53DB29D2AC599 /* Endpoint.swift in Sources */,
-				6609F74CE0CB60608728F1A8FBC4A1AD /* HTTPParams.swift in Sources */,
-				D6C6F24EDCABF4EB94ADA378F14D3E0D /* NetworkService.swift in Sources */,
-				84EEFCD135A4663848C4EA221BAB275D /* RequestFactory.swift in Sources */,
-				CF9AD273E755A769451E1DE8B345D950 /* URLSessionAdapter-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,119 +763,48 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1C13820995E6DB70F82B67389E5A9CA8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftEvents;
-			target = 17762D8B30A3F7B89054F21E08E1F4B2 /* SwiftEvents */;
-			targetProxy = 77AE05BF1052FD797A86E959BA32C0F2 /* PBXContainerItemProxy */;
-		};
-		60F0FBBC402C125B112C8402E7AE34B5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Toast-Swift-Toast-Swift";
-			target = C344E85893FCDEE5B70436E0A4A3472B /* Toast-Swift-Toast-Swift */;
-			targetProxy = F48B80ADDFD85007EBB59EB2E4CB9842 /* PBXContainerItemProxy */;
-		};
-		A7568B4109BF1521DF589761861468B3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = UAObfuscatedString;
-			target = B76CD0FDBDCCD714A37472070CA106F0 /* UAObfuscatedString */;
-			targetProxy = DBB04F56FEC2122A13EACA3F25CE5D02 /* PBXContainerItemProxy */;
-		};
-		BDC39C71D6659B4246C8C87AF2936CF4 /* PBXTargetDependency */ = {
+		20428CB9035035629F0D108C8FB6CE0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Toast-Swift";
 			target = B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */;
-			targetProxy = 6AA498AF8850D09FEFBFB78EC07C6DF8 /* PBXContainerItemProxy */;
+			targetProxy = F9793886A55735CBD066772DF4E716AF /* PBXContainerItemProxy */;
 		};
-		C3A05C3E5C8790E0C991CF2F3A18F417 /* PBXTargetDependency */ = {
+		36812DF07C396255E3899A95BB824189 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = URLSessionAdapter;
 			target = 7E775F2D6ACC74E5533826C21A4B84AE /* URLSessionAdapter */;
-			targetProxy = 76544974A69491B2D9467CD11F59C968 /* PBXContainerItemProxy */;
+			targetProxy = 609D5A6F430AC967C20FB3C0F1620273 /* PBXContainerItemProxy */;
 		};
-		F78EF9458E6970C6BAA0A9F381F5900B /* PBXTargetDependency */ = {
+		422A633ABF6E3DDD8E4647005A13D10F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-CryptocurrencyInfo";
 			target = 172AF901AB0A9C187E3C79FB7E73CD5B /* Pods-CryptocurrencyInfo */;
-			targetProxy = F8B7639AEA99A2EE17322E9E4FD659E3 /* PBXContainerItemProxy */;
+			targetProxy = 0CC55E0DD8048776C77E15448221C214 /* PBXContainerItemProxy */;
+		};
+		633A064FEAD149D7C9E5808A52B4F1F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftEvents;
+			target = 17762D8B30A3F7B89054F21E08E1F4B2 /* SwiftEvents */;
+			targetProxy = 580A68262F7D76611988DF1BE8C9CEF6 /* PBXContainerItemProxy */;
+		};
+		8CA343E942E60A708A73C67EC3737832 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Toast-Swift-Toast-Swift";
+			target = C344E85893FCDEE5B70436E0A4A3472B /* Toast-Swift-Toast-Swift */;
+			targetProxy = 9C05CC2E26B0900954033F66893A6258 /* PBXContainerItemProxy */;
+		};
+		C82F6C9C0653F0773600F10FC2A3EA07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UAObfuscatedString;
+			target = B76CD0FDBDCCD714A37472070CA106F0 /* UAObfuscatedString */;
+			targetProxy = 8FD5FAEBC7330F0A426C512A5AF9FF5C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0ECDD02A6527E59E162A41BB587752F0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B22AFBB0C9AB8C0A25D7DE7BA6A5DE6 /* URLSessionAdapter.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/URLSessionAdapter/URLSessionAdapter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter.modulemap";
-				PRODUCT_MODULE_NAME = URLSessionAdapter;
-				PRODUCT_NAME = URLSessionAdapter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1B5AF907D15FA38FDA654F92244DC96E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1DDEAD9CD2FA19DC24493E70B4CAAD1 /* URLSessionAdapter.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/URLSessionAdapter/URLSessionAdapter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter.modulemap";
-				PRODUCT_MODULE_NAME = URLSessionAdapter;
-				PRODUCT_NAME = URLSessionAdapter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		2547B4596836362666D8AACCB98A02EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2464A103F3B823DEFED237514F43AE19 /* UAObfuscatedString.debug.xcconfig */;
+			baseConfigurationReference = E3AD5199347915BD7464215D1D289FD0 /* UAObfuscatedString.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -880,7 +817,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UAObfuscatedString/UAObfuscatedString-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UAObfuscatedString/UAObfuscatedString-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -901,7 +838,7 @@
 		};
 		335888624B863A53F482B2E5A5CB861C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF483F2BEE0708631865B20F322D9A4D /* Toast-Swift.debug.xcconfig */;
+			baseConfigurationReference = 0A2432BC617C1FA2E94F3343C1755734 /* Toast-Swift.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -915,7 +852,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -934,9 +871,44 @@
 			};
 			name = Debug;
 		};
+		3F1A1E4261B9E01427023F74BCC9075C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67954F51AF396C2BC5C71263CF3CE62E /* URLSessionAdapter.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/URLSessionAdapter/URLSessionAdapter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter.modulemap";
+				PRODUCT_MODULE_NAME = URLSessionAdapter;
+				PRODUCT_NAME = URLSessionAdapter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		587F6847DBCBE9579002441D0DB73E24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3DD9B6C88C6EBFD15B6B9774F52BD9D /* Toast-Swift.release.xcconfig */;
+			baseConfigurationReference = 864E5E7601D27685AD63E699057D2A09 /* Toast-Swift.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -950,7 +922,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1008,9 +980,45 @@
 			};
 			name = Release;
 		};
+		6F769851EC9DF9DF639902DA1F5AB7FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDB9C7F8FB2AF736F9FA505C988C897A /* URLSessionAdapter.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/URLSessionAdapter/URLSessionAdapter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/URLSessionAdapter/URLSessionAdapter.modulemap";
+				PRODUCT_MODULE_NAME = URLSessionAdapter;
+				PRODUCT_NAME = URLSessionAdapter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		7B7B1EF7500E6B194E7C0A157306DB9C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EA268517EA18BBD1899A8E18233681E /* UAObfuscatedString.release.xcconfig */;
+			baseConfigurationReference = 4AF563F0137C6354E68927FF2227398F /* UAObfuscatedString.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1023,7 +1031,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UAObfuscatedString/UAObfuscatedString-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UAObfuscatedString/UAObfuscatedString-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1109,23 +1117,6 @@
 			};
 			name = Debug;
 		};
-		95517AD78026443DF44FACF32C205F55 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF483F2BEE0708631865B20F322D9A4D /* Toast-Swift.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Toast-Swift";
-				IBSC_MODULE = Toast_Swift;
-				INFOPLIST_FILE = "Target Support Files/Toast-Swift/ResourceBundle-Toast-Swift-Toast-Swift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				PRODUCT_NAME = "Toast-Swift";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		9553C89E183877A5CB2F3C6801BEC129 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1188,23 +1179,6 @@
 			};
 			name = Release;
 		};
-		A8D24EBC3B13A05D28EF8F7BDBF28CBB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3DD9B6C88C6EBFD15B6B9774F52BD9D /* Toast-Swift.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Toast-Swift";
-				IBSC_MODULE = Toast_Swift;
-				INFOPLIST_FILE = "Target Support Files/Toast-Swift/ResourceBundle-Toast-Swift-Toast-Swift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				PRODUCT_NAME = "Toast-Swift";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		B7B18F02F286948AD0CB7CDD22A6895B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D85816126BE40683E673D6428A4AF8EA /* Pods-CryptocurrencyInfo.debug.xcconfig */;
@@ -1244,7 +1218,7 @@
 		};
 		D20BFE574A22AFA8F03AFAD1B8DC6D11 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3939D961F1636BE8538D5120374282F7 /* SwiftEvents.debug.xcconfig */;
+			baseConfigurationReference = E5FB9D28DDAF9772B54434046CC83B9C /* SwiftEvents.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1258,7 +1232,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftEvents/SwiftEvents-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftEvents/SwiftEvents-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1274,6 +1248,40 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DA59F883D71D2A9EB0F6F56984ED92AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 864E5E7601D27685AD63E699057D2A09 /* Toast-Swift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Toast-Swift";
+				IBSC_MODULE = Toast_Swift;
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/ResourceBundle-Toast-Swift-Toast-Swift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "Toast-Swift";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		DF91260838790EEE5782544D1DE14A8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A2432BC617C1FA2E94F3343C1755734 /* Toast-Swift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Toast-Swift";
+				IBSC_MODULE = Toast_Swift;
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/ResourceBundle-Toast-Swift-Toast-Swift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "Toast-Swift";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -1354,7 +1362,7 @@
 		};
 		FD9F9A75AF83E97C772DB382D8219D0E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD4D81BB6C5D20E2B4152C220F879746 /* SwiftEvents.release.xcconfig */;
+			baseConfigurationReference = 938D748997B04355C31EF258CF39F05C /* SwiftEvents.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1368,7 +1376,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftEvents/SwiftEvents-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftEvents/SwiftEvents-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1391,6 +1399,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E70757E684267213568EE30EA8A923F /* Build configuration list for PBXNativeTarget "Toast-Swift-Toast-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF91260838790EEE5782544D1DE14A8F /* Debug */,
+				DA59F883D71D2A9EB0F6F56984ED92AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2B1739CC185CEDE3A990F521808D3137 /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1418,20 +1435,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		788C624F667AC598A9CC55BBF0C85079 /* Build configuration list for PBXNativeTarget "URLSessionAdapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1A1E4261B9E01427023F74BCC9075C /* Debug */,
+				6F769851EC9DF9DF639902DA1F5AB7FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7D255CDF039E83EEAC9F7434FAA7CE60 /* Build configuration list for PBXNativeTarget "Pods-CryptocurrencyInfoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1B88DC63807A1C39F5A2F3DDB1B1C17 /* Debug */,
 				E81ADF19D2002BC369B37188B5C30AFD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AF77A9E1E18CEF819A0C42C5DDF6AA13 /* Build configuration list for PBXNativeTarget "URLSessionAdapter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B5AF907D15FA38FDA654F92244DC96E /* Debug */,
-				0ECDD02A6527E59E162A41BB587752F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1450,15 +1467,6 @@
 			buildConfigurations = (
 				D20BFE574A22AFA8F03AFAD1B8DC6D11 /* Debug */,
 				FD9F9A75AF83E97C772DB382D8219D0E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FF47D8D9148378D78ACED61ECE73A18A /* Build configuration list for PBXNativeTarget "Toast-Swift-Toast-Swift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95517AD78026443DF44FACF32C205F55 /* Debug */,
-				A8D24EBC3B13A05D28EF8F7BDBF28CBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

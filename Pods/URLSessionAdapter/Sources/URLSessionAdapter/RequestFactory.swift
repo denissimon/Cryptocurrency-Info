@@ -9,27 +9,14 @@
 
 import Foundation
 
-/// https://datatracker.ietf.org/doc/html/rfc7231#section-4.3
-public enum HTTPMethod: String {
-    case GET
-    case POST
-    case PUT
-    case PATCH
-    case DELETE
-    case HEAD
-    case OPTIONS
-    case CONNECT
-    case TRACE
-    case QUERY /// https://www.ietf.org/archive/id/draft-ietf-httpbis-safe-method-w-body-02.html
-}
-
 public class RequestFactory {
-    
-    public static func request(url: URL, method: HTTPMethod, params: HTTPParams? = nil) -> URLRequest {
-        var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
+    public static func request(_ endpoint: EndpointType) -> URLRequest? {
+        guard let url = URL(string: endpoint.baseURL + endpoint.path) else { return nil }
         
-        if let params = params {
+        var request = URLRequest(url: url)
+        request.httpMethod = endpoint.method.rawValue
+        
+        if let params = endpoint.params {
             if let httpBody = params.httpBody {
                 switch httpBody {
                 case is Data:

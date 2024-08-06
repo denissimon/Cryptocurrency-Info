@@ -31,16 +31,20 @@ public struct RequestConfig {
     }
 }
 
+@available(iOS 15.0, *)
+@available(macOS 12.0, *)
+@available(tvOS 15.0, *)
+@available(watchOS 8.0, *)
 public protocol NetworkServiceAsyncAwaitType {
     var urlSession: URLSession { get }
     
-    func request(_ endpoint: EndpointType, config: RequestConfig?) async throws -> Data
-    func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig?) async throws -> T
+    func request(_ request: URLRequest, config: RequestConfig?) async throws -> Data
+    func request<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig?) async throws -> T
     func fetchFile(url: URL, config: RequestConfig?) async throws -> Data?
     func downloadFile(url: URL, to localUrl: URL, config: RequestConfig?) async throws -> Bool
     
-    func requestWithStatusCode(_ endpoint: EndpointType, config: RequestConfig?) async throws -> (result: Data, statusCode: Int?)
-    func requestWithStatusCode<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig?) async throws -> (result: T, statusCode: Int?)
+    func requestWithStatusCode(_ request: URLRequest, config: RequestConfig?) async throws -> (result: Data, statusCode: Int?)
+    func requestWithStatusCode<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig?) async throws -> (result: T, statusCode: Int?)
     func fetchFileWithStatusCode(url: URL, config: RequestConfig?) async throws -> (result: Data?, statusCode: Int?)
     func downloadFileWithStatusCode(url: URL, to localUrl: URL, config: RequestConfig?) async throws -> (result: Bool, statusCode: Int?)
 }
@@ -48,20 +52,27 @@ public protocol NetworkServiceAsyncAwaitType {
 public protocol NetworkServiceCallbacksType {
     var urlSession: URLSession { get }
     
-    func request(_ endpoint: EndpointType, config: RequestConfig?, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable?
-    func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig?, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable?
+    func request(_ request: URLRequest, config: RequestConfig?, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable?
+    func request<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig?, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable?
     func fetchFile(url: URL, config: RequestConfig?, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable?
     func downloadFile(url: URL, to localUrl: URL, config: RequestConfig?, completion: @escaping (Result<Bool, NetworkError>) -> Void) -> NetworkCancellable?
     
-    func requestWithStatusCode(_ endpoint: EndpointType, config: RequestConfig?, completion: @escaping (Result<(result: Data?, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
-    func requestWithStatusCode<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig?, completion: @escaping (Result<(result: T, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
+    func requestWithStatusCode(_ request: URLRequest, config: RequestConfig?, completion: @escaping (Result<(result: Data?, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
+    func requestWithStatusCode<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig?, completion: @escaping (Result<(result: T, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
     func fetchFileWithStatusCode(url: URL, config: RequestConfig?, completion: @escaping (Result<(result: Data?, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
     func downloadFileWithStatusCode(url: URL, to localUrl: URL, config: RequestConfig?, completion: @escaping (Result<(result: Bool, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
 }
 
+@available(iOS 15.0, *)
+@available(macOS 12.0, *)
+@available(tvOS 15.0, *)
+@available(watchOS 8.0, *)
 public typealias NetworkServiceType = NetworkServiceAsyncAwaitType & NetworkServiceCallbacksType
 
+@available(iOS 15.0, *)
 @available(macOS 12.0, *)
+@available(tvOS 15.0, *)
+@available(watchOS 8.0, *)
 open class NetworkService: NetworkServiceType {
        
     public private(set) var urlSession: URLSession
@@ -92,18 +103,13 @@ open class NetworkService: NetworkServiceType {
     // MARK: - async/await API
     
     /// - Parameter uploadTask: To support uploading files, including background uploads. In other POST/PUT cases (e.g. with a json as httpBody), uploadTask can be false and dataTask will be used.
-    public func request(_ endpoint: EndpointType, config: RequestConfig? = nil) async throws -> Data {
-        guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            throw NetworkError()
-        }
-        
+    public func request(_ request: URLRequest, config: RequestConfig? = nil) async throws -> Data {
         let configUploadTask: Bool = config?.uploadTask ?? defaultConfig.uploadTask!
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        var request = RequestFactory.request(url: url, method: endpoint.method, params: endpoint.params)
-        var msg = "\nNetworkService request \(endpoint.method.rawValue)"
+        var msg = "\nNetworkService request \(request.httpMethod ?? "")"
         if configUploadTask { msg += ", uploadTask"}
-        msg += ", url: \(url)"
+        msg += ", url: \(request.url?.description ?? "")"
         
         var responseData = Data()
         var response = URLResponse()
@@ -119,9 +125,10 @@ open class NetworkService: NetworkServiceType {
                 throw NetworkError()
             }
             log(msg)
-            request.httpBody = nil
+            var updatedRequest = request
+            updatedRequest.httpBody = nil
             (responseData, response) = try await urlSession.upload(
-                for: request,
+                for: updatedRequest,
                 from: httpBody
             )
         }
@@ -133,18 +140,13 @@ open class NetworkService: NetworkServiceType {
     }
     
     /// - Parameter uploadTask: To support uploading files, including background uploads. In other POST/PUT cases (e.g. with a json as httpBody), uploadTask can be false and dataTask will be used.
-    public func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig? = nil) async throws -> T {
-        guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            throw NetworkError()
-        }
-        
+    public func request<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig? = nil) async throws -> T {
         let configUploadTask: Bool = config?.uploadTask ?? defaultConfig.uploadTask!
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        var request = RequestFactory.request(url: url, method: endpoint.method, params: endpoint.params)
-        var msg = "\nNetworkService request<T: Decodable> \(endpoint.method.rawValue)"
+        var msg = "\nNetworkService request<T: Decodable> \(request.httpMethod ?? "")"
         if configUploadTask { msg += ", uploadTask"}
-        msg += ", url: \(url)"
+        msg += ", url: \(request.url?.description ?? "")"
         
         var responseData = Data()
         var response = URLResponse()
@@ -160,9 +162,10 @@ open class NetworkService: NetworkServiceType {
                 throw NetworkError()
             }
             log(msg)
-            request.httpBody = nil
+            var updatedRequest = request
+            updatedRequest.httpBody = nil
             (responseData, response) = try await urlSession.upload(
-                for: request,
+                for: updatedRequest,
                 from: httpBody
             )
         }
@@ -171,7 +174,7 @@ open class NetworkService: NetworkServiceType {
         let statusCode = httpResponse?.statusCode
         try validate(statusCode, data: responseData, requestValidation: configAutoValidation)
         
-        guard let decoded = ResponseDecodable.decode(type, data: responseData) else {
+        guard let decoded = try? JSONDecoder().decode(type, from: responseData) else {
             throw NetworkError(statusCode: statusCode, data: responseData)
         }
         
@@ -223,18 +226,13 @@ open class NetworkService: NetworkServiceType {
     }
     
     /// - Parameter uploadTask: To support uploading files, including background uploads. In other POST/PUT cases (e.g. with a json as httpBody), uploadTask can be false and dataTask will be used.
-    public func requestWithStatusCode(_ endpoint: EndpointType, config: RequestConfig? = nil) async throws -> (result: Data, statusCode: Int?) {
-        guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            throw NetworkError()
-        }
-        
+    public func requestWithStatusCode(_ request: URLRequest, config: RequestConfig? = nil) async throws -> (result: Data, statusCode: Int?) {
         let configUploadTask: Bool = config?.uploadTask ?? defaultConfig.uploadTask!
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        var request = RequestFactory.request(url: url, method: endpoint.method, params: endpoint.params)
-        var msg = "\nNetworkService requestWithStatusCode \(endpoint.method.rawValue)"
+        var msg = "\nNetworkService requestWithStatusCode \(request.httpMethod ?? "")"
         if configUploadTask { msg += ", uploadTask"}
-        msg += ", url: \(url)"
+        msg += ", url: \(request.url?.description ?? "")"
         
         var responseData = Data()
         var response = URLResponse()
@@ -250,9 +248,10 @@ open class NetworkService: NetworkServiceType {
                 throw NetworkError()
             }
             log(msg)
-            request.httpBody = nil
+            var updatedRequest = request
+            updatedRequest.httpBody = nil
             (responseData, response) = try await urlSession.upload(
-                for: request,
+                for: updatedRequest,
                 from: httpBody
             )
         }
@@ -265,18 +264,13 @@ open class NetworkService: NetworkServiceType {
     }
     
     /// - Parameter uploadTask: To support uploading files, including background uploads. In other POST/PUT cases (e.g. with a json as httpBody), uploadTask can be false and dataTask will be used.
-    public func requestWithStatusCode<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig? = nil) async throws -> (result: T, statusCode: Int?) {
-        guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            throw NetworkError()
-        }
-        
+    public func requestWithStatusCode<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig? = nil) async throws -> (result: T, statusCode: Int?) {
         let configUploadTask: Bool = config?.uploadTask ?? defaultConfig.uploadTask!
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        var request = RequestFactory.request(url: url, method: endpoint.method, params: endpoint.params)
-        var msg = "\nNetworkService requestWithStatusCode<T: Decodable> \(endpoint.method.rawValue)"
+        var msg = "\nNetworkService requestWithStatusCode<T: Decodable> \(request.httpMethod ?? "")"
         if configUploadTask { msg += ", uploadTask"}
-        msg += ", url: \(url)"
+        msg += ", url: \(request.url?.description ?? "")"
         
         var responseData = Data()
         var response = URLResponse()
@@ -292,9 +286,10 @@ open class NetworkService: NetworkServiceType {
                 throw NetworkError()
             }
             log(msg)
-            request.httpBody = nil
+            var updatedRequest = request
+            updatedRequest.httpBody = nil
             (responseData, response) = try await urlSession.upload(
-                for: request,
+                for: updatedRequest,
                 from: httpBody
             )
         }
@@ -303,7 +298,7 @@ open class NetworkService: NetworkServiceType {
         let statusCode = httpResponse?.statusCode
         try validate(statusCode, data: responseData, requestValidation: configAutoValidation)
         
-        guard let decoded = ResponseDecodable.decode(type, data: responseData) else {
+        guard let decoded = try? JSONDecoder().decode(type, from: responseData) else {
             throw NetworkError(statusCode: statusCode, data: responseData)
         }
         
@@ -330,7 +325,7 @@ open class NetworkService: NetworkServiceType {
     }
     
     /// Downloads a file to disk, and supports background downloads.
-    /// - Returns:.success(true), if successful
+    /// - Returns: .success(true), if successful
     public func downloadFileWithStatusCode(url: URL, to localUrl: URL, config: RequestConfig? = nil) async throws -> (result: Bool, statusCode: Int?) {
         log("\nNetworkService downloadFileWithStatusCode, url: \(url), to: \(localUrl)")
         
@@ -359,20 +354,13 @@ open class NetworkService: NetworkServiceType {
     // MARK: - callbacks API
     
     /// - Parameter uploadTask: To support uploading files, including background uploads. In other POST/PUT cases (e.g. with a json as httpBody), uploadTask can be false and dataTask will be used.
-    public func request(_ endpoint: EndpointType, config: RequestConfig? = nil, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable? {
-        
-        guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            completion(.failure(NetworkError()))
-            return nil
-        }
-        
+    public func request(_ request: URLRequest, config: RequestConfig? = nil, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable? {
         let configUploadTask: Bool = config?.uploadTask ?? defaultConfig.uploadTask!
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        var request = RequestFactory.request(url: url, method: endpoint.method, params: endpoint.params)
-        var msg = "\nNetworkService request \(endpoint.method.rawValue)"
+        var msg = "\nNetworkService request \(request.httpMethod ?? "")"
         if configUploadTask { msg += ", uploadTask"}
-        msg += ", url: \(url)"
+        msg += ", url: \(request.url?.description ?? "")"
         
         switch configUploadTask {
         case false:
@@ -395,9 +383,9 @@ open class NetworkService: NetworkServiceType {
                 return nil
             }
             log(msg)
-            request.httpBody = nil
-            
-            let uploadTask = urlSession.uploadTask(with: request, from: httpBody) { (data, response, error) in
+            var updatedRequest = request
+            updatedRequest.httpBody = nil
+            let uploadTask = urlSession.uploadTask(with: updatedRequest, from: httpBody) { (data, response, error) in
                 let response = response as? HTTPURLResponse
                 let statusCode = response?.statusCode
                 if error == nil, (try? self.validate(statusCode, requestValidation: configAutoValidation)) != nil {
@@ -413,20 +401,13 @@ open class NetworkService: NetworkServiceType {
     }
     
     /// - Parameter uploadTask: To support uploading files, including background uploads. In other POST/PUT cases (e.g. with a json as httpBody), uploadTask can be false and dataTask will be used.
-    public func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig? = nil, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable? {
-        
-        guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            completion(.failure(NetworkError()))
-            return nil
-        }
-        
+    public func request<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig? = nil, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable? {
         let configUploadTask: Bool = config?.uploadTask ?? defaultConfig.uploadTask!
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        var request = RequestFactory.request(url: url, method: endpoint.method, params: endpoint.params)
-        var msg = "\nNetworkService request<T: Decodable> \(endpoint.method.rawValue)"
+        var msg = "\nNetworkService request<T: Decodable> \(request.httpMethod ?? "")"
         if configUploadTask { msg += ", uploadTask"}
-        msg += ", url: \(url)"
+        msg += ", url: \(request.url?.description ?? "")"
         
         switch configUploadTask {
         case false:
@@ -435,7 +416,7 @@ open class NetworkService: NetworkServiceType {
                 let response = response as? HTTPURLResponse
                 let statusCode = response?.statusCode
                 if error == nil, (try? self.validate(statusCode, requestValidation: configAutoValidation)) != nil {
-                    guard let data = data, let decoded = ResponseDecodable.decode(type, data: data) else {
+                    guard let data = data, let decoded = try? JSONDecoder().decode(type, from: data) else {
                         completion(.failure(NetworkError(statusCode: statusCode, data: data)))
                         return
                     }
@@ -453,13 +434,13 @@ open class NetworkService: NetworkServiceType {
                 return nil
             }
             log(msg)
-            request.httpBody = nil
-            
-            let uploadTask = urlSession.uploadTask(with: request, from: httpBody) { (data, response, error) in
+            var updatedRequest = request
+            updatedRequest.httpBody = nil
+            let uploadTask = urlSession.uploadTask(with: updatedRequest, from: httpBody) { (data, response, error) in
                 let response = response as? HTTPURLResponse
                 let statusCode = response?.statusCode
                 if error == nil, (try? self.validate(statusCode, requestValidation: configAutoValidation)) != nil {
-                    guard let data = data, let decoded = ResponseDecodable.decode(type, data: data) else {
+                    guard let data = data, let decoded = try? JSONDecoder().decode(type, from: data) else {
                         completion(.failure(NetworkError(statusCode: statusCode, data: data)))
                         return
                     }
@@ -480,7 +461,8 @@ open class NetworkService: NetworkServiceType {
         
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        let request = RequestFactory.request(url: url, method: .GET, params: nil)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         
         let dataTask = urlSession.dataTask(with: request) { (data, response, error) in
             let response = response as? HTTPURLResponse
@@ -508,7 +490,8 @@ open class NetworkService: NetworkServiceType {
         
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        let request = RequestFactory.request(url: url, method: .GET, params: nil)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         
         let downloadTask = urlSession.downloadTask(with: request) { (tempLocalUrl, response, error) in
             let response = response as? HTTPURLResponse
@@ -535,20 +518,13 @@ open class NetworkService: NetworkServiceType {
     }
     
     /// - Parameter uploadTask: To support uploading files, including background uploads. In other POST/PUT cases (e.g. with a json as httpBody), uploadTask can be false and dataTask will be used.
-    public func requestWithStatusCode(_ endpoint: EndpointType, config: RequestConfig? = nil, completion: @escaping (Result<(result: Data?, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable? {
-        
-        guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            completion(.failure(NetworkError()))
-            return nil
-        }
-        
+    public func requestWithStatusCode(_ request: URLRequest, config: RequestConfig? = nil, completion: @escaping (Result<(result: Data?, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable? {
         let configUploadTask: Bool = config?.uploadTask ?? defaultConfig.uploadTask!
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        var request = RequestFactory.request(url: url, method: endpoint.method, params: endpoint.params)
-        var msg = "\nNetworkService requestWithStatusCode \(endpoint.method.rawValue)"
+        var msg = "\nNetworkService requestWithStatusCode \(request.httpMethod ?? "")"
         if configUploadTask { msg += ", uploadTask"}
-        msg += ", url: \(url)"
+        msg += ", url: \(request.url?.description ?? "")"
         
         switch configUploadTask {
         case false:
@@ -573,9 +549,9 @@ open class NetworkService: NetworkServiceType {
                 return nil
             }
             log(msg)
-            request.httpBody = nil
-            
-            let uploadTask = urlSession.uploadTask(with: request, from: httpBody) { (data, response, error) in
+            var updatedRequest = request
+            updatedRequest.httpBody = nil
+            let uploadTask = urlSession.uploadTask(with: updatedRequest, from: httpBody) { (data, response, error) in
                 let response = response as? HTTPURLResponse
                 let statusCode = response?.statusCode
                 
@@ -593,20 +569,13 @@ open class NetworkService: NetworkServiceType {
     }
     
     /// - Parameter uploadTask: To support uploading files, including background uploads. In other POST/PUT cases (e.g. with a json as httpBody), uploadTask can be false and dataTask will be used.
-    public func requestWithStatusCode<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig? = nil, completion: @escaping (Result<(result: T, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable? {
-        
-        guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
-            completion(.failure(NetworkError()))
-            return nil
-        }
-        
+    public func requestWithStatusCode<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig? = nil, completion: @escaping (Result<(result: T, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable? {
         let configUploadTask: Bool = config?.uploadTask ?? defaultConfig.uploadTask!
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        var request = RequestFactory.request(url: url, method: endpoint.method, params: endpoint.params)
-        var msg = "\nNetworkService requestWithStatusCode<T: Decodable> \(endpoint.method.rawValue)"
+        var msg = "\nNetworkService requestWithStatusCode<T: Decodable> \(request.httpMethod ?? "")"
         if configUploadTask { msg += ", uploadTask"}
-        msg += ", url: \(url)"
+        msg += ", url: \(request.url?.description ?? "")"
         
         switch configUploadTask {
         case false:
@@ -616,7 +585,7 @@ open class NetworkService: NetworkServiceType {
                 let statusCode = response?.statusCode
                 
                 if error == nil, (try? self.validate(statusCode, requestValidation: configAutoValidation)) != nil {
-                    guard let data = data, let decoded = ResponseDecodable.decode(type, data: data) else {
+                    guard let data = data, let decoded = try? JSONDecoder().decode(type, from: data) else {
                         completion(.failure(NetworkError(statusCode: statusCode, data: data)))
                         return
                     }
@@ -635,14 +604,14 @@ open class NetworkService: NetworkServiceType {
                 return nil
             }
             log(msg)
-            request.httpBody = nil
-            
-            let uploadTask = urlSession.uploadTask(with: request, from: httpBody) { (data, response, error) in
+            var updatedRequest = request
+            updatedRequest.httpBody = nil
+            let uploadTask = urlSession.uploadTask(with: updatedRequest, from: httpBody) { (data, response, error) in
                 let response = response as? HTTPURLResponse
                 let statusCode = response?.statusCode
                 
                 if error == nil, (try? self.validate(statusCode, requestValidation: configAutoValidation)) != nil {
-                    guard let data = data, let decoded = ResponseDecodable.decode(type, data: data) else {
+                    guard let data = data, let decoded = try? JSONDecoder().decode(type, from: data) else {
                         completion(.failure(NetworkError(statusCode: statusCode, data: data)))
                         return
                     }
@@ -664,7 +633,8 @@ open class NetworkService: NetworkServiceType {
         
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        let request = RequestFactory.request(url: url, method: .GET, params: nil)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         
         let dataTask = urlSession.dataTask(with: request) { (data, response, error) in
             let response = response as? HTTPURLResponse
@@ -692,7 +662,8 @@ open class NetworkService: NetworkServiceType {
         
         let configAutoValidation: Bool = config?.autoValidation ?? defaultConfig.autoValidation!
         
-        let request = RequestFactory.request(url: url, method: .GET, params: nil)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         
         let downloadTask = urlSession.downloadTask(with: request) { (tempLocalUrl, response, error) in
             let response = response as? HTTPURLResponse

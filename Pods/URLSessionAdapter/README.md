@@ -100,14 +100,26 @@ class ActivityRepository {
         self.networkService = networkService
     }
     
-    func getActivity(id: Int) async throws -> Activity
+    func getActivity(id: Int) async -> Result<Activity, CustomError>
         let endpoint = APIEndpoints.getActivity(id: id)
-        return try await networkService.request(endpoint, type: Activity.self)
+        guard let request = RequestFactory.request(endpoint) else { return .failure(customError()) }
+        do {
+            let activity = try await networkService.request(request, type: Activity.self)
+            return .success(activity)
+        } catch {
+            return .failure(error as! CustomError)
+        }
     }
     
-    func createActivity(_ activity: Activity) async throws -> Data? {
+    func createActivity(_ activity: Activity) async -> Result<Data?, CustomError> {
         let endpoint = APIEndpoints.createActivity(activity)
-        return try await networkService.request(endpoint)
+        guard let request = RequestFactory.request(endpoint) else { return .failure(customError()) }
+        do {
+            let data = try await networkService.request(request)
+            return .success(data)
+        } catch {
+            return .failure(error as! CustomError)
+        }
     }
 }
 ```
@@ -115,34 +127,36 @@ class ActivityRepository {
 **API calls:**
 
 ```swift
-let activityRepository = ActivityRepository(networkService: NetworkService())
+let networkService = NetworkService(urlSession: URLSession.shared)
+let activityRepository = ActivityRepository(networkService: networkService)
 
 Task {
-    do {
-        let activity = try await activityRepository.getActivity(id: 1) // -> Activity
+    let result = await activityRepository.getActivity(id: 1)
+    switch result {
+    case .success(let activity):
         ...
-    } catch {
+    case .failure(let error):
         ...
     }
 }
 
 Task {
-    do {
-        // The server returns the id of the created activity
-        if let data = try await activityRepository.createActivity(activity) { // -> Data?
-            if let createdActivityId = Int(String(data: data, encoding: .utf8) ?? "") {
-                ...
-            }
+    // The server returns the id of the created activity
+    let result = await activityRepository.createActivity(activity)
+    switch result {
+    case .success(let data):
+        guard let data = data, 
+              let createdActivityId = Int(String(data: data, encoding: .utf8) ?? "") else {
+            ...
         }
-    } catch {
+        ...
+    case .failure(let error):
         ...
     }
 }
 ```
 
 ```swift
-let networkService = NetworkService()
-
 // To fetch a file:
 let data = try await networkService.fetchFile(url: url)
 guard let image = UIImage(data: data) else {
@@ -156,34 +170,37 @@ guard try await networkService.downloadFile(url: url, to: localUrl) else {
 
 // To upload a file:
 let endpoint = JSONPlaceholderAPI.uploadFile(file)
+guard let request = RequestFactory.request(endpoint) else { return }
 let config = RequestConfig(uploadTask: true)
-let response = try await networkService.request(endpoint, config: config)
+let response = try await networkService.request(request, config: config)
 ```
 
 ```swift
 // To get a result with status code:
 let endpoint = JSONPlaceholderAPI.createPost(post)
-let response = try await networkService.requestWithStatusCode(endpoint, type: Post.self)
+guard let request = RequestFactory.request(endpoint) else { return }
+let response = try await networkService.requestWithStatusCode(request, type: Post.self)
 let post = response.result // Returned created Post
 let statusCode = response.statusCode // Returned 201 status code
 ```
+
+**Validation:**
 
 ```swift
 // By default, any 400-599 status code returned by the server throws a NetworkError:
 do {
     // The server will return status code 404
-    let response = try await networkService.requestWithStatusCode(endpoint)
+    let response = try await networkService.requestWithStatusCode(request)
     ...
 } catch {
-    switch error {
-    case is NetworkError:
+    if error is NetworkError {
         let networkError = error as! NetworkError
         let errorDescription = networkError.error?.localizedDescription
         let errorStatusCode = networkError.statusCode // 404
         let errorDataStr = String(data: networkError.data ?? Data(), encoding: .utf8)!
         ...
-    default:
-        // Handling other network errors
+    } else {
+        // Handling other errors
         ...
     }
 }
@@ -192,7 +209,7 @@ do {
 networkService.autoValidation = false
 do {
     // The server will return status code 404
-    let response = try await networkService.requestWithStatusCode(endpoint)
+    let response = try await networkService.requestWithStatusCode(request)
     let statusCode = response.statusCode // 404
     let resultStr = String(data: response.result ?? Data(), encoding: .utf8)!
 } catch {
@@ -203,7 +220,7 @@ do {
 do {
     // The server will return status code 404
     let config = RequestConfig(autoValidation: false)
-    let response = try await networkService.requestWithStatusCode(endpoint, config: config)
+    let response = try await networkService.requestWithStatusCode(request, config: config)
     let statusCode = response.statusCode // 404
     let resultStr = String(data: response.result ?? Data(), encoding: .utf8)!
 } catch {
@@ -218,25 +235,25 @@ More usage examples can be found in [tests](https://github.com/denissimon/URLSes
 ```swift
 // async/await API
 
-func request(_ endpoint: EndpointType, config: RequestConfig?) async throws -> Data
-func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig?) async throws -> T
+func request(_ request: URLRequest, config: RequestConfig?) async throws -> Data
+func request<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig?) async throws -> T
 func fetchFile(url: URL, config: RequestConfig?) async throws -> Data?
 func downloadFile(url: URL, to localUrl: URL, config: RequestConfig?) async throws -> Bool
 
-func requestWithStatusCode(_ endpoint: EndpointType, config: RequestConfig?) async throws -> (result: Data, statusCode: Int?)
-func requestWithStatusCode<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig?) async throws -> (result: T, statusCode: Int?)
+func requestWithStatusCode(_ request: URLRequest, config: RequestConfig?) async throws -> (result: Data, statusCode: Int?)
+func requestWithStatusCode<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig?) async throws -> (result: T, statusCode: Int?)
 func fetchFileWithStatusCode(url: URL, config: RequestConfig?) async throws -> (result: Data?, statusCode: Int?)
 func downloadFileWithStatusCode(url: URL, to localUrl: URL, config: RequestConfig?) async throws -> (result: Bool, statusCode: Int?)
 
 // callbacks API
 
-func request(_ endpoint: EndpointType, config: RequestConfig?, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable?
-func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig?, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable?
+func request(_ request: URLRequest, config: RequestConfig?, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable?
+func request<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig?, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable?
 func fetchFile(url: URL, config: RequestConfig?, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable?
 func downloadFile(url: URL, to localUrl: URL, config: RequestConfig?, completion: @escaping (Result<Bool, NetworkError>) -> Void) -> NetworkCancellable?
 
-func requestWithStatusCode(_ endpoint: EndpointType, config: RequestConfig?, completion: @escaping (Result<(result: Data?, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
-func requestWithStatusCode<T: Decodable>(_ endpoint: EndpointType, type: T.Type, config: RequestConfig?, completion: @escaping (Result<(result: T, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
+func requestWithStatusCode(_ request: URLRequest, config: RequestConfig?, completion: @escaping (Result<(result: Data?, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
+func requestWithStatusCode<T: Decodable>(_ request: URLRequest, type: T.Type, config: RequestConfig?, completion: @escaping (Result<(result: T, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
 func fetchFileWithStatusCode(url: URL, config: RequestConfig?, completion: @escaping (Result<(result: Data?, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
 func downloadFileWithStatusCode(url: URL, to localUrl: URL, config: RequestConfig?, completion: @escaping (Result<(result: Bool, statusCode: Int?), NetworkError>) -> Void) -> NetworkCancellable?
 ```
