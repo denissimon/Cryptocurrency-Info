@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		410140C32C5D4690002101CE /* SharedEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410140C22C5D4690002101CE /* SharedEvents.swift */; };
 		411B60C52B081BC400185132 /* DefaultAssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60C42B081BC400185132 /* DefaultAssetRepository.swift */; };
 		411B60CD2B08250500185132 /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60CC2B08250500185132 /* AssetRepository.swift */; };
 		411B60D32B08279D00185132 /* URLSessionAPIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60D22B08279D00185132 /* URLSessionAPIInteractor.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		251295414662AE076B4F6B52 /* Pods_CryptocurrencyInfoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptocurrencyInfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27C3187A23994C37235E344E /* Pods_CryptocurrencyInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptocurrencyInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		410140C22C5D4690002101CE /* SharedEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedEvents.swift; sourceTree = "<group>"; };
 		411B60C42B081BC400185132 /* DefaultAssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAssetRepository.swift; sourceTree = "<group>"; };
 		411B60CC2B08250500185132 /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
 		411B60D22B08279D00185132 /* URLSessionAPIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIInteractor.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				419B5BB125D30BAE00443960 /* Supportive.swift */,
 				411EE4772597E81F005A79F3 /* Extensions.swift */,
+				410140C22C5D4690002101CE /* SharedEvents.swift */,
 				414D910E2B72BD74009F37CA /* Protocols */,
 			);
 			path = Utils;
@@ -685,6 +688,7 @@
 				414A52FC2ADC90AD00F92F38 /* MainCoordinator.swift in Sources */,
 				41C7B5BC258F0C9B001305A3 /* AssetCell.swift in Sources */,
 				419D4FC225991BC200C6F1A3 /* FlowCoordinator.swift in Sources */,
+				410140C32C5D4690002101CE /* SharedEvents.swift in Sources */,
 				414A52FA2ADC259300F92F38 /* Storyboarded.swift in Sources */,
 				41D3B58225945259007E76EF /* LinkCell.swift in Sources */,
 				411EE4782597E81F005A79F3 /* Extensions.swift in Sources */,
