@@ -117,10 +117,10 @@
 		6FE5AC375DF768D0F504996CF01B27F7 /* UAObfuscatedString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UAObfuscatedString-prefix.pch"; sourceTree = "<group>"; };
 		75F7BDBCD939ED5E5D1928E2E25FA501 /* URLSessionAdapter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URLSessionAdapter-prefix.pch"; sourceTree = "<group>"; };
 		7C3BD0176F83FBC20D753028482E78E1 /* Pods-CryptocurrencyInfoTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CryptocurrencyInfoTests"; path = Pods_CryptocurrencyInfoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E7338BE89BE1AFCBB7D7E13F9A990AF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Toast/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		7E7338BE89BE1AFCBB7D7E13F9A990AF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Toast/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		864E5E7601D27685AD63E699057D2A09 /* Toast-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		86B35B84CE1F60A0483686EA2B85BB90 /* RequestFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestFactory.swift; path = Sources/URLSessionAdapter/RequestFactory.swift; sourceTree = "<group>"; };
-		89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UAObfuscatedString; path = UAObfuscatedString.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UAObfuscatedString.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB6BF5F3691A798BCE0FF894763D75A /* SwiftEvents-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftEvents-prefix.pch"; sourceTree = "<group>"; };
 		8DED2AD07E1BD2E333C8C5F0655A77D5 /* Pods-CryptocurrencyInfo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CryptocurrencyInfo-umbrella.h"; sourceTree = "<group>"; };
 		8E46C93310DA0C725F22D4BD388FB2FE /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		938D748997B04355C31EF258CF39F05C /* SwiftEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftEvents.release.xcconfig; sourceTree = "<group>"; };
 		9A645699642D1B137101D565B4B5B7E6 /* SwiftEvents.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftEvents.modulemap; sourceTree = "<group>"; };
 		9B02F05BDC9088A436443DC1DF08D875 /* Pods-CryptocurrencyInfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptocurrencyInfoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1A0007D7483194E0F65E3870E691262 /* Pods-CryptocurrencyInfoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CryptocurrencyInfoTests.release.xcconfig"; sourceTree = "<group>"; };
 		AACAE0B1B37897067F738D7CD0536003 /* Pods-CryptocurrencyInfo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CryptocurrencyInfo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B6644B18BFEB8BD933EE2DEDB622B88F /* UAObfuscatedString-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UAObfuscatedString-Info.plist"; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 				126132322B30DFD6B3C0F38C0165EC80 /* SwiftEvents */,
 				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */,
 				13FD39576595D8A884BF5166065C5236 /* Toast-Swift-Toast-Swift */,
-				89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString */,
+				89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString.framework */,
 				15F69F3C73197C9FCA0624B6EF63CB89 /* URLSessionAdapter */,
 			);
 			name = Products;
@@ -256,7 +256,6 @@
 				F4182C22FF8BC29D6FC532F9D0E1425B /* SwiftEvents.swift */,
 				64FE1DE4E790DC584C67BF62000125E1 /* Support Files */,
 			);
-			name = SwiftEvents;
 			path = SwiftEvents;
 			sourceTree = "<group>";
 		};
@@ -276,7 +275,6 @@
 				D30C9AA7B4D294761B6D0E904449A2B2 /* Resources */,
 				8E8C1F76099D1E0505B103FC9CAC62AC /* Support Files */,
 			);
-			name = "Toast-Swift";
 			path = "Toast-Swift";
 			sourceTree = "<group>";
 		};
@@ -348,7 +346,6 @@
 				86B35B84CE1F60A0483686EA2B85BB90 /* RequestFactory.swift */,
 				9280A72CEE8556B0C5A009B26A33D13D /* Support Files */,
 			);
-			name = URLSessionAdapter;
 			path = URLSessionAdapter;
 			sourceTree = "<group>";
 		};
@@ -403,7 +400,6 @@
 				0C8DEC96D0C78926497016180B5A9CCC /* UAObfuscatedString.swift */,
 				1784190C24610228F00CCA068F092B14 /* Support Files */,
 			);
-			name = UAObfuscatedString;
 			path = UAObfuscatedString;
 			sourceTree = "<group>";
 		};
@@ -569,7 +565,7 @@
 			);
 			name = UAObfuscatedString;
 			productName = UAObfuscatedString;
-			productReference = 89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString */;
+			productReference = 89DD03093B2E1F4F5D8F92D16831ACA3 /* UAObfuscatedString.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */ = {
@@ -817,7 +813,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UAObfuscatedString/UAObfuscatedString-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UAObfuscatedString/UAObfuscatedString-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1031,7 +1027,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UAObfuscatedString/UAObfuscatedString-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UAObfuscatedString/UAObfuscatedString-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
