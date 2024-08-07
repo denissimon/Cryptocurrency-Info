@@ -17,10 +17,22 @@ class URLSessionAPIInteractor: APIInteractor {
     }
     
     func request(_ endpoint: EndpointType, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable? {
-        return urlSessionAdapter.request(endpoint, completion: completion)
+        guard let request = RequestFactory.request(endpoint),
+              let networkCancellable = urlSessionAdapter.request(request, completion: completion) else {
+            completion(.failure(NetworkError()))
+            return nil
+        }
+        return networkCancellable
     }
     
     func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable? {
-        return urlSessionAdapter.request(endpoint, type: type, completion: completion)
+        guard let request = RequestFactory.request(endpoint),
+              let networkCancellable = urlSessionAdapter.request(request, type: type, completion: completion) else {
+            completion(.failure(NetworkError()))
+            return nil
+        }
+        return networkCancellable
     }
 }
+
+
