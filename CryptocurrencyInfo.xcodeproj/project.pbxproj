@@ -220,6 +220,7 @@
 		414A52F62ADC1DF900F92F38 /* AssetsFeature */ = {
 			isa = PBXGroup;
 			children = (
+				414A52FB2ADC90AD00F92F38 /* MainCoordinator.swift */,
 				41DF42E1258E37F2005EBE0E /* Models */,
 				41DF42FB258E6194005EBE0E /* AssetsList */,
 				41C7B5CD2590B778001305A3 /* AssetDetails */,
@@ -261,7 +262,6 @@
 				414A53012AE3445900F92F38 /* DIContainer */,
 				419D4FC125991BC200C6F1A3 /* FlowCoordinator.swift */,
 				419D4FC625991C1E00C6F1A3 /* AppCoordinator.swift */,
-				414A52FB2ADC90AD00F92F38 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
