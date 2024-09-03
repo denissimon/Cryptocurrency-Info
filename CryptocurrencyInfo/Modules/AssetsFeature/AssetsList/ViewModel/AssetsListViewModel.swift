@@ -42,7 +42,7 @@ class AssetsListViewModel {
         }
     }
     
-    private func onNetworkError(_ msg: String = "") {
+    private func showError(_ msg: String = "") {
         if !msg.isEmpty {
             makeToast.value = msg
         }
@@ -74,15 +74,15 @@ class AssetsListViewModel {
                 self.activityIndicatorVisibility.value = false
             case .failure(let error):
                 if error.error != nil {
-                    self.onNetworkError(error.error!.localizedDescription)
+                    self.showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.onNetworkError("Next page not found")
+                        self.showError("Next page not found")
                     } else {
-                        self.onNetworkError()
+                        self.showError()
                     }
                 } else {
-                    self.onNetworkError()
+                    self.showError()
                 }
             }
             

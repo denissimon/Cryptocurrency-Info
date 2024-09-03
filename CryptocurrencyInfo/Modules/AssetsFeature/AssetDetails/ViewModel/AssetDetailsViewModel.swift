@@ -25,7 +25,7 @@ class AssetDetailsViewModel {
         self.priceRepository = priceRepository
     }
     
-    private func onNetworkError(_ msg: String = "") {
+    private func showError(_ msg: String = "") {
         if !msg.isEmpty {
             makeToast.value = msg
         }
@@ -50,19 +50,19 @@ class AssetDetailsViewModel {
                     self.data.value = Details(asset: self.data.value.asset, profile: updatedProfile)
                     self.activityIndicatorVisibility.value = false
                 } else {
-                    self.onNetworkError()
+                    self.showError()
                 }
             case .failure(let error):
                 if error.error != nil {
-                    self.onNetworkError(error.error!.localizedDescription)
+                    self.showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.onNetworkError("Profile data not found")
+                        self.showError("Profile data not found")
                     } else {
-                        self.onNetworkError()
+                        self.showError()
                     }
                 } else {
-                    self.onNetworkError()
+                    self.showError()
                 }
             }
         }
@@ -99,19 +99,19 @@ class AssetDetailsViewModel {
                 if let projectDetails = profile.projectDetails {
                     updatedProfile?.projectDetails = self.editLinksInProjectDetails(projectDetails)
                 } else {
-                    self.onNetworkError()
+                    self.showError()
                 }
             case .failure(let error):
                 if error.error != nil {
-                    self.onNetworkError(error.error!.localizedDescription)
+                    self.showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.onNetworkError("Profile data not found")
+                        self.showError("Profile data not found")
                     } else {
-                        self.onNetworkError()
+                        self.showError()
                     }
                 } else {
-                    self.onNetworkError()
+                    self.showError()
                 }
                 return
             }
@@ -124,15 +124,15 @@ class AssetDetailsViewModel {
                 }
             case .failure(let error):
                 if error.error != nil {
-                    self.onNetworkError(error.error!.localizedDescription)
+                    self.showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.onNetworkError("Asset data not found")
+                        self.showError("Asset data not found")
                     } else {
-                        self.onNetworkError()
+                        self.showError()
                     }
                 } else {
-                    self.onNetworkError()
+                    self.showError()
                 }
                 return
             }
