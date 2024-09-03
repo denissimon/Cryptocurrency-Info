@@ -70,7 +70,7 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
             self?.tableView.reloadData()
         }
         
-        viewModel.showToast.bind(self, queue: .main) { [weak self] message in
+        viewModel.makeToast.bind(self, queue: .main) { [weak self] message in
             guard !message.isEmpty else { return }
             self?.makeToast(message: message)
         }

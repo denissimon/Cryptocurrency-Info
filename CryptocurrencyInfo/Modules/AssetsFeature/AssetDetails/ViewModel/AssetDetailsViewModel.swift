@@ -15,7 +15,7 @@ class AssetDetailsViewModel {
     
     // Bindings
     let data: Observable<Details> = Observable(Details())
-    let showToast: Observable<String> = Observable("")
+    let makeToast: Observable<String> = Observable("")
     let priceCurrency: Observable<PriceCurrency> = Observable(AppConfiguration.Other.selectedCurrency)
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
     
@@ -27,7 +27,7 @@ class AssetDetailsViewModel {
     
     private func onNetworkError(_ msg: String = "") {
         if !msg.isEmpty {
-            showToast.value = msg
+            makeToast.value = msg
         }
         self.activityIndicatorVisibility.value = false
     }

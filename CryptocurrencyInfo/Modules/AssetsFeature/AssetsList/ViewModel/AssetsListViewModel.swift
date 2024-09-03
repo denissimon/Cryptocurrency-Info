@@ -16,7 +16,7 @@ class AssetsListViewModel {
     var data: Observable<[Asset]> = Observable([])
     private var dataCopy = [Asset]()
     var priceCurrency: Observable<PriceCurrency> = Observable(AppConfiguration.Other.selectedCurrency)
-    let showToast: Observable<String> = Observable("")
+    let makeToast: Observable<String> = Observable("")
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
     let getAssetsCompletionHandler: Observable<Bool?> = Observable(nil)
     
@@ -44,7 +44,7 @@ class AssetsListViewModel {
     
     private func onNetworkError(_ msg: String = "") {
         if !msg.isEmpty {
-            showToast.value = msg
+            makeToast.value = msg
         }
         self.activityIndicatorVisibility.value = false
     }
