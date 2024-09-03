@@ -29,7 +29,7 @@ class AssetDetailsViewModelTests: XCTestCase {
             self.data = data
         }
         
-        assetDetailsViewModel.showToast.bind(self) { (text) in
+        assetDetailsViewModel.makeToast.bind(self) { (text) in
             if !text.isEmpty {
                 self.toastResult = text
             }
@@ -62,7 +62,7 @@ class AssetDetailsViewModelTests: XCTestCase {
         XCTAssertNotNil(data)
         XCTAssertEqual(data!.asset?.name, "Bitcoin")
         
-        assetDetailsViewModel.showToast.value = "Some new text for toast"
+        assetDetailsViewModel.makeToast.value = "Some new text for toast"
         XCTAssertEqual(toastResult, "Some new text for toast")
         
         assetDetailsViewModel.priceCurrency.value = .EUR
