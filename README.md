@@ -9,8 +9,6 @@ The app shows cryptocurrency prices and other related info. Built with Messari A
 
 It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is loaded in batches.
 
-Includes unit tests.
-
 <table> 
   <tr>
     <td> <img src="Screenshots/1_Cryptocurrency-Info.png" width = 252px></td>
@@ -19,17 +17,15 @@ Includes unit tests.
   </tr>
 </table>
 
-#### Architecture concepts used here:
+### Architecture concepts used here
 
 - [Layered Architecture][LayeredArchitectureLink]
 - [MVVM][MVVMLink]
-- [Flow coordinator][FlowCoordinatorLink] implemented with protocol-based delegation
+- [Flow coordinator][FlowCoordinatorLink]
 - [Dependency Injection][DIContainerLink], DIContainer
 - [Data Binding][DataBindingLink] using the lightweight Observable\<T\>
 - [Closure-based delegation][ClosureBasedDelegationLink] using the lightweight Event\<T\>
-- [async/await][AsyncAwaitLink] with the existing Transport Layer remaining unchanged
-- Reusable data source for [UITableView][UITableViewDataSourceLink]
-- [Codable][CodableLink]
+- [Reusable data sources][DataSourceLink]
 
 [LayeredArchitectureLink]: https://en.wikipedia.org/wiki/Multitier_architecture
 [MVVMLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails
@@ -37,11 +33,20 @@ Includes unit tests.
 [DIContainerLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Coordinator/DIContainer/DIContainer.swift
 [DataBindingLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/ViewModel/AssetsListViewModel.swift
 [ClosureBasedDelegationLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
+[DataSourceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
+
+### Includes
+
+- [async/await][AsyncAwaitLink] with the existing Infrastructure remaining unchanged
+- [Shared events service][SharedEventsLink]
+- Advanced using of [Codable][CodableLink]
+- Unit tests
+
 [AsyncAwaitLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Data/Repositories
-[UITableViewDataSourceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
+[SharedEventsLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Common/Utils/SharedEvents.swift
 [CodableLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails/Models/Profile.swift
 
-#### Built with:
+### Built with
 
 - [SwiftEvents](https://github.com/denissimon/SwiftEvents) - The easiest way to implement data binding and notifications. Includes Event\<T\> and Observable\<T\>. Has a thread-safe version.
 - [URLSessionAdapter](https://github.com/denissimon/URLSessionAdapter) - A Codable wrapper around URLSession for networking.
@@ -50,6 +55,6 @@ Includes unit tests.
 
 The dependency manager is [CocoaPods](https://cocoapods.org). Run `pod update` to update pods.
 
-#### Requirements:
+### Requirements
 
 iOS version support: 15.0+. Xcode 13.0+, Swift 5.5+
