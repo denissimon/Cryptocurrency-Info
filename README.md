@@ -40,6 +40,7 @@ It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is
 - [async/await][AsyncAwaitLink] with the existing Infrastructure remaining unchanged
 - [Shared events service][SharedEventsLink]
 - Advanced using of [Codable][CodableLink]
+- Localization
 - Unit tests
 
 [AsyncAwaitLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Data/Repositories
