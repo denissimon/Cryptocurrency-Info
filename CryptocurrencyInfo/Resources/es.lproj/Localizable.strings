@@ -1,0 +1,15 @@
+//
+//  Localizable.strings
+//  CryptocurrencyInfo
+//
+//  Created by Denis Simon on 05.09.2024.
+//
+
+"Today's Cryptocurrency Info" = "Información sobre criptomonedas de hoy";
+"Search" = "Buscar";
+"Back" = "Atrás";
+"Next page not found" = "Página siguiente no encontrada";
+"Profile data not found" = "Datos de perfil no encontrados";
+"Asset data not found" = "Datos de activos no encontrados";
+"About" = "Sobre";
+"Links" = "Enlaces";

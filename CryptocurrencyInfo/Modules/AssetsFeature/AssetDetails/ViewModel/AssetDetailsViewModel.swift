@@ -57,7 +57,7 @@ class AssetDetailsViewModel {
                     self.showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.showError("Profile data not found")
+                        self.showError(NSLocalizedString("Profile data not found", comment: ""))
                     } else {
                         self.showError()
                     }
@@ -106,7 +106,7 @@ class AssetDetailsViewModel {
                     self.showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.showError("Profile data not found")
+                        self.showError(NSLocalizedString("Profile data not found", comment: ""))
                     } else {
                         self.showError()
                     }
@@ -127,7 +127,7 @@ class AssetDetailsViewModel {
                     self.showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.showError("Asset data not found")
+                        self.showError(NSLocalizedString("Asset data not found", comment: ""))
                     } else {
                         self.showError()
                     }

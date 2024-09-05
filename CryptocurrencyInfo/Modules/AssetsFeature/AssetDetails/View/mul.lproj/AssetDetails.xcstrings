@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "EGW-hG-Bjt.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"BTC\"; ObjectID = \"EGW-hG-Bjt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "BTC"
+          }
+        }
+      }
+    },
+    "IWb-5x-yfo.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Bitcoin\"; ObjectID = \"IWb-5x-yfo\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bitcoin"
+          }
+        }
+      }
+    },
+    "Mkb-nI-IRq.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Link\"; ObjectID = \"Mkb-nI-IRq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Link"
+          }
+        }
+      }
+    },
+    "MZI-Pt-8HS.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"About project\"; ObjectID = \"MZI-Pt-8HS\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About project"
+          }
+        }
+      }
+    },
+    "S4M-RN-NND.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"$price\"; ObjectID = \"S4M-RN-NND\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "$price"
+          }
+        }
+      }
+    },
+    "wFi-IB-us9.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"A peer-to-peer electronic cash system\"; ObjectID = \"wFi-IB-us9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A peer-to-peer electronic cash system"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

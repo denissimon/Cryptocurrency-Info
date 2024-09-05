@@ -108,6 +108,8 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
     // MARK: - Private
     
     private func prepareUI() {
+        title = viewModel.screenTitle
+        
         tableView.rowHeight = CGFloat(AppConfiguration.Other.tableCellDefaultHeight)
         tableView.estimatedRowHeight = CGFloat(AppConfiguration.Other.tableCellDefaultHeight)
         
@@ -118,9 +120,10 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
         }
         
         let backItem = UIBarButtonItem()
-        backItem.title = "Back"
+        backItem.title = NSLocalizedString("Back", comment: "")
         self.navigationItem.backBarButtonItem = backItem
         
+        searchBar.placeholder = NSLocalizedString("Search", comment: "")
         searchBar.sizeToFit()
     }
     

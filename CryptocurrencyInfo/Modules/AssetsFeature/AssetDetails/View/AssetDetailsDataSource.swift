@@ -154,9 +154,9 @@ extension AssetDetailsDataSource: UITableViewDataSource {
         if section == 0 {
             return nil
         } else if section == 1 {
-            return "About"
+            return NSLocalizedString("About", comment: "")
         } else if section == 2 {
-            return "Links"
+            return NSLocalizedString("Links", comment: "")
         }
         return nil
     }

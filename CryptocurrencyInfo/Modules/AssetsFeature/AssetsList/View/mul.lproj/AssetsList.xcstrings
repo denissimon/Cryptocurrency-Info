@@ -1,0 +1,66 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "oF3-Rh-oFc.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"$price\"; ObjectID = \"oF3-Rh-oFc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "$price"
+          }
+        }
+      }
+    },
+    "OQ0-kn-xlk.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Bitcoin\"; ObjectID = \"OQ0-kn-xlk\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bitcoin"
+          }
+        }
+      }
+    },
+    "uZt-nx-oSk.title" : {
+      "comment" : "Class = \"UINavigationItem\"; title = \"Today's Cryptocurrency Info\"; ObjectID = \"uZt-nx-oSk\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Today's Cryptocurrency Info"
+          }
+        }
+      }
+    },
+    "yLf-2i-7R4.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"BTC\"; ObjectID = \"yLf-2i-7R4\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "BTC"
+          }
+        }
+      }
+    },
+    "Yvm-3y-muD.placeholder" : {
+      "comment" : "Class = \"UISearchBar\"; placeholder = \"Search\"; ObjectID = \"Yvm-3y-muD\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Search"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

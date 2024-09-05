@@ -24,6 +24,8 @@ class AssetsListViewModel {
     private(set) var assetsAreLoadingFromServer = false
     var searchMode = false
     
+    let screenTitle = NSLocalizedString("Today's Cryptocurrency Info", comment: "")
+    
     init(assetRepository: AssetRepository) {
         self.assetRepository = assetRepository
         bind()
@@ -77,7 +79,7 @@ class AssetsListViewModel {
                     self.showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.showError("Next page not found")
+                        self.showError(NSLocalizedString("Next page not found", comment: ""))
                     } else {
                         self.showError()
                     }
