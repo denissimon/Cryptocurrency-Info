@@ -14,6 +14,7 @@ It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is
     <td> <img src="Screenshots/1_Cryptocurrency-Info.png" width = 252px></td>
     <td> <img src="Screenshots/2_Cryptocurrency-Info.png" width = 252px></td>
     <td> <img src="Screenshots/3_Cryptocurrency-Info.png" width = 252px></td>
+    <td> <img src="Screenshots/4_Cryptocurrency-Info.png" width = 252px></td>
   </tr>
 </table>
 
