@@ -48,7 +48,7 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
-            self.tableView.deselectRow(at: indexPathForSelectedRow, animated: true)
+            tableView.deselectRow(at: indexPathForSelectedRow, animated: true)
         }
     }
     
@@ -121,7 +121,7 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
         
         let backItem = UIBarButtonItem()
         backItem.title = NSLocalizedString("Back", comment: "")
-        self.navigationItem.backBarButtonItem = backItem
+        navigationItem.backBarButtonItem = backItem
         
         searchBar.placeholder = NSLocalizedString("Search", comment: "")
         searchBar.sizeToFit()
