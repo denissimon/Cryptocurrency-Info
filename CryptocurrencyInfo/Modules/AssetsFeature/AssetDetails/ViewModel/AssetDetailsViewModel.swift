@@ -29,14 +29,16 @@ class AssetDetailsViewModel {
         if !msg.isEmpty {
             makeToast.value = msg
         }
-        self.activityIndicatorVisibility.value = false
+        activityIndicatorVisibility.value = false
     }
     
     func getDataSource() -> AssetDetailsDataSource {
-        return AssetDetailsDataSource(with: data.value)
+        AssetDetailsDataSource(with: data.value)
     }
     
-    func getProfile(asset: String) {
+    func getProfile() {
+        guard let asset = data.value.asset?.symbol else { return }
+        
         activityIndicatorVisibility.value = true
         
         Task.detached {
@@ -82,7 +84,9 @@ class AssetDetailsViewModel {
         return regex.stringByReplacingMatches(in: projectDetails, options: [], range: NSRange(0..<projectDetails.utf16.count), withTemplate: "")
     }
     
-    func updateData(asset: String) {
+    func updateData() {
+        guard let asset = data.value.asset?.symbol else { return }
+        
         activityIndicatorVisibility.value = true
         
         Task.detached {
