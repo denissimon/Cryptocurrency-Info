@@ -31,9 +31,7 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
         setup()
         prepareUI()
         
-        if let asset = dataSource?.data.asset {
-            viewModel.getProfile(asset: asset.symbol)
-        }
+        viewModel.getProfile()
     }
     
     private func setup() {
@@ -73,9 +71,7 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
     // MARK: - Private
     
     private func prepareUI() {
-        if let asset = dataSource?.data.asset {
-            self.navigationItem.title = asset.name
-        }
+        navigationItem.title = viewModel.data.value.asset?.name
         
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
@@ -92,9 +88,7 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
     }
     
     @objc private func updateData(_ sender: Any) {
-        if let asset = dataSource?.data.asset {
-            viewModel.updateData(asset: asset.symbol)
-        }
+        viewModel.updateData()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.refreshControl.endRefreshing()
         }
