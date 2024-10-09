@@ -48,11 +48,11 @@ class AssetsListViewModel {
         if !msg.isEmpty {
             makeToast.value = msg
         }
-        self.activityIndicatorVisibility.value = false
+        activityIndicatorVisibility.value = false
     }
     
     func getDataSource() -> AssetsListDataSource {
-        return AssetsListDataSource(with: data.value)
+        AssetsListDataSource(with: data.value)
     }
     
     func getAssets(page: Int) {
@@ -93,11 +93,11 @@ class AssetsListViewModel {
     }
     
     func clearData() {
-        self.data.value.removeAll()
+        data.value.removeAll()
     }
     
     func setAssetsAreLoadingFromServer(_ newValue: Bool) {
-        self.assetsAreLoadingFromServer = newValue
+        assetsAreLoadingFromServer = newValue
     }
     
     func searchAsset(_ searchText: String) {
