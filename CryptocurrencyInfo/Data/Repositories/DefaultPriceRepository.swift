@@ -16,16 +16,16 @@ class DefaultPriceRepository: PriceRepository {
         self.apiInteractor = apiInteractor
     }
     
-    private func getPrice(asset: String, completionHandler: @escaping (Result<Price, NetworkError>) -> Void) {
-        let endpoint = MessariAPI.price(asset: asset)
+    private func getPrice(symbol: String, completionHandler: @escaping (Result<Price, NetworkError>) -> Void) {
+        let endpoint = MessariAPI.price(symbol: symbol)
         apiInteractor.request(endpoint, type: Price.self) { result in
             completionHandler(result)
         }
     }
     
-    func getPrice(asset: String) async -> Result<Price, NetworkError> {
+    func getPrice(symbol: String) async -> Result<Price, NetworkError> {
         await withCheckedContinuation { continuation in
-            getPrice(asset: asset) { result in
+            getPrice(symbol: symbol) { result in
                 continuation.resume(returning: result)
             }
         }

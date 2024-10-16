@@ -10,5 +10,5 @@ import URLSessionAdapter
 protocol ProfileRepository {
     typealias ProfileResult = Result<Profile, NetworkError>
     
-    func getProfile(asset: String) async -> ProfileResult
+    func getProfile(symbol: String) async -> ProfileResult
 }

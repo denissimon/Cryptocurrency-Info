@@ -31,8 +31,8 @@ struct MessariAPI {
             params: params)
     }
     
-    static func profile(asset: String) -> EndpointType {
-        let path = "/v2/assets/\(asset)/profile?fields=profile/general/overview/tagline,profile/general/overview/project_details,profile/general/overview/official_links"
+    static func profile(symbol: String) -> EndpointType {
+        let path = "/v2/assets/\(symbol)/profile?fields=profile/general/overview/tagline,profile/general/overview/project_details,profile/general/overview/official_links"
         
         let params = MessariAPI.defaultParams
         
@@ -43,8 +43,8 @@ struct MessariAPI {
             params: params)
     }
     
-    static func price(asset: String) -> EndpointType {
-        let path = "/v1/assets/\(asset)/metrics/market-data"
+    static func price(symbol: String) -> EndpointType {
+        let path = "/v1/assets/\(symbol)/metrics/market-data"
         
         let params = MessariAPI.defaultParams
         

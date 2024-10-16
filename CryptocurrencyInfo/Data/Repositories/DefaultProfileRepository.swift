@@ -16,16 +16,16 @@ class DefaultProfileRepository: ProfileRepository {
         self.apiInteractor = apiInteractor
     }
     
-    private func getProfile(asset: String, completionHandler: @escaping (Result<Profile, NetworkError>) -> Void) {
-        let endpoint = MessariAPI.profile(asset: asset)
+    private func getProfile(symbol: String, completionHandler: @escaping (Result<Profile, NetworkError>) -> Void) {
+        let endpoint = MessariAPI.profile(symbol: symbol)
         apiInteractor.request(endpoint, type: Profile.self) { result in
             completionHandler(result)
         }
     }
     
-    func getProfile(asset: String) async -> Result<Profile, NetworkError> {
+    func getProfile(symbol: String) async -> Result<Profile, NetworkError> {
         await withCheckedContinuation { continuation in
-            getProfile(asset: asset) { result in
+            getProfile(symbol: symbol) { result in
                 continuation.resume(returning: result)
             }
         }
