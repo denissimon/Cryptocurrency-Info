@@ -37,12 +37,12 @@ class AssetDetailsViewModel {
     }
     
     func getProfile() {
-        guard let asset = data.value.asset?.symbol else { return }
+        guard let symbol = data.value.asset?.symbol else { return }
         
         activityIndicatorVisibility.value = true
         
         Task.detached {
-            let result = await self.profileRepository.getProfile(asset: asset)
+            let result = await self.profileRepository.getProfile(symbol: symbol)
             
             switch result {
             case .success(let profile):
@@ -85,13 +85,13 @@ class AssetDetailsViewModel {
     }
     
     func updateData() {
-        guard let asset = data.value.asset?.symbol else { return }
+        guard let symbol = data.value.asset?.symbol else { return }
         
         activityIndicatorVisibility.value = true
         
         Task.detached {
-            async let profile = self.profileRepository.getProfile(asset: asset)
-            async let price = self.priceRepository.getPrice(asset: asset)
+            async let profile = self.profileRepository.getProfile(symbol: symbol)
+            async let price = self.priceRepository.getPrice(symbol: symbol)
             
             let details = await (profile: profile, price: price)
             
