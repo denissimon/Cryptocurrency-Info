@@ -17,7 +17,7 @@ struct AppConfiguration {
     }
     
     struct Settings {
-        static var selectedCurrency: PriceCurrency = .USD // TODO: Update when the app starts, taking the stored value from the local database
+        static var selectedCurrency: Currency = .USD // TODO: Update when the app starts, taking the stored value from the local database
     }
     
     struct Other {

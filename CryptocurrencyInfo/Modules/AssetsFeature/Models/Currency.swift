@@ -1,5 +1,5 @@
 //
-//  PriceCurrency.swift
+//  Currency.swift
 //  CryptocurrencyInfo
 //
 //  Created by Denis Simon on 20.12.2020.
@@ -7,47 +7,87 @@
 
 // https://gist.github.com/denissimon/cec7f01f89a2d4234cb2966b34726c77
 
-enum PriceCurrency: String, CustomStringConvertible {
-    case AED = "د.إ" // UAE dirham
-    case ARS = "ARG$" // Argentine peso
-    case AUD = "A$" // Australian dollar
-    case BGN = "BGN" // Bulgarian lev
-    case BHD = ".د.ب" // Bahraini dinar
-    case BRL = "R$" // Brazilian real
-    case CAD = "C$" // Canadian dollar
-    case CHF = "CHF" // Swiss franc
-    case CLP = "CLP$" // Chilean peso
-    case CNH = "CNH" // Chinese renminbi
-    case CNY = "¥/元" // Chinese renminbi
-    case COP = "COL$" // Colombian peso
-    case CZK = "Kč" // Czech koruna
-    case DKK = "DKK" // Danish krone
-    case EUR = "€" // Euro
-    case GBP = "£" // Pound sterling
-    case HKD = "HK$" // Hong Kong dollar
-    case HUF = "Ft" // Hungarian forint
-    case IDR = "Rp" // Indonesian rupiah
-    case ILS = "₪" // Israeli new shekel
-    case INR = "₹" // Indian rupee
-    case JPY = "¥/円" // Japanese yen
-    case KRW = "₩" // South Korean won
-    case MXN = "MXN" // Mexican peso
-    case MYR = "RM" // Malaysian ringgit
-    case NOK = "NOK" // Norwegian krone
-    case NZD = "NZ$" // New Zealand dollar
-    case PEN = "S/" // Peruvian solBahraini dinar
-    case PHP = "₱" // Philippine peso
-    case PLN = "zł" // Polish złoty
-    case RON = "L" // Romanian leu
-    case RUB = "₽" // Russian ruble
-    case SAR = "﷼" // Saudi riyal
-    case SEK = "SEK" // Swedish krona
-    case SGD = "S$" // Singapore dollar
-    case THB = "฿" // Thai baht
-    case TRY = "₺" // Turkish lira
-    case TWD = "NT$" // New Taiwan dollar
-    case USD = "$" // U.S. dollar
-    case ZAR = "R" // South African rand
+enum Currency: String, Codable, CustomStringConvertible {
+    /// UAE dirham
+    case AED = "د.إ"
+    /// Argentine peso
+    case ARS = "ARG$"
+    /// Australian dollar
+    case AUD = "A$"
+    /// Bulgarian lev
+    case BGN = "BGN"
+    /// Bahraini dinar
+    case BHD = ".د.ب"
+    /// Brazilian real
+    case BRL = "R$"
+    /// Canadian dollar
+    case CAD = "C$"
+    /// Swiss franc
+    case CHF = "CHF"
+    /// Chilean peso
+    case CLP = "CLP$"
+    /// Chinese renminbi
+    case CNH = "CNH"
+    /// Chinese renminbi
+    case CNY = "¥/元"
+    /// Colombian peso
+    case COP = "COL$"
+    /// Czech koruna
+    case CZK = "Kč"
+    /// Danish krone
+    case DKK = "DKK"
+    /// Euro
+    case EUR = "€"
+    /// Pound sterling
+    case GBP = "£"
+    /// Hong Kong dollar
+    case HKD = "HK$"
+    /// Hungarian forint
+    case HUF = "Ft"
+    /// Indonesian rupiah
+    case IDR = "Rp"
+    /// Israeli new shekel
+    case ILS = "₪"
+    /// Indian rupee
+    case INR = "₹"
+    /// Japanese yen
+    case JPY = "¥/円"
+    /// South Korean won
+    case KRW = "₩"
+    /// Mexican peso
+    case MXN = "MXN"
+    /// Malaysian ringgit
+    case MYR = "RM"
+    /// Norwegian krone
+    case NOK = "NOK"
+    /// New Zealand dollar
+    case NZD = "NZ$"
+    /// Peruvian solBahraini dinar
+    case PEN = "S/"
+    /// Philippine peso
+    case PHP = "₱"
+    /// Polish złoty
+    case PLN = "zł"
+    /// Romanian leu
+    case RON = "L"
+    /// Russian ruble
+    case RUB = "₽"
+    /// Saudi riyal
+    case SAR = "﷼"
+    /// Swedish krona
+    case SEK = "SEK"
+    /// Singapore dollar
+    case SGD = "S$"
+    /// Thai baht
+    case THB = "฿"
+    /// Turkish lira
+    case TRY = "₺"
+    /// New Taiwan dollar
+    case TWD = "NT$"
+    /// U.S. dollar
+    case USD = "$"
+    /// South African rand
+    case ZAR = "R"
     
     var description: String {
         switch self {
