@@ -20,3 +20,12 @@ extension Decimal {
         return result
     }
 }
+
+extension NumberFormatter {
+    static var currencyFormatter: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: AppConfiguration.Settings.selectedCurrency.local)
+        return formatter
+    }
+}
