@@ -35,10 +35,6 @@ class AssetsListViewModelTests: XCTestCase {
             }
         }
         
-        assetsListViewModel.priceCurrency.bind(self) { [weak self] priceCurrency in
-            self?.priceCurrencyResult = priceCurrency
-        }
-        
         assetsListViewModel.getAssetsCompletionHandler.bind(self) { [weak self] value in
             self?.assetsCompletionHandlerResult = value
         }
@@ -71,8 +67,8 @@ class AssetsListViewModelTests: XCTestCase {
         assetsListViewModel.makeToast.value = "Some text for toast"
         XCTAssertEqual(toastResult, "Some text for toast")
         
-        assetsListViewModel.priceCurrency.value = .EUR
-        XCTAssertEqual(priceCurrencyResult, .EUR)
+        assetsListViewModel.updateSelectedCurrency(.EUR)
+        XCTAssertEqual(AppConfiguration.Settings.selectedCurrency, .EUR)
         
         assetsListViewModel.getAssetsCompletionHandler.value = true
         XCTAssertEqual(assetsCompletionHandlerResult, true)

@@ -16,7 +16,6 @@ class AssetDetailsViewModelTests: XCTestCase {
     
     var data: Details? = nil
     var toastResult: String? = nil
-    var priceCurrencyResult: PriceCurrency? = nil
     var activityIndicatorVisibilityResult: Bool? = nil
     
     override func setUpWithError() throws {
@@ -35,10 +34,6 @@ class AssetDetailsViewModelTests: XCTestCase {
             }
         }
         
-        assetDetailsViewModel.priceCurrency.bind(self) { (priceCurrency) in
-            self.priceCurrencyResult = priceCurrency
-        }
-        
         assetDetailsViewModel.activityIndicatorVisibility.bind(self) { (value) in
             self.activityIndicatorVisibilityResult = value
         }
@@ -50,7 +45,6 @@ class AssetDetailsViewModelTests: XCTestCase {
         assetDetailsViewModel = nil
         data = nil
         toastResult = nil
-        priceCurrencyResult = nil
         activityIndicatorVisibilityResult = nil
     }
 
@@ -64,9 +58,6 @@ class AssetDetailsViewModelTests: XCTestCase {
         
         assetDetailsViewModel.makeToast.value = "Some new text for toast"
         XCTAssertEqual(toastResult, "Some new text for toast")
-        
-        assetDetailsViewModel.priceCurrency.value = .EUR
-        XCTAssertEqual(priceCurrencyResult, .EUR)
         
         assetDetailsViewModel.activityIndicatorVisibility.value = false
         XCTAssertEqual(activityIndicatorVisibilityResult, false)
