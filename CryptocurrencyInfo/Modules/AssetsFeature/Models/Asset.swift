@@ -8,9 +8,14 @@
 import Foundation
 
 class Asset: Codable {
+    /// E.g. "BTC"
     let symbol: String
+    /// E.g. "Bitcoin"
     let name: String
+    /// The value from Messari API
     var priceUsd: Decimal
+    /// Preparing data to display based on priceUsd and AppConfiguration.Settings.selectedCurrency (assumed to be user changeable). If includes conversion from USD to another currency available for selection.
+    var price: Money
     
     enum CodingKeys: String, CodingKey {
         case symbol
@@ -26,10 +31,11 @@ class Asset: Codable {
         }
     }
     
-    init(symbol: String, name: String, priceUsd: Decimal) {
+    init(symbol: String, name: String, priceUsd: Decimal, price: Money) {
         self.symbol = symbol
         self.name = name
         self.priceUsd = priceUsd
+        self.price = price
     }
     
     required init(from decoder: Decoder) throws {
@@ -40,6 +46,7 @@ class Asset: Codable {
         let metrics = try values.nestedContainer(keyedBy: MetricsKeys.self, forKey: .metrics)
         let marketData = try metrics.nestedContainer(keyedBy: MetricsKeys.MarketDataKeys.self, forKey: .marketData)
         priceUsd = try marketData.decode(Decimal.self, forKey: .priceUsd)
+        price = Money(amount: priceUsd, currency: .USD)
     }
     
     func encode(to encoder: Encoder) throws {
