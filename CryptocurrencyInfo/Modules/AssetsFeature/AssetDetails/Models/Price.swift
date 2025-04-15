@@ -5,8 +5,10 @@
 //  Created by Denis Simon on 25.12.2020.
 //
 
+import Foundation
+
 struct Price: Codable {
-    let priceUsd: Double
+    let priceUsd: Decimal
     
     enum CodingKeys: String, CodingKey {
         case data
@@ -20,7 +22,7 @@ struct Price: Codable {
         }
     }
     
-    init(priceUsd: Double) {
+    init(priceUsd: Decimal) {
         self.priceUsd = priceUsd
     }
     
@@ -28,7 +30,7 @@ struct Price: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         let data = try values.nestedContainer(keyedBy: DataKeys.self, forKey: .data)
         let marketData = try data.nestedContainer(keyedBy: DataKeys.MarketDataKeys.self, forKey: .marketData)
-        priceUsd = try marketData.decode(Double.self, forKey: .priceUsd)
+        priceUsd = try marketData.decode(Decimal.self, forKey: .priceUsd)
     }
     
     func encode(to encoder: Encoder) throws {
