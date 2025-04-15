@@ -20,7 +20,7 @@ struct MessariAPI {
         (value: AppConfiguration.ProductionServer.messariApiKey, forHTTPHeaderField: "x-messari-api-key")])
     
     static func assets(page: Int) -> EndpointType {
-        let path = "/v2/assets?page=\(page)&limit=\(AppConfiguration.ProductionServer.limitOnPage)&with-metrics/market_data/price_" + AppConfiguration.Other.selectedCurrency.description.lowercased()
+        let path = "/v2/assets?page=\(page)&limit=\(AppConfiguration.ProductionServer.limitOnPage)&with-metrics/market_data/price_usd"
         
         let params = MessariAPI.defaultParams
         
