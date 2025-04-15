@@ -16,7 +16,6 @@ class AssetDetailsViewModel {
     // Bindings
     let data: Observable<Details> = Observable(Details())
     let makeToast: Observable<String> = Observable("")
-    let priceCurrency: Observable<PriceCurrency> = Observable(AppConfiguration.Other.selectedCurrency)
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
     
     init(asset: Asset, profileRepository: ProfileRepository, priceRepository: PriceRepository) {
@@ -123,8 +122,8 @@ class AssetDetailsViewModel {
             switch details.price {
             case .success(let price):
                 updatedPrice = price.priceUsd
-                if updatedPrice != nil, updatedPrice != self.data.value.asset?.priceUsd, let symbol = self.data.value.asset?.symbol {
-                    SharedEvents.get.priceChanged.notify((symbol: symbol, priceUsd: updatedPrice!))
+                if updatedPrice != nil, updatedPrice != self.data.value.asset?.priceUsd, let asset = self.data.value.asset {
+                    SharedEvents.get.priceChanged.notify(asset)
                 }
             case .failure(let error):
                 if error.error != nil {
@@ -142,7 +141,7 @@ class AssetDetailsViewModel {
             }
             
             let updatedAsset = self.data.value.asset
-            updatedAsset?.priceUsd = updatedPrice
+            updatedAsset?.priceUsd = updatedPrice ?? Decimal.zero
             self.data.value = Details(asset: updatedAsset, profile: updatedProfile)
             
             self.activityIndicatorVisibility.value = false

@@ -75,10 +75,6 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
             self?.makeToast(message: message)
         }
         
-        viewModel.priceCurrency.bind(self) { [weak self] priceCurrency in
-            self?.dataSource?.setPriceCurrency(priceCurrency)
-        }
-        
         viewModel.getAssetsCompletionHandler.bind(self) { [weak self] data in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self?.viewModel.setAssetsAreLoadingFromServer(false)

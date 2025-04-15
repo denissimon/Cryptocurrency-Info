@@ -15,7 +15,6 @@ class AssetsListViewModel {
     // Bindings
     var data: Observable<[Asset]> = Observable([])
     private var dataCopy = [Asset]()
-    var priceCurrency: Observable<PriceCurrency> = Observable(AppConfiguration.Other.selectedCurrency)
     let makeToast: Observable<String> = Observable("")
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
     let getAssetsCompletionHandler: Observable<Bool?> = Observable(nil)
@@ -32,12 +31,12 @@ class AssetsListViewModel {
     }
     
     private func bind() {
-        SharedEvents.get.priceChanged.subscribe(self, queue: .main) { [weak self] assetPrice in
+        SharedEvents.get.priceChanged.subscribe(self, queue: .main) { [weak self] updatedAsset in
             guard let self = self else { return }
             let data = self.data.value
             for asset in data {
-                if asset.symbol == assetPrice.symbol {
-                    asset.priceUsd = assetPrice.priceUsd
+                if asset.symbol == updatedAsset.symbol {
+                    asset.priceUsd = updatedAsset.priceUsd
                 }
             }
             self.data.value = data
@@ -119,5 +118,12 @@ class AssetsListViewModel {
     func resetSearch() {
         data.value = dataCopy
         searchMode = false
+    }
+    
+    func updateSelectedCurrency(_ newCurrency: PriceCurrency) {
+        AppConfiguration.Settings.selectedCurrency = newCurrency
+        let dataToEdit = self.data.value
+        // TODO: Convert the price of each asset into the selected currency
+        self.data.value = dataToEdit
     }
 }

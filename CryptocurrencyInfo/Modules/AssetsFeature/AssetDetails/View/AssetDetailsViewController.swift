@@ -55,10 +55,6 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
             self?.makeToast(message: message)
         }
         
-        viewModel.priceCurrency.bind(self) { [weak self] priceCurrency in
-            self?.dataSource?.setPriceCurrency(priceCurrency)
-        }
-        
         viewModel.activityIndicatorVisibility.bind(self, queue: .main) { [weak self] value in
             if value {
                 self?.makeToastActivity()

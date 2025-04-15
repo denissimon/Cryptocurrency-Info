@@ -10,7 +10,6 @@ import UIKit
 class AssetDetailsDataSource: NSObject {
     
     private(set) var data: Details
-    private(set) var priceCurrency = AppConfiguration.Other.selectedCurrency
     
     init(with data: Details) {
         self.data = data
@@ -19,10 +18,6 @@ class AssetDetailsDataSource: NSObject {
     
     func updateData(_ data: Details) {
         self.data = data
-    }
-    
-    func setPriceCurrency(_ priceCurrency: PriceCurrency) {
-        self.priceCurrency = priceCurrency
     }
     
     @objc func onButtonTap(sender: UIButton){
@@ -76,7 +71,7 @@ extension AssetDetailsDataSource: UITableViewDataSource {
                 hatCell.symbol.text = data.asset?.symbol
                 
                 if let priceUsd = data.asset?.priceUsd {
-                    hatCell.price.text = Supportive.getPriceStr(priceUsd, currency: priceCurrency)
+                    hatCell.price.text = Supportive.getPriceStr(priceUsd, currency: AppConfiguration.Settings.selectedCurrency)
                 } else {
                     hatCell.price.text = ""
                 }
