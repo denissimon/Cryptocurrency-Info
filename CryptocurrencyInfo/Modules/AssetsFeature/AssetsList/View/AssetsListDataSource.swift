@@ -43,9 +43,7 @@ extension AssetsListDataSource: UITableViewDataSource {
 
         cell.name.text = data[indexPath.item].name
         cell.symbol.text = data[indexPath.item].symbol
-        
-        let priceUsd = data[indexPath.item].priceUsd
-        cell.price.text = Supportive.getPriceStr(priceUsd, currency: AppConfiguration.Settings.selectedCurrency)
+        cell.price.text = data[indexPath.item].price.formatedAmountCustomized
         
         return cell
     }

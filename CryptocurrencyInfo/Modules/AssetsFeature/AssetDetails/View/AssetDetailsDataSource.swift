@@ -69,12 +69,7 @@ extension AssetDetailsDataSource: UITableViewDataSource {
 
                 hatCell.name.text = data.asset?.name
                 hatCell.symbol.text = data.asset?.symbol
-                
-                if let priceUsd = data.asset?.priceUsd {
-                    hatCell.price.text = Supportive.getPriceStr(priceUsd, currency: AppConfiguration.Settings.selectedCurrency)
-                } else {
-                    hatCell.price.text = ""
-                }
+                hatCell.price.text = data.asset?.price.formatedAmountCustomized
                 
                 return hatCell
             
