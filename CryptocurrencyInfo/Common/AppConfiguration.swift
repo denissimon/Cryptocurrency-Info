@@ -16,9 +16,12 @@ struct AppConfiguration {
         static let limitOnPage = 50
     }
     
+    struct Settings {
+        static var selectedCurrency: PriceCurrency = .USD // TODO: Update when the app starts, taking the stored value from the local database
+    }
+    
     struct Other {
         static let toastDuration = 3.0
         static let tableCellDefaultHeight: Float = 58
-        static let selectedCurrency: PriceCurrency = .USD
     }
 }
