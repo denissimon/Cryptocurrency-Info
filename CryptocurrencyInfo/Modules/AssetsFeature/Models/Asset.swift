@@ -5,10 +5,12 @@
 //  Created by Denis Simon on 19.12.2020.
 //
 
+import Foundation
+
 class Asset: Codable {
     let symbol: String
     let name: String
-    var priceUsd: Double?
+    var priceUsd: Decimal
     
     enum CodingKeys: String, CodingKey {
         case symbol
@@ -24,7 +26,7 @@ class Asset: Codable {
         }
     }
     
-    init(symbol: String, name: String, priceUsd: Double) {
+    init(symbol: String, name: String, priceUsd: Decimal) {
         self.symbol = symbol
         self.name = name
         self.priceUsd = priceUsd
@@ -37,7 +39,7 @@ class Asset: Codable {
         
         let metrics = try values.nestedContainer(keyedBy: MetricsKeys.self, forKey: .metrics)
         let marketData = try metrics.nestedContainer(keyedBy: MetricsKeys.MarketDataKeys.self, forKey: .marketData)
-        priceUsd = try? marketData.decode(Double.self, forKey: .priceUsd)
+        priceUsd = try marketData.decode(Decimal.self, forKey: .priceUsd)
     }
     
     func encode(to encoder: Encoder) throws {
