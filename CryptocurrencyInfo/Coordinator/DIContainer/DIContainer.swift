@@ -5,7 +5,6 @@
 //  Created by Denis Simon on 27.12.2020.
 //
 
-import UIKit
 import URLSessionAdapter
 
 class DIContainer {
@@ -32,6 +31,12 @@ class DIContainer {
        return DefaultPriceRepository(apiInteractor: apiInteractor)
     }
     
+    // MARK: - Services
+    
+    lazy var currencyConversionService: CurrencyConversionService = {
+        DefaultCurrencyConversionService(apiInteractor: apiInteractor)
+    }()
+    
     // MARK: - Flow Coordinators
     
     func makeMainCoordinator(navigationController: UINavigationController) -> MainCoordinator {
@@ -46,14 +51,14 @@ extension DIContainer: MainCoordinatorDIContainer {
     
     func makeAssetsListViewController(coordinator: AssetsListViewControllerCoordinatorDelegate) -> AssetsListViewController {
         let assetRepository = makeAssetRepository()
-        let viewModel = AssetsListViewModel(assetRepository: assetRepository)
+        let viewModel = AssetsListViewModel(assetRepository: assetRepository, currencyConversionService: currencyConversionService)
         return AssetsListViewController.instantiate(viewModel: viewModel, coordinator: coordinator)
     }
     
     func makeAssetDetailsViewController(asset: Asset) -> AssetDetailsViewController {
         let profileRepository = makeProfileRepository()
         let priceRepository = makePriceRepository()
-        let viewModel = AssetDetailsViewModel(asset: asset, profileRepository: profileRepository, priceRepository: priceRepository)
+        let viewModel = AssetDetailsViewModel(asset: asset, profileRepository: profileRepository, priceRepository: priceRepository, currencyConversionService: currencyConversionService)
         return AssetDetailsViewController.instantiate(viewModel: viewModel)
     }
 }
