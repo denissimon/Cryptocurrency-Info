@@ -14,5 +14,5 @@ class SharedEvents {
     
     private init() {}
     
-    public let priceChanged = Event<Asset>()
+    public let priceChanged = Event<Asset?>()
 }
