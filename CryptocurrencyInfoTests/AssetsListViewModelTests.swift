@@ -16,14 +16,13 @@ class AssetsListViewModelTests: XCTestCase {
     
     var data: [Asset]? = nil
     var toastResult: String? = nil
-    var priceCurrencyResult: PriceCurrency? = nil
     var assetsCompletionHandlerResult: Bool? = nil
     var activityIndicatorVisibilityResult: Bool? = nil
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        assetsListViewModel = AssetsListViewModel(assetRepository: dependencyContainer.makeAssetRepository())
+        assetsListViewModel = AssetsListViewModel(assetRepository: dependencyContainer.makeAssetRepository(), currencyConversionService: dependencyContainer.currencyConversionService)
         
         assetsListViewModel.data.bind(self) { [weak self] data in
             self?.data = data
@@ -50,15 +49,14 @@ class AssetsListViewModelTests: XCTestCase {
         assetsListViewModel = nil
         data = nil
         toastResult = nil
-        priceCurrencyResult = nil
         assetsCompletionHandlerResult = nil
         activityIndicatorVisibilityResult = nil
     }
 
     func testObservables() throws {
         var assetArr = [Asset]()
-        assetArr.append(Asset(symbol: "BTC", name: "Bitcoin", priceUsd: 27000.0))
-        assetArr.append(Asset(symbol: "ETH", name: "Ethereum", priceUsd: 700.0))
+        assetArr.append(Asset(symbol: "BTC", name: "Bitcoin", priceUsd: 27000.0, price: Money()))
+        assetArr.append(Asset(symbol: "ETH", name: "Ethereum", priceUsd: 700.0, price: Money()))
         
         assetsListViewModel.data.value = assetArr
         XCTAssertNotNil(data)
@@ -66,9 +64,6 @@ class AssetsListViewModelTests: XCTestCase {
         
         assetsListViewModel.makeToast.value = "Some text for toast"
         XCTAssertEqual(toastResult, "Some text for toast")
-        
-        assetsListViewModel.updateSelectedCurrency(.EUR)
-        XCTAssertEqual(AppConfiguration.Settings.selectedCurrency, .EUR)
         
         assetsListViewModel.getAssetsCompletionHandler.value = true
         XCTAssertEqual(assetsCompletionHandlerResult, true)

@@ -21,8 +21,8 @@ class AssetDetailsViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        let asset = Asset(symbol: "ETH", name: "Ethereum", priceUsd: 700.0)
-        assetDetailsViewModel = AssetDetailsViewModel(asset: asset, profileRepository: dependencyContainer.makeProfileRepository(), priceRepository: dependencyContainer.makePriceRepository())
+        let asset = Asset(symbol: "ETH", name: "Ethereum", priceUsd: 700.0, price: Money())
+        assetDetailsViewModel = AssetDetailsViewModel(asset: asset, profileRepository: dependencyContainer.makeProfileRepository(), priceRepository: dependencyContainer.makePriceRepository(), currencyConversionService: dependencyContainer.currencyConversionService)
         
         assetDetailsViewModel.data.bind(self) { (data) in
             self.data = data
@@ -49,7 +49,7 @@ class AssetDetailsViewModelTests: XCTestCase {
     }
 
     func testObservables() throws {
-        let asset = Asset(symbol: "BTC", name: "Bitcoin", priceUsd: 27000.0)
+        let asset = Asset(symbol: "BTC", name: "Bitcoin", priceUsd: 27000.0, price: Money())
         let detailsData = Details(asset: asset, profile: nil)
         
         assetDetailsViewModel.data.value = detailsData
