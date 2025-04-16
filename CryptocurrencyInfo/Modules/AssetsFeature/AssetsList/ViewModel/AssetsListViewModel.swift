@@ -11,6 +11,7 @@ import SwiftEvents
 class AssetsListViewModel {
     
     private var assetRepository: AssetRepository
+    private var currencyConversionService: CurrencyConversionService
     
     // Bindings
     var data: Observable<[Asset]> = Observable([])
@@ -25,18 +26,20 @@ class AssetsListViewModel {
     
     let screenTitle = NSLocalizedString("Today's Cryptocurrency Info", comment: "")
     
-    init(assetRepository: AssetRepository) {
+    init(assetRepository: AssetRepository, currencyConversionService: CurrencyConversionService) {
         self.assetRepository = assetRepository
+        self.currencyConversionService = currencyConversionService
         bind()
     }
     
     private func bind() {
         SharedEvents.get.priceChanged.subscribe(self, queue: .main) { [weak self] updatedAsset in
-            guard let self = self else { return }
+            guard let self = self, updatedAsset != nil else { return }
             let data = self.data.value
             for asset in data {
-                if asset.symbol == updatedAsset.symbol {
-                    asset.priceUsd = updatedAsset.priceUsd
+                if asset.symbol == updatedAsset!.symbol {
+                    asset.price.amount = updatedAsset!.price.amount
+                    break
                 }
             }
             self.data.value = data
@@ -67,8 +70,10 @@ class AssetsListViewModel {
             
             switch result {
             case .success(let assets):
-                if assets.data.count > 0 {
-                    self.data.value += assets.data
+                var data = assets.data
+                if data.count > 0 {
+                    await self.currencyConversionService.convertCurrency(&data)
+                    self.data.value += data
                     self.currentPage = page
                     self.dataCopy = self.data.value
                 }
@@ -118,12 +123,5 @@ class AssetsListViewModel {
     func resetSearch() {
         data.value = dataCopy
         searchMode = false
-    }
-    
-    func updateSelectedCurrency(_ newCurrency: PriceCurrency) {
-        AppConfiguration.Settings.selectedCurrency = newCurrency
-        let dataToEdit = self.data.value
-        // TODO: Convert the price of each asset into the selected currency
-        self.data.value = dataToEdit
     }
 }

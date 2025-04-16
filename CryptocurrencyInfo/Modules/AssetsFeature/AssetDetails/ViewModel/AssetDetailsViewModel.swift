@@ -12,16 +12,18 @@ class AssetDetailsViewModel {
     
     private let profileRepository: ProfileRepository
     private let priceRepository: PriceRepository
+    private var currencyConversionService: CurrencyConversionService
     
     // Bindings
     let data: Observable<Details> = Observable(Details())
     let makeToast: Observable<String> = Observable("")
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
     
-    init(asset: Asset, profileRepository: ProfileRepository, priceRepository: PriceRepository) {
+    init(asset: Asset, profileRepository: ProfileRepository, priceRepository: PriceRepository, currencyConversionService: CurrencyConversionService) {
         self.data.value.asset = asset
         self.profileRepository = profileRepository
         self.priceRepository = priceRepository
+        self.currencyConversionService = currencyConversionService
     }
     
     private func showError(_ msg: String = "") {
@@ -91,16 +93,17 @@ class AssetDetailsViewModel {
         Task.detached {
             async let profile = self.profileRepository.getProfile(symbol: symbol)
             async let price = self.priceRepository.getPrice(symbol: symbol)
-            
             let details = await (profile: profile, price: price)
             
-            var updatedProfile = self.data.value.profile
-            var updatedPrice = self.data.value.asset?.priceUsd
+            var profileToUpdate = self.data.value.profile
+            var assetToUpdate = self.data.value.asset
+            
+            var shouldTriggerPriceChangedEvent = false
             
             switch details.profile {
             case .success(let profile):
                 if let projectDetails = profile.projectDetails {
-                    updatedProfile?.projectDetails = self.editLinksInProjectDetails(projectDetails)
+                    profileToUpdate?.projectDetails = self.editLinksInProjectDetails(projectDetails)
                 } else {
                     self.showError()
                 }
@@ -121,9 +124,14 @@ class AssetDetailsViewModel {
             
             switch details.price {
             case .success(let price):
-                updatedPrice = price.priceUsd
-                if updatedPrice != nil, updatedPrice != self.data.value.asset?.priceUsd, let asset = self.data.value.asset {
-                    SharedEvents.get.priceChanged.notify(asset)
+                if assetToUpdate != nil, assetToUpdate!.priceUsd != price.priceUsd {
+                    assetToUpdate!.priceUsd = price.priceUsd
+                    if AppConfiguration.Settings.selectedCurrency == .USD {
+                        assetToUpdate!.price.amount = price.priceUsd
+                    } else {
+                        await self.currencyConversionService.convertCurrency(&assetToUpdate!)
+                    }
+                    shouldTriggerPriceChangedEvent = true
                 }
             case .failure(let error):
                 if error.error != nil {
@@ -140,9 +148,11 @@ class AssetDetailsViewModel {
                 return
             }
             
-            let updatedAsset = self.data.value.asset
-            updatedAsset?.priceUsd = updatedPrice ?? Decimal.zero
-            self.data.value = Details(asset: updatedAsset, profile: updatedProfile)
+            if shouldTriggerPriceChangedEvent {
+                SharedEvents.get.priceChanged.notify(assetToUpdate)
+            }
+            
+            self.data.value = Details(asset: assetToUpdate, profile: profileToUpdate)
             
             self.activityIndicatorVisibility.value = false
         }
