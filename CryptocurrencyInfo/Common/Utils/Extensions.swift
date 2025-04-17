@@ -7,6 +7,8 @@
 
 import Foundation
 
+// https://gist.github.com/denissimon/3271d125cc0705dc46881e8f741d6775
+
 extension Decimal {
     mutating func round(_ scale: Int, _ roundingMode: NSDecimalNumber.RoundingMode) {
         var localCopy = self
