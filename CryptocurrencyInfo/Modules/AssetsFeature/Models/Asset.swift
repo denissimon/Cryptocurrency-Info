@@ -12,9 +12,9 @@ class Asset: Codable {
     let symbol: String
     /// E.g. "Bitcoin"
     let name: String
-    /// The value from Messari API
+    /// Asset price in USD
     var priceUsd: Decimal
-    /// Preparing data to display based on priceUsd and AppConfiguration.Settings.selectedCurrency (assumed to be user changeable). If includes conversion from USD to another currency available for selection.
+    /// Preparing data for display based on priceUsd and AppConfiguration.Settings.selectedCurrency (assumed to be user changeable). This includes converting from USD to another currency available for selection.
     var price: Money
     
     enum CodingKeys: String, CodingKey {
