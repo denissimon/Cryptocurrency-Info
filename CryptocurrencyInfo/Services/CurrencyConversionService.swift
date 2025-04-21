@@ -23,7 +23,7 @@ class DefaultCurrencyConversionService: CurrencyConversionService {
     func convertCurrency(_ assets: inout [Asset]) async {
         guard AppConfiguration.Settings.selectedCurrency != .USD else { return }
         
-        // TODO: Convert the price of each asset to the currently selected currency using CurrencyConversionAPI
+        // TODO: Convert the price of each asset to the selected currency using CurrencyConversionAPI
         try? await Task.sleep(nanoseconds: 1 * 5_000_000) // mock the API request
         let rate: Decimal = 1.1 // mock the received rate
         
@@ -39,7 +39,7 @@ class DefaultCurrencyConversionService: CurrencyConversionService {
     func convertCurrency(_ asset: inout Asset) async {
         guard AppConfiguration.Settings.selectedCurrency != .USD else { return }
         
-        // TODO: Convert the price of an asset to the currently selected currency using CurrencyConversionAPI
+        // TODO: Convert the price of an asset to the selected currency using CurrencyConversionAPI
         try? await Task.sleep(nanoseconds: 1 * 5_000_000) // mock the API request
         let rate: Decimal = 1.1 // mock the received rate
         asset.price.amount = asset.priceUsd * rate
