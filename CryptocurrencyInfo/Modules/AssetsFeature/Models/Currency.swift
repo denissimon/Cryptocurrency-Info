@@ -7,7 +7,7 @@
 
 // https://gist.github.com/denissimon/cec7f01f89a2d4234cb2966b34726c77
 
-enum Currency: String, Codable, CustomStringConvertible {
+enum Currency: String, Codable, CustomStringConvertible, CaseIterable {
     /// UAE dirham
     case AED = "د.إ"
     /// Argentine peso
