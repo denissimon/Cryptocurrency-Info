@@ -41,9 +41,10 @@ extension AssetsListDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AssetCell", for: indexPath) as! AssetCell
 
-        cell.name.text = data[indexPath.item].name
-        cell.symbol.text = data[indexPath.item].symbol
-        cell.price.text = data[indexPath.item].price.formatedAmountCustomized
+        let asset = data[indexPath.item]
+        cell.name.text = asset.name
+        cell.symbol.text = asset.symbol
+        cell.price.text = asset.price.formatedAmountCustomized
         
         return cell
     }
