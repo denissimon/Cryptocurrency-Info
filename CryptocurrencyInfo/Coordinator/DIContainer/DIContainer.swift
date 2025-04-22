@@ -5,6 +5,7 @@
 //  Created by Denis Simon on 27.12.2020.
 //
 
+import UIKit
 import URLSessionAdapter
 
 class DIContainer {
@@ -15,6 +16,13 @@ class DIContainer {
         let urlSession = URLSession.shared
         let networkService = NetworkService(urlSession: urlSession)
         return URLSessionAPIInteractor(with: networkService)
+    }()
+    
+    // MARK: - Persistence
+    
+    lazy var settingsDBInteractor: SettingsDBInteractor = {
+        let userDefaultsAdapter = UserDefaultsAdapter()
+        return UserDefaultsSettingsDBInteractor(with: userDefaultsAdapter)
     }()
     
     // MARK: - Repositories
@@ -29,6 +37,10 @@ class DIContainer {
     
     func makePriceRepository() -> PriceRepository {
        return DefaultPriceRepository(apiInteractor: apiInteractor)
+    }
+    
+    func makeSettingsRepository() -> SettingsRepository {
+        return DefaultSettingsRepository(settingsDBInteractor: settingsDBInteractor)
     }
     
     // MARK: - Services
@@ -51,7 +63,8 @@ extension DIContainer: MainCoordinatorDIContainer {
     
     func makeAssetsListViewController(coordinator: AssetsListViewControllerCoordinatorDelegate) -> AssetsListViewController {
         let assetRepository = makeAssetRepository()
-        let viewModel = AssetsListViewModel(assetRepository: assetRepository, currencyConversionService: currencyConversionService)
+        let settingsRepository = makeSettingsRepository()
+        let viewModel = AssetsListViewModel(assetRepository: assetRepository, settingsRepository: settingsRepository, currencyConversionService: currencyConversionService)
         return AssetsListViewController.instantiate(viewModel: viewModel, coordinator: coordinator)
     }
     
