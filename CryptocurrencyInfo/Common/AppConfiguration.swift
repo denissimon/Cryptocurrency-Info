@@ -5,8 +5,6 @@
 //  Created by Denis Simon on 19.12.2020.
 //
 
-import UAObfuscatedString
-
 struct AppConfiguration {
     
     struct ProductionServer {
@@ -17,7 +15,8 @@ struct AppConfiguration {
     }
     
     struct Settings {
-        static var selectedCurrency: Currency = .USD // TODO: Update when the app starts, taking the stored value from the local database
+        /// If there is a stored value in the local DB, then selectedCurrency is updated when the app starts
+        static var selectedCurrency: Currency = .USD
     }
     
     struct Other {
