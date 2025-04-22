@@ -22,7 +22,7 @@ class AssetsListViewModelTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        assetsListViewModel = AssetsListViewModel(assetRepository: dependencyContainer.makeAssetRepository(), currencyConversionService: dependencyContainer.currencyConversionService)
+        assetsListViewModel = AssetsListViewModel(assetRepository: dependencyContainer.makeAssetRepository(), settingsRepository: dependencyContainer.makeSettingsRepository(), currencyConversionService: dependencyContainer.currencyConversionService)
         
         assetsListViewModel.data.bind(self) { [weak self] data in
             self?.data = data
