@@ -34,7 +34,7 @@ It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is
 [DIContainerLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Coordinator/DIContainer/DIContainer.swift
 [DataBindingLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/ViewModel/AssetsListViewModel.swift
 [ClosureBasedDelegationLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
-[DataSourceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/View/AssetsListDataSource.swift
+[DataSourceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails/View/AssetDetailsDataSource.swift
 
 ### Includes
 
@@ -45,7 +45,7 @@ It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is
 - Unit tests
 
 [AsyncAwaitLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Data/Repositories
-[SharedEventsLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Common/Utils/SharedEvents.swift
+[SharedEventsLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Services/SharedEvents.swift
 [CodableLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails/Models/Profile.swift
 
 ### Built with
@@ -55,7 +55,11 @@ It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is
 - [Toast-Swift](https://github.com/scalessec/Toast-Swift) - A Swift extension that adds toast notifications to the UIView object class.
 - [UAObfuscatedString](https://github.com/UrbanApps/UAObfuscatedString) - A simple category to hide sensitive strings from appearing in your binary.
 
-The dependency manager is [CocoaPods](https://cocoapods.org). Run `pod update` to update pods.
+The dependency manager is [Swift Package Manager](https://www.swift.org/documentation/package-manager/). To update package versions: 
+
+```txt
+Xcode: File -> Packages -> Update to Latest Package Versions
+```
 
 ### Requirements
 
