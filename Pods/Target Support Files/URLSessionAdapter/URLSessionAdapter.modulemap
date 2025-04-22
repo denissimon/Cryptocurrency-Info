@@ -1,6 +1,0 @@
-framework module URLSessionAdapter {
-  umbrella header "URLSessionAdapter-umbrella.h"
-
-  export *
-  module * { export * }
-}
