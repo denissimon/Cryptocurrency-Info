@@ -1,0 +1,33 @@
+{
+  "originHash" : "a7044de751c7dab4d507398653fa6c8dfd42925ead6baf06babc03bf1179c2d1",
+  "pins" : [
+    {
+      "identity" : "swiftevents",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/denissimon/SwiftEvents",
+      "state" : {
+        "revision" : "fcbbaa1a5f18edacfa5e55184701c2a87b25491a",
+        "version" : "2.2.1"
+      }
+    },
+    {
+      "identity" : "toast-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scalessec/Toast-Swift",
+      "state" : {
+        "revision" : "ddccd20d6fb718448d9b179c454c561653fda7d5",
+        "version" : "5.1.1"
+      }
+    },
+    {
+      "identity" : "urlsessionadapter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/denissimon/URLSessionAdapter",
+      "state" : {
+        "revision" : "82237705792a600387f4dfc06e36931d53278706",
+        "version" : "1.6.3"
+      }
+    }
+  ],
+  "version" : 3
+}
