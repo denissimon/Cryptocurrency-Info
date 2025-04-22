@@ -11,6 +11,7 @@ import SwiftEvents
 class AssetsListViewModel {
     
     private var assetRepository: AssetRepository
+    private var settingsRepository: SettingsRepository
     private var currencyConversionService: CurrencyConversionService
     
     // Bindings
@@ -26,10 +27,20 @@ class AssetsListViewModel {
     
     let screenTitle = NSLocalizedString("Today's Cryptocurrency Info", comment: "")
     
-    init(assetRepository: AssetRepository, currencyConversionService: CurrencyConversionService) {
+    init(assetRepository: AssetRepository, settingsRepository: SettingsRepository, currencyConversionService: CurrencyConversionService) {
         self.assetRepository = assetRepository
+        self.settingsRepository = settingsRepository
         self.currencyConversionService = currencyConversionService
+        setup()
         bind()
+    }
+    
+    private func setup() {
+        Task {
+            if let storedSelectedCurrency = await settingsRepository.getSelectedCurrency() {
+                AppConfiguration.Settings.selectedCurrency = storedSelectedCurrency
+            }
+        }
     }
     
     private func bind() {
