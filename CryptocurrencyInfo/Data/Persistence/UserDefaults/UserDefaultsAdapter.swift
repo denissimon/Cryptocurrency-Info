@@ -39,7 +39,7 @@ class UserDefaultsAdapter {
         }
     }
     
-    func removeAllKeys() {
+    func removeAll() {
         if let bundleID = Bundle.main.bundleIdentifier {
             defaults.removePersistentDomain(forName: bundleID)
         }
