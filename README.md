@@ -39,13 +39,18 @@ It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is
 ### Includes
 
 - [async/await][AsyncAwaitLink] with the existing Infrastructure remaining unchanged
-- [Shared events service][SharedEventsLink]
+- [SharedEvents][SharedEventsLink] - a NotificationCenter-like component
+- [Currency conversion service][CurrencyConversionServiceLink] - for displaying asset prices in different currencies (USD, EUR, etc.)
+- Configurable use of [UserDefaults][UserDefaultsLink] or [SwiftData][SwiftDataLink] example
 - Advanced using of [Codable][CodableLink]
 - Localization
 - Unit tests
 
 [AsyncAwaitLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Data/Repositories
 [SharedEventsLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Services/SharedEvents.swift
+[CurrencyConversionServiceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Services/CurrencyConversionService.swift
+[UserDefaultsLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Data/Persistence/DBInteractor/Settings/UserDefaultsSettingsDBInteractor.swift
+[SwiftDataLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Data/Persistence/DBInteractor/Settings/SwiftDataSettingsDBInteractor.swift
 [CodableLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails/Models/Profile.swift
 
 ### Built with
@@ -63,4 +68,4 @@ Xcode: File -> Packages -> Update to Latest Package Versions
 
 ### Requirements
 
-iOS version support: 15.0+. Xcode 13.0+, Swift 5.5+
+iOS version support: 17.0+. Xcode 13.0+, Swift 5.5+
