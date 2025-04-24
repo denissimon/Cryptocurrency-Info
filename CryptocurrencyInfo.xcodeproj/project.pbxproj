@@ -944,7 +944,7 @@
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CryptocurrencyInfoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -967,7 +967,7 @@
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = CryptocurrencyInfoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -988,7 +988,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				INFOPLIST_FILE = CryptocurrencyInfoUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1009,7 +1009,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				INFOPLIST_FILE = CryptocurrencyInfoUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
