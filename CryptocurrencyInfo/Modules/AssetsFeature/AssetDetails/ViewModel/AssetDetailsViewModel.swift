@@ -93,6 +93,7 @@ class AssetDetailsViewModel {
         Task.detached {
             async let profile = self.profileRepository.getProfile(symbol: symbol)
             async let price = self.priceRepository.getPrice(symbol: symbol)
+            
             let details = await (profile: profile, price: price)
             
             var profileToUpdate = self.data.value.profile
