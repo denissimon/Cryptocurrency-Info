@@ -16,6 +16,10 @@
 		410AA3CD2DB0788B0077460D /* SettingsDBInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AA3C52DB0788B0077460D /* SettingsDBInteractor.swift */; };
 		410AA3CE2DB0788B0077460D /* UserDefaultsSettingsDBInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AA3C62DB0788B0077460D /* UserDefaultsSettingsDBInteractor.swift */; };
 		410E776C2DB54F6200CCE87F /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 410E776B2DB54F6200CCE87F /* Toast */; };
+		410E77752DB8B3D500CCE87F /* SwiftDataSettingsDBInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E77742DB8B3D500CCE87F /* SwiftDataSettingsDBInteractor.swift */; };
+		410E77772DB8B4BC00CCE87F /* SwiftDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E77762DB8B4BC00CCE87F /* SwiftDataAdapter.swift */; };
+		410E77792DB9528100CCE87F /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E77782DB9527100CCE87F /* SettingsModel.swift */; };
+		410E777D2DB9769F00CCE87F /* SwiftDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E777C2DB9769F00CCE87F /* SwiftDataConfiguration.swift */; };
 		411B60C52B081BC400185132 /* DefaultAssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60C42B081BC400185132 /* DefaultAssetRepository.swift */; };
 		411B60CD2B08250500185132 /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60CC2B08250500185132 /* AssetRepository.swift */; };
 		411B60D32B08279D00185132 /* URLSessionAPIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60D22B08279D00185132 /* URLSessionAPIInteractor.swift */; };
@@ -91,6 +95,10 @@
 		410AA3C52DB0788B0077460D /* SettingsDBInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDBInteractor.swift; sourceTree = "<group>"; };
 		410AA3C62DB0788B0077460D /* UserDefaultsSettingsDBInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettingsDBInteractor.swift; sourceTree = "<group>"; };
 		410AA3C92DB0788B0077460D /* UserDefaultsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAdapter.swift; sourceTree = "<group>"; };
+		410E77742DB8B3D500CCE87F /* SwiftDataSettingsDBInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataSettingsDBInteractor.swift; sourceTree = "<group>"; };
+		410E77762DB8B4BC00CCE87F /* SwiftDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataAdapter.swift; sourceTree = "<group>"; };
+		410E77782DB9527100CCE87F /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		410E777C2DB9769F00CCE87F /* SwiftDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataConfiguration.swift; sourceTree = "<group>"; };
 		411B60C42B081BC400185132 /* DefaultAssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAssetRepository.swift; sourceTree = "<group>"; };
 		411B60CC2B08250500185132 /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
 		411B60D22B08279D00185132 /* URLSessionAPIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIInteractor.swift; sourceTree = "<group>"; };
@@ -176,7 +184,6 @@
 		410AA3732DAF027E0077460D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				410140C22C5D4690002101CE /* SharedEvents.swift */,
 				410AA3752DAF038D0077460D /* CurrencyConversionService.swift */,
 			);
 			path = Services;
@@ -187,6 +194,7 @@
 			children = (
 				410AA3C52DB0788B0077460D /* SettingsDBInteractor.swift */,
 				410AA3C62DB0788B0077460D /* UserDefaultsSettingsDBInteractor.swift */,
+				410E77742DB8B3D500CCE87F /* SwiftDataSettingsDBInteractor.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -212,8 +220,27 @@
 			children = (
 				410AA3C82DB0788B0077460D /* DBInteractor */,
 				410AA3CA2DB0788B0077460D /* UserDefaults */,
+				410E77732DB8B1D700CCE87F /* SwiftData */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		410E77732DB8B1D700CCE87F /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				410E777B2DB969C700CCE87F /* Models */,
+				410E777C2DB9769F00CCE87F /* SwiftDataConfiguration.swift */,
+				410E77762DB8B4BC00CCE87F /* SwiftDataAdapter.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		410E777B2DB969C700CCE87F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				410E77782DB9527100CCE87F /* SettingsModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		411B60C02B081AC800185132 /* Data */ = {
@@ -460,6 +487,7 @@
 			children = (
 				41DF4286258E34CC005EBE0E /* AppDelegate.swift */,
 				41DF42F5258E5DE1005EBE0E /* AppConfiguration.swift */,
+				410140C22C5D4690002101CE /* SharedEvents.swift */,
 				414D910A2B6F61C7009F37CA /* Utils */,
 			);
 			path = Common;
@@ -645,12 +673,14 @@
 				41DF4313258E6D9B005EBE0E /* Asset.swift in Sources */,
 				411B60DC2B08858400185132 /* DefaultProfileRepository.swift in Sources */,
 				410AA3C22DB078480077460D /* SettingsRepository.swift in Sources */,
+				410E77772DB8B4BC00CCE87F /* SwiftDataAdapter.swift in Sources */,
 				41DF42F6258E5DE1005EBE0E /* AppConfiguration.swift in Sources */,
 				411B60D52B082B9100185132 /* APIInteractor.swift in Sources */,
 				41DF4300258E6825005EBE0E /* AssetsListViewModel.swift in Sources */,
 				411B60DA2B08850B00185132 /* ProfileRepository.swift in Sources */,
 				41C7B5DE2591817A001305A3 /* Details.swift in Sources */,
 				41DF428B258E34CC005EBE0E /* AssetsListViewController.swift in Sources */,
+				410E77792DB9528100CCE87F /* SettingsModel.swift in Sources */,
 				41DF42EE258E5DAE005EBE0E /* MessariAPI.swift in Sources */,
 				412BF7122594080A00F11969 /* AboutAssetCell.swift in Sources */,
 				41AED6622DB4BE6C0088389C /* UAObfuscatedString.swift in Sources */,
@@ -675,11 +705,13 @@
 				414A52FC2ADC90AD00F92F38 /* MainCoordinator.swift in Sources */,
 				41C7B5BC258F0C9B001305A3 /* AssetCell.swift in Sources */,
 				419D4FC225991BC200C6F1A3 /* FlowCoordinator.swift in Sources */,
+				410E777D2DB9769F00CCE87F /* SwiftDataConfiguration.swift in Sources */,
 				410140C32C5D4690002101CE /* SharedEvents.swift in Sources */,
 				414A52FA2ADC259300F92F38 /* Storyboarded.swift in Sources */,
 				41F3C7692DAE0B7800E63168 /* Money.swift in Sources */,
 				41D3B58225945259007E76EF /* LinkCell.swift in Sources */,
 				410AA3782DAF115C0077460D /* CurrencyConversionAPI.swift in Sources */,
+				410E77752DB8B3D500CCE87F /* SwiftDataSettingsDBInteractor.swift in Sources */,
 				411EE4782597E81F005A79F3 /* Extensions.swift in Sources */,
 				41DF42E8258E5D8D005EBE0E /* Assets.swift in Sources */,
 				410AA3762DAF03900077460D /* CurrencyConversionService.swift in Sources */,
@@ -867,7 +899,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				INFOPLIST_FILE = CryptocurrencyInfo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -875,6 +907,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.denisvsimon.CryptocurrencyInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -888,7 +921,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23R9SJL6N9;
 				INFOPLIST_FILE = CryptocurrencyInfo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -896,6 +929,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.denisvsimon.CryptocurrencyInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
