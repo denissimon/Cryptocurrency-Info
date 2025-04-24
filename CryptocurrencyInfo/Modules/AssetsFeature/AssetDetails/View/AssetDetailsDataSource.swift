@@ -20,16 +20,11 @@ class AssetDetailsDataSource: NSObject {
         self.data = data
     }
     
-    @objc func onButtonTap(sender: UIButton){
-        let buttonTag = sender.tag
+    @objc func onLinkTap(sender: UIButton){
+        let linkTag = sender.tag
         
-        guard let officialLinks = data.profile?.officialLinks else {
-            return
-        }
-        
-        guard let linkUrlString = officialLinks[buttonTag].link, let url = URL(string: linkUrlString) else {
-            return
-        }
+        guard let officialLinks = data.profile?.officialLinks else { return }
+        guard let linkUrlString = officialLinks[linkTag].link, let url = URL(string: linkUrlString) else { return }
             
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -104,7 +99,7 @@ extension AssetDetailsDataSource: UITableViewDataSource {
             linkCell.link.setTitle(title, for: .normal)
             linkCell.link.setTitle(title, for: .highlighted)
             
-            linkCell.link.addTarget(self, action: #selector(onButtonTap(sender:)), for: .touchUpInside)
+            linkCell.link.addTarget(self, action: #selector(onLinkTap(sender:)), for: .touchUpInside)
             linkCell.link.tag = indexPath.row
             
             return linkCell
