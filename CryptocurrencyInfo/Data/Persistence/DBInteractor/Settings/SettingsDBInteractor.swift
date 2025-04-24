@@ -8,6 +8,6 @@
 import Foundation
 
 protocol SettingsDBInteractor {
-    func saveSelectedCurrency<T: Codable>(_ currency: T, type: T.Type) -> Bool?
-    func getSelectedCurrency<T: Codable>(type: T.Type) -> T?
+    func getSelectedCurrency() -> Currency? where Currency: Codable
+    func saveSelectedCurrency(_ currency: Currency) -> Bool where Currency: Codable
 }
