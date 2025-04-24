@@ -47,7 +47,7 @@ It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is
 - Unit tests
 
 [AsyncAwaitLink]: https://github.com/denissimon/Cryptocurrency-Info/tree/master/CryptocurrencyInfo/Data/Repositories
-[SharedEventsLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Services/SharedEvents.swift
+[SharedEventsLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Common/SharedEvents.swift
 [CurrencyConversionServiceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Services/CurrencyConversionService.swift
 [UserDefaultsLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Data/Persistence/DBInteractor/Settings/UserDefaultsSettingsDBInteractor.swift
 [SwiftDataLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Data/Persistence/DBInteractor/Settings/SwiftDataSettingsDBInteractor.swift
@@ -68,4 +68,4 @@ Xcode: File -> Packages -> Update to Latest Package Versions
 
 ### Requirements
 
-iOS version support: 17.0+. Xcode 13.0+, Swift 5.5+
+iOS version support: 17.0+. Xcode 15.0+, Swift 5.5+
