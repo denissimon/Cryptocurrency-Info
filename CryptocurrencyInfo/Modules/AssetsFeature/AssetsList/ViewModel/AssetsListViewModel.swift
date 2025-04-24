@@ -41,6 +41,15 @@ class AssetsListViewModel {
                 AppConfiguration.Settings.selectedCurrency = storedSelectedCurrency
             }
         }
+        
+        // For testing: we сan simulate as if the app user changed the currency
+        /*DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5.0) {
+            Task {
+                let newSelectedCurrency: Currency = .EUR
+                let _ = await self.settingsRepository.saveSelectedCurrency(newSelectedCurrency)
+                AppConfiguration.Settings.selectedCurrency = newSelectedCurrency
+            }
+        }*/
     }
     
     private func bind() {
