@@ -6,6 +6,6 @@
 //
 
 protocol SettingsRepository {
-    func saveSelectedCurrency(_ currency: Currency) async -> Bool?
     func getSelectedCurrency() async -> Currency?
+    func saveSelectedCurrency(_ currency: Currency) async -> Bool
 }

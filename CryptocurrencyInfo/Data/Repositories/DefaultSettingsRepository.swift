@@ -17,16 +17,16 @@ class DefaultSettingsRepository: SettingsRepository {
     
     // MARK: - DB methods
     
-    func saveSelectedCurrency(_ currency: Currency) async -> Bool? {
+    func getSelectedCurrency() async -> Currency? {
         await withCheckedContinuation { continuation in
-            let result = settingsDBInteractor.saveSelectedCurrency(currency, type: Currency.self)
+            let result = settingsDBInteractor.getSelectedCurrency()
             continuation.resume(returning: result)
         }
     }
     
-    func getSelectedCurrency() async -> Currency? {
+    func saveSelectedCurrency(_ currency: Currency) async -> Bool {
         await withCheckedContinuation { continuation in
-            let result = settingsDBInteractor.getSelectedCurrency(type: Currency.self)
+            let result = settingsDBInteractor.saveSelectedCurrency(currency)
             continuation.resume(returning: result)
         }
     }
