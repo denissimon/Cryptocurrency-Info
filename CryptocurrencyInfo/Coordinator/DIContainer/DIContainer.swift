@@ -26,7 +26,7 @@ class DIContainer {
         let userDefaultsAdapter = UserDefaultsAdapter()
         return UserDefaultsSettingsDBInteractor(with: userDefaultsAdapter)
         */
-        let swiftDataAdapter = SwiftDataAdapter(context: SwiftDataConfiguration.context)
+        let swiftDataAdapter = SwiftDataAdapter(modelContainer: SwiftDataConfiguration.container)
         return SwiftDataSettingsDBInteractor(with: swiftDataAdapter)
     }()
     
