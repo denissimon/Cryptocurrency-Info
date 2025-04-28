@@ -9,12 +9,12 @@ import SwiftData
 
 struct SwiftDataConfiguration {
     
+    private static let schema = Schema([
+        SettingsModel.self,
+    ])
+    
     static let container: ModelContainer = {
-        let schema = Schema([
-            SettingsModel.self,
-        ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-        
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
@@ -22,9 +22,13 @@ struct SwiftDataConfiguration {
         }
     }()
     
-    static var context: ModelContext {
-        let context = ModelContext(container)
-        context.autosaveEnabled = true
-        return context
-    }
+    /// For unit tests
+    static let containerInMemoryOnly: ModelContainer = {
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        do {
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
 }
