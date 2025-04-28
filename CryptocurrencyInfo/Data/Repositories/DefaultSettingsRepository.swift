@@ -9,7 +9,7 @@ import Foundation
 
 class DefaultSettingsRepository: SettingsRepository {
     
-    let settingsDBInteractor: SettingsDBInteractor
+    private let settingsDBInteractor: SettingsDBInteractor
     
     init(settingsDBInteractor: SettingsDBInteractor) {
         self.settingsDBInteractor = settingsDBInteractor
@@ -18,16 +18,10 @@ class DefaultSettingsRepository: SettingsRepository {
     // MARK: - DB methods
     
     func getSelectedCurrency() async -> Currency? {
-        await withCheckedContinuation { continuation in
-            let result = settingsDBInteractor.getSelectedCurrency()
-            continuation.resume(returning: result)
-        }
+        await settingsDBInteractor.getSelectedCurrency()
     }
     
     func saveSelectedCurrency(_ currency: Currency) async -> Bool {
-        await withCheckedContinuation { continuation in
-            let result = settingsDBInteractor.saveSelectedCurrency(currency)
-            continuation.resume(returning: result)
-        }
+        await settingsDBInteractor.saveSelectedCurrency(currency)
     }
 }

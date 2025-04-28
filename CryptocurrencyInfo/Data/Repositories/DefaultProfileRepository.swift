@@ -10,7 +10,7 @@ import URLSessionAdapter
 
 class DefaultProfileRepository: ProfileRepository {
     
-    let apiInteractor: APIInteractor
+    private let apiInteractor: APIInteractor
     
     init(apiInteractor: APIInteractor) {
         self.apiInteractor = apiInteractor
