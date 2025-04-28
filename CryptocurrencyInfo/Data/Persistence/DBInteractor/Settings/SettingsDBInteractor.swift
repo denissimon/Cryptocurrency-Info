@@ -8,6 +8,6 @@
 import Foundation
 
 protocol SettingsDBInteractor {
-    func getSelectedCurrency() -> Currency? where Currency: Codable
-    func saveSelectedCurrency(_ currency: Currency) -> Bool where Currency: Codable
+    func getSelectedCurrency() async -> Currency? where Currency: Codable
+    func saveSelectedCurrency(_ currency: Currency) async -> Bool where Currency: Codable
 }
