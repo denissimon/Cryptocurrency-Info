@@ -10,57 +10,71 @@ import SwiftData
 
 class SwiftDataSettingsDBInteractor: SettingsDBInteractor {
     
-    let swiftDataAdapter: SwiftDataAdapter
+    private let swiftDataAdapter: SwiftDataAdapter
     
-    var settingsModel: SettingsModel?
+    private var settingsModel: SettingsModel?
     
     init(with swiftDataAdapter: SwiftDataAdapter) {
         self.swiftDataAdapter = swiftDataAdapter
         Task.detached {
-            self.setup()
+            await self.setup()
         }
     }
     
-    private func setup() {
+    private func log(_ error: SwiftDataError) {
+        // Optionally, reporting solutions like Firebase Crashlytics can be used here
+        #if DEBUG
+        print("SwiftData:", error)
+        #endif
+    }
+    
+    private func setup() async {
         let descriptor = FetchDescriptor<SettingsModel>()
-        let count = swiftDataAdapter.fetchCount(SettingsModel.self, descriptor: descriptor)
-        // Create a new row in the Settings table if there are no rows yet (this table should have only 1 row)
-        if count == 0 {
-            swiftDataAdapter.insert(SettingsModel(.USD))
+        let settingsRowCount = await swiftDataAdapter.fetchCount(SettingsModel.self, descriptor: descriptor)
+        // Create a new row in the SettingsModel table if there are no rows yet (it should have only 1 row)
+        if settingsRowCount == 0 {
+            do {
+                try await swiftDataAdapter.insert(SettingsModel(.USD))
+            } catch {
+                log(error as! SwiftDataError)
+            }
         }
     }
 
-    private func getSettingsModel() -> SettingsModel? {
+    private func getSettingsModel() async -> SettingsModel? {
         var descriptor = FetchDescriptor<SettingsModel>()
         descriptor.fetchLimit = 1
-        let result = swiftDataAdapter.fetch(SettingsModel.self, descriptor: descriptor)
-        
-        switch result {
-        case .success(let settingsModelArr):
+        do {
+            let settingsModelArr = try await swiftDataAdapter.fetch(SettingsModel.self, descriptor: descriptor)
             return settingsModelArr.first
-        case .failure(_):
+        } catch {
+            log(error as! SwiftDataError)
             return nil
         }
     }
     
-    func getSelectedCurrency() -> Currency? {
+    func getSelectedCurrency() async -> Currency? {
         if settingsModel == nil {
-            settingsModel = getSettingsModel()
+            settingsModel = await getSettingsModel()
         }
         return settingsModel?.selectedCurrency
     }
     
-    func saveSelectedCurrency(_ currency: Currency) -> Bool {
-        if settingsModel != nil {
-            guard settingsModel!.selectedCurrency != currency else { return false }
-            settingsModel!.selectedCurrency = currency
-            if settingsModel!.hasChanges {
-                try? settingsModel!.modelContext?.save()
-                return true
-            }
+    func saveSelectedCurrency(_ currency: Currency) async -> Bool {
+        guard settingsModel != nil else {
+            settingsModel = await getSettingsModel()
             return false
         }
-        settingsModel = getSettingsModel()
+        guard settingsModel!.selectedCurrency != currency else { return false }
+        settingsModel!.selectedCurrency = currency
+        if settingsModel!.hasChanges {
+            do {
+                try settingsModel!.modelContext?.save()
+                return true
+            } catch {
+                log(error as! SwiftDataError)
+            }
+        }
         return false
     }
 }
