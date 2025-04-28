@@ -5,67 +5,67 @@
 //  Created by Denis Simon on 23.04.2025.
 //
 
-// https://gist.github.com/denissimon/cf4beee8291843e7fced6b6292b3ef62
+// https://gist.github.com/denissimon/fff3142561c6bbb0e3e8961681ec5e89
 
 import Foundation
 import SwiftData
 
-struct SwiftDataError: Error {
-    let error: Error?
-    let description: String = ""
-}
-
-class SwiftDataAdapter {
+actor SwiftDataAdapter {
     
-    let context: ModelContext
+    private let container: ModelContainer
+    private var context: ModelContext!
     
-    init(context: ModelContext) {
+    init(container: ModelContainer) {
+        self.container = container
+    }
+    
+    /// Since ModelContexts are not Sendable, this context should be instantiated on the queue from which it is used, not the main.
+    private func createContext(autosaveEnabled: Bool = true) -> ModelContext {
+        let context = ModelContext(container)
+        context.autosaveEnabled = autosaveEnabled
         self.context = context
         print(context.sqliteUrlPath)
+        return context
     }
     
     /// Insert an object
-    func insert<T>(_ object: T) where T: PersistentModel {
+    func insert<T: PersistentModel>(_ object: T) throws {
+        if context == nil { context = createContext() }
         context.insert(object)
-        try? context.save()
+        try context.save()
     }
     
     /// Fetch one or several objects using a descriptor
-    func fetch<T>(_ type: T.Type, descriptor: FetchDescriptor<T>) -> Result<[T], SwiftDataError> where T: PersistentModel {
-        do {
-            let data = try context.fetch(descriptor)
-            return .success(data)
-        } catch (let error) {
-            return .failure(SwiftDataError(error: error))
-        }
+    func fetch<T: PersistentModel>(_ type: T.Type, descriptor: FetchDescriptor<T>) throws -> [T] {
+        if context == nil { context = createContext() }
+        return try context.fetch(descriptor)
     }
     
     /// Delete an object
-    func delete<T>(_ object: T) where T: PersistentModel {
+    func delete<T: PersistentModel>(_ object: T) throws {
+        if context == nil { context = createContext() }
         context.delete(object)
-        try? context.save()
+        try context.save()
     }
     
-    /// Delete one or several objects of the specified type using a predicate.
-    /// If you don’t provide a predicate, the context will remove all objects of the specified type from the persistent storage.
-    func delete<T>(_ type: T.Type, predicate: Predicate<T>? = nil) -> Result<Bool, SwiftDataError> where T: PersistentModel {
-        do {
-            try context.delete(model: type, where: predicate)
-            try? context.save()
-            return .success(true)
-        } catch (let error) {
-            return .failure(SwiftDataError(error: error))
-        }
+    /// Delete one or several objects using a predicate.
+    /// If you don’t provide a predicate, the context will remove all objects of the specified type.
+    func delete<T: PersistentModel>(_ type: T.Type, predicate: Predicate<T>? = nil) throws {
+        if context == nil { context = createContext() }
+        try context.delete(model: type, where: predicate)
+        try context.save()
     }
     
     /// Delete all objects
-    func deleteAll() {
+    func deleteAll() throws {
+        if context == nil { context = createContext() }
         context.container.deleteAllData() // erase() from iOS 18
-        try? context.save()
+        try context.save()
     }
     
     /// Get the number of objects using a descriptor
-    func fetchCount<T>(_ type: T.Type, descriptor: FetchDescriptor<T>) -> Int where T: PersistentModel {
+    func fetchCount<T: PersistentModel>(_ type: T.Type, descriptor: FetchDescriptor<T>) -> Int {
+        if context == nil { context = createContext() }
         let count = (try? context.fetchCount(descriptor)) ?? 0
         return count
     }
