@@ -10,7 +10,6 @@
 		410140C32C5D4690002101CE /* SharedEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410140C22C5D4690002101CE /* SharedEvents.swift */; };
 		410AA3762DAF03900077460D /* CurrencyConversionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AA3752DAF038D0077460D /* CurrencyConversionService.swift */; };
 		410AA3782DAF115C0077460D /* CurrencyConversionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AA3772DAF114F0077460D /* CurrencyConversionAPI.swift */; };
-		410AA3C22DB078480077460D /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AA3C12DB078480077460D /* SettingsRepository.swift */; };
 		410AA3C42DB0786A0077460D /* DefaultSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AA3C32DB0786A0077460D /* DefaultSettingsRepository.swift */; };
 		410AA3CC2DB0788B0077460D /* UserDefaultsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AA3C92DB0788B0077460D /* UserDefaultsAdapter.swift */; };
 		410AA3CD2DB0788B0077460D /* SettingsDBInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410AA3C52DB0788B0077460D /* SettingsDBInteractor.swift */; };
@@ -21,21 +20,23 @@
 		410E77792DB9528100CCE87F /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E77782DB9527100CCE87F /* SettingsModel.swift */; };
 		410E777D2DB9769F00CCE87F /* SwiftDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E777C2DB9769F00CCE87F /* SwiftDataConfiguration.swift */; };
 		411B60C52B081BC400185132 /* DefaultAssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60C42B081BC400185132 /* DefaultAssetRepository.swift */; };
-		411B60CD2B08250500185132 /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60CC2B08250500185132 /* AssetRepository.swift */; };
 		411B60D32B08279D00185132 /* URLSessionAPIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60D22B08279D00185132 /* URLSessionAPIInteractor.swift */; };
 		411B60D52B082B9100185132 /* APIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60D42B082B9100185132 /* APIInteractor.swift */; };
-		411B60DA2B08850B00185132 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60D92B08850B00185132 /* ProfileRepository.swift */; };
 		411B60DC2B08858400185132 /* DefaultProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60DB2B08858400185132 /* DefaultProfileRepository.swift */; };
-		411B60E22B0890F800185132 /* PriceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60E12B0890F800185132 /* PriceRepository.swift */; };
 		411B60E42B08915D00185132 /* DefaultPriceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411B60E32B08915D00185132 /* DefaultPriceRepository.swift */; };
 		411EE4782597E81F005A79F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411EE4772597E81F005A79F3 /* Extensions.swift */; };
 		412BF6FD2592D37900F11969 /* AssetDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BF6FC2592D37900F11969 /* AssetDetailsDataSource.swift */; };
 		412BF7052593F75B00F11969 /* TaglineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BF7042593F75B00F11969 /* TaglineCell.swift */; };
 		412BF7122594080A00F11969 /* AboutAssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BF7112594080A00F11969 /* AboutAssetCell.swift */; };
+		4139314C2DBC34650094BDF5 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413931492DBC34650094BDF5 /* ProfileRepository.swift */; };
+		4139314D2DBC34650094BDF5 /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413931472DBC34650094BDF5 /* AssetRepository.swift */; };
+		4139314E2DBC34650094BDF5 /* PriceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413931482DBC34650094BDF5 /* PriceRepository.swift */; };
+		4139314F2DBC34650094BDF5 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4139314A2DBC34650094BDF5 /* SettingsRepository.swift */; };
 		414A52FA2ADC259300F92F38 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A52F92ADC259300F92F38 /* Storyboarded.swift */; };
 		414A52FC2ADC90AD00F92F38 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A52FB2ADC90AD00F92F38 /* MainCoordinator.swift */; };
 		414A53002ADDD2D300F92F38 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A52FF2ADDD2D300F92F38 /* DIContainer.swift */; };
 		414D91102B72BE44009F37CA /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414D910F2B72BE44009F37CA /* Alertable.swift */; };
+		416260A72DBB56AF000C1BF5 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416260A62DBB56AF000C1BF5 /* UserDefaultsKeys.swift */; };
 		417D4F232C8A358300416B9A /* AssetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417D4F222C8A358300416B9A /* AssetDetails.storyboard */; };
 		417D4F282C8A361300416B9A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 417D4F262C8A361300416B9A /* Localizable.strings */; };
 		417D4F2F2C8A437E00416B9A /* AssetsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417D4F2E2C8A437E00416B9A /* AssetsList.storyboard */; };
@@ -90,7 +91,6 @@
 		410140C22C5D4690002101CE /* SharedEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedEvents.swift; sourceTree = "<group>"; };
 		410AA3752DAF038D0077460D /* CurrencyConversionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversionService.swift; sourceTree = "<group>"; };
 		410AA3772DAF114F0077460D /* CurrencyConversionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversionAPI.swift; sourceTree = "<group>"; };
-		410AA3C12DB078480077460D /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		410AA3C32DB0786A0077460D /* DefaultSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettingsRepository.swift; sourceTree = "<group>"; };
 		410AA3C52DB0788B0077460D /* SettingsDBInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDBInteractor.swift; sourceTree = "<group>"; };
 		410AA3C62DB0788B0077460D /* UserDefaultsSettingsDBInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettingsDBInteractor.swift; sourceTree = "<group>"; };
@@ -100,21 +100,23 @@
 		410E77782DB9527100CCE87F /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		410E777C2DB9769F00CCE87F /* SwiftDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataConfiguration.swift; sourceTree = "<group>"; };
 		411B60C42B081BC400185132 /* DefaultAssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAssetRepository.swift; sourceTree = "<group>"; };
-		411B60CC2B08250500185132 /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
 		411B60D22B08279D00185132 /* URLSessionAPIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIInteractor.swift; sourceTree = "<group>"; };
 		411B60D42B082B9100185132 /* APIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractor.swift; sourceTree = "<group>"; };
-		411B60D92B08850B00185132 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
 		411B60DB2B08858400185132 /* DefaultProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProfileRepository.swift; sourceTree = "<group>"; };
-		411B60E12B0890F800185132 /* PriceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRepository.swift; sourceTree = "<group>"; };
 		411B60E32B08915D00185132 /* DefaultPriceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPriceRepository.swift; sourceTree = "<group>"; };
 		411EE4772597E81F005A79F3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		412BF6FC2592D37900F11969 /* AssetDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsDataSource.swift; sourceTree = "<group>"; };
 		412BF7042593F75B00F11969 /* TaglineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaglineCell.swift; sourceTree = "<group>"; };
 		412BF7112594080A00F11969 /* AboutAssetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAssetCell.swift; sourceTree = "<group>"; };
+		413931472DBC34650094BDF5 /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
+		413931482DBC34650094BDF5 /* PriceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRepository.swift; sourceTree = "<group>"; };
+		413931492DBC34650094BDF5 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
+		4139314A2DBC34650094BDF5 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		414A52F92ADC259300F92F38 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		414A52FB2ADC90AD00F92F38 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		414A52FF2ADDD2D300F92F38 /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		414D910F2B72BE44009F37CA /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		416260A62DBB56AF000C1BF5 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		417D4F222C8A358300416B9A /* AssetDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AssetDetails.storyboard; sourceTree = "<group>"; };
 		417D4F272C8A361300416B9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		417D4F292C8A362C00416B9A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		410AA3CA2DB0788B0077460D /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
+				416260A62DBB56AF000C1BF5 /* UserDefaultsKeys.swift */,
 				410AA3C92DB0788B0077460D /* UserDefaultsAdapter.swift */,
 			);
 			path = UserDefaults;
@@ -246,7 +249,7 @@
 		411B60C02B081AC800185132 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				411B60E72B09DE4F00185132 /* Interfaces */,
+				4139314B2DBC34650094BDF5 /* Interfaces */,
 				411B60C12B081B0200185132 /* Repositories */,
 				411B60C22B081B3400185132 /* Network */,
 				410AA3CB2DB0788B0077460D /* Persistence */,
@@ -283,13 +286,13 @@
 			path = APIInteractor;
 			sourceTree = "<group>";
 		};
-		411B60E72B09DE4F00185132 /* Interfaces */ = {
+		4139314B2DBC34650094BDF5 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				411B60CC2B08250500185132 /* AssetRepository.swift */,
-				411B60D92B08850B00185132 /* ProfileRepository.swift */,
-				411B60E12B0890F800185132 /* PriceRepository.swift */,
-				410AA3C12DB078480077460D /* SettingsRepository.swift */,
+				413931472DBC34650094BDF5 /* AssetRepository.swift */,
+				413931482DBC34650094BDF5 /* PriceRepository.swift */,
+				413931492DBC34650094BDF5 /* ProfileRepository.swift */,
+				4139314A2DBC34650094BDF5 /* SettingsRepository.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -669,20 +672,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				41C7B5D925918122001305A3 /* AssetDetailsViewModel.swift in Sources */,
-				411B60E22B0890F800185132 /* PriceRepository.swift in Sources */,
 				41DF4313258E6D9B005EBE0E /* Asset.swift in Sources */,
 				411B60DC2B08858400185132 /* DefaultProfileRepository.swift in Sources */,
-				410AA3C22DB078480077460D /* SettingsRepository.swift in Sources */,
 				410E77772DB8B4BC00CCE87F /* SwiftDataAdapter.swift in Sources */,
 				41DF42F6258E5DE1005EBE0E /* AppConfiguration.swift in Sources */,
 				411B60D52B082B9100185132 /* APIInteractor.swift in Sources */,
 				41DF4300258E6825005EBE0E /* AssetsListViewModel.swift in Sources */,
-				411B60DA2B08850B00185132 /* ProfileRepository.swift in Sources */,
 				41C7B5DE2591817A001305A3 /* Details.swift in Sources */,
 				41DF428B258E34CC005EBE0E /* AssetsListViewController.swift in Sources */,
+				416260A72DBB56AF000C1BF5 /* UserDefaultsKeys.swift in Sources */,
 				410E77792DB9528100CCE87F /* SettingsModel.swift in Sources */,
 				41DF42EE258E5DAE005EBE0E /* MessariAPI.swift in Sources */,
 				412BF7122594080A00F11969 /* AboutAssetCell.swift in Sources */,
+				4139314C2DBC34650094BDF5 /* ProfileRepository.swift in Sources */,
+				4139314D2DBC34650094BDF5 /* AssetRepository.swift in Sources */,
+				4139314E2DBC34650094BDF5 /* PriceRepository.swift in Sources */,
+				4139314F2DBC34650094BDF5 /* SettingsRepository.swift in Sources */,
 				41AED6622DB4BE6C0088389C /* UAObfuscatedString.swift in Sources */,
 				41C7B5E3259181E7001305A3 /* Profile.swift in Sources */,
 				411B60D32B08279D00185132 /* URLSessionAPIInteractor.swift in Sources */,
@@ -701,7 +706,6 @@
 				41C7B5C1258F1057001305A3 /* Currency.swift in Sources */,
 				411B60C52B081BC400185132 /* DefaultAssetRepository.swift in Sources */,
 				41C7B5CF2590B7C2001305A3 /* HatCell.swift in Sources */,
-				411B60CD2B08250500185132 /* AssetRepository.swift in Sources */,
 				414A52FC2ADC90AD00F92F38 /* MainCoordinator.swift in Sources */,
 				41C7B5BC258F0C9B001305A3 /* AssetCell.swift in Sources */,
 				419D4FC225991BC200C6F1A3 /* FlowCoordinator.swift in Sources */,
