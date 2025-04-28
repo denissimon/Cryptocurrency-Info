@@ -8,7 +8,5 @@
 import URLSessionAdapter
 
 protocol AssetRepository {
-    typealias AssetsResult = Result<Assets, NetworkError>
-
-    func getAssets(page: Int) async -> AssetsResult
+    func getAssets(page: Int) async -> Result<Assets, NetworkError>
 }

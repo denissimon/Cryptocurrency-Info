@@ -7,8 +7,6 @@
 
 import URLSessionAdapter
 
-protocol PriceRepository {
-    typealias PriceResult = Result<Price, NetworkError>
-    
-    func getPrice(symbol: String) async -> PriceResult
+protocol PriceRepository {    
+    func getPrice(symbol: String) async -> Result<Price, NetworkError>
 }
