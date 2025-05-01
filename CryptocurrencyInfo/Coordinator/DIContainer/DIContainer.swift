@@ -21,7 +21,7 @@ class DIContainer {
     // MARK: - Persistence
     
     lazy var settingsDBInteractor: SettingsDBInteractor = {
-       /// Configurable use of UserDefaults or SwiftData. Both implementations - UserDefaultsSettingsDBInteractor and SwiftDataSettingsDBInteractor - comform to the same SettingsDBInteractor protocol
+        // Configurable use of UserDefaults or SwiftData. Both implementations - UserDefaultsSettingsDBInteractor and SwiftDataSettingsDBInteractor - comform to the same SettingsDBInteractor protocol
         /*
         let userDefaultsAdapter = UserDefaultsAdapter()
         return UserDefaultsSettingsDBInteractor(with: userDefaultsAdapter)
