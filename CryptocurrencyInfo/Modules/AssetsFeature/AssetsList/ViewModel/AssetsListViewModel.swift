@@ -16,14 +16,13 @@ class AssetsListViewModel {
     
     // Bindings
     var data: Observable<[Asset]> = Observable([])
-    private var dataCopy = [Asset]()
+    private var dataCopy: [Asset] = []
     let makeToast: Observable<String> = Observable("")
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
-    let getAssetsCompletionHandler: Observable<Bool?> = Observable(nil)
     
     private(set) var currentPage = 0
     private(set) var assetsAreLoadingFromServer = false
-    var searchMode = false
+    private(set) var searchMode = false
     
     let screenTitle = NSLocalizedString("Today's Cryptocurrency Info", comment: "")
     
@@ -82,37 +81,36 @@ class AssetsListViewModel {
         guard searchMode == false || (searchMode && data.value.count == dataCopy.count) else { return }
         
         assetsAreLoadingFromServer = true
-        
         activityIndicatorVisibility.value = true
         
-        Task.detached {
-            let result = await self.assetRepository.getAssets(page: page)
+        Task {
+            let result = await assetRepository.getAssets(page: page)
             
             switch result {
             case .success(let assets):
                 var data = assets.data
                 if data.count > 0 {
-                    await self.currencyConversionService.convertCurrency(&data)
+                    await currencyConversionService.convertCurrency(&data)
                     self.data.value += data
-                    self.currentPage = page
-                    self.dataCopy = self.data.value
+                    currentPage = page
+                    dataCopy = self.data.value
                 }
-                self.activityIndicatorVisibility.value = false
+                activityIndicatorVisibility.value = false
             case .failure(let error):
                 if error.error != nil {
-                    self.showError(error.error!.localizedDescription)
+                    showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.showError(NSLocalizedString("Next page not found", comment: ""))
+                        showError(NSLocalizedString("Next page not found", comment: ""))
                     } else {
-                        self.showError()
+                        showError()
                     }
                 } else {
-                    self.showError()
+                    showError()
                 }
             }
             
-            self.getAssetsCompletionHandler.value = nil
+            assetsAreLoadingFromServer = false
         }
     }
     
@@ -138,6 +136,10 @@ class AssetsListViewModel {
             }
         }
         data.value = resultData
+    }
+    
+    func startSearch() {
+        searchMode = true
     }
     
     func resetSearch() {

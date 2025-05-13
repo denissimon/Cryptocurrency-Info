@@ -26,11 +26,7 @@ class AssetDetailsDataSource: NSObject {
         guard let officialLinks = data.profile?.officialLinks else { return }
         guard let linkUrlString = officialLinks[linkTag].link, let url = URL(string: linkUrlString) else { return }
             
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url)
-        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
 
@@ -39,7 +35,7 @@ class AssetDetailsDataSource: NSObject {
 extension AssetDetailsDataSource: UITableViewDataSource {
         
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        3
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,7 +105,7 @@ extension AssetDetailsDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+        false
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

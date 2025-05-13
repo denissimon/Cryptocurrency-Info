@@ -66,8 +66,9 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
     
     private func bind(to viewModel: AssetsListViewModel, dataSource: AssetsListDataSource?) {
         viewModel.data.bind(self, queue: .main) { [weak self] data in
-            self?.dataSource?.updateData(data)
-            self?.tableView.reloadData()
+            guard let self = self else { return }
+            self.dataSource?.updateData(data)
+            self.tableView.reloadData()
         }
         
         viewModel.makeToast.bind(self, queue: .main) { [weak self] message in
@@ -75,17 +76,12 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
             self?.makeToast(message: message)
         }
         
-        viewModel.getAssetsCompletionHandler.bind(self) { [weak self] data in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                self?.viewModel.setAssetsAreLoadingFromServer(false)
-            }
-        }
-        
         viewModel.activityIndicatorVisibility.bind(self, queue: .main) { [weak self] value in
+            guard let self = self else { return }
             if value {
-                self?.makeToastActivity()
+                self.makeToastActivity()
             } else {
-                self?.hideToastActivity()
+                self.hideToastActivity()
             }
         }
         
@@ -109,11 +105,7 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
         tableView.rowHeight = CGFloat(AppConfiguration.Other.tableCellDefaultHeight)
         tableView.estimatedRowHeight = CGFloat(AppConfiguration.Other.tableCellDefaultHeight)
         
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
+        tableView.refreshControl = refreshControl
         
         let backItem = UIBarButtonItem()
         backItem.title = NSLocalizedString("Back", comment: "")
@@ -138,7 +130,7 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
 extension AssetsListViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        viewModel.searchMode = true
+        viewModel.startSearch()
         searchBar.setShowsCancelButton(true, animated: true)
     }
     

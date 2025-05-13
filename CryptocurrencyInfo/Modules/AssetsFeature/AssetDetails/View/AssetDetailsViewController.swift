@@ -46,8 +46,9 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
     
     private func bind(to viewModel: AssetDetailsViewModel) {
         viewModel.data.bind(self, queue: .main) { [weak self] data in
-            self?.dataSource?.updateData(data)
-            self?.tableView.reloadData()
+            guard let self = self else { return }
+            self.dataSource?.updateData(data)
+            self.tableView.reloadData()
         }
         
         viewModel.makeToast.bind(self, queue: .main) { [weak self] message in
@@ -56,10 +57,11 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
         }
         
         viewModel.activityIndicatorVisibility.bind(self, queue: .main) { [weak self] value in
+            guard let self = self else { return }
             if value {
-                self?.makeToastActivity()
+                self.makeToastActivity()
             } else {
-                self?.hideToastActivity()
+                self.hideToastActivity()
             }
         }
     }
@@ -69,11 +71,7 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
     private func prepareUI() {
         navigationItem.title = viewModel.data.value.asset?.name
         
-        if #available(iOS 10.0, *) {
-            tableView.refreshControl = refreshControl
-        } else {
-            tableView.addSubview(refreshControl)
-        }
+        tableView.refreshControl = refreshControl
         
         tableView.separatorColor = .clear
         

@@ -42,30 +42,30 @@ class AssetDetailsViewModel {
         
         activityIndicatorVisibility.value = true
         
-        Task.detached {
-            let result = await self.profileRepository.getProfile(symbol: symbol)
+        Task {
+            let result = await profileRepository.getProfile(symbol: symbol)
             
             switch result {
             case .success(let profile):
                 if let projectDetails = profile.projectDetails {
                     var updatedProfile = profile
-                    updatedProfile.projectDetails = self.editLinksInProjectDetails(projectDetails)
-                    self.data.value = Details(asset: self.data.value.asset, profile: updatedProfile)
-                    self.activityIndicatorVisibility.value = false
+                    updatedProfile.projectDetails = editLinksInProjectDetails(projectDetails)
+                    data.value = Details(asset: data.value.asset, profile: updatedProfile)
+                    activityIndicatorVisibility.value = false
                 } else {
                     self.showError()
                 }
             case .failure(let error):
                 if error.error != nil {
-                    self.showError(error.error!.localizedDescription)
+                    showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.showError(NSLocalizedString("Profile data not found", comment: ""))
+                        showError(NSLocalizedString("Profile data not found", comment: ""))
                     } else {
-                        self.showError()
+                        showError()
                     }
                 } else {
-                    self.showError()
+                    showError()
                 }
             }
         }
