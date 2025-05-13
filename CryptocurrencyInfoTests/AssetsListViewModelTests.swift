@@ -34,10 +34,6 @@ class AssetsListViewModelTests: XCTestCase {
             }
         }
         
-        assetsListViewModel.getAssetsCompletionHandler.bind(self) { [weak self] value in
-            self?.assetsCompletionHandlerResult = value
-        }
-        
         assetsListViewModel.activityIndicatorVisibility.bind(self) { [weak self] value in
                 self?.activityIndicatorVisibilityResult = value
         }
@@ -64,9 +60,6 @@ class AssetsListViewModelTests: XCTestCase {
         
         assetsListViewModel.makeToast.value = "Some text for toast"
         XCTAssertEqual(toastResult, "Some text for toast")
-        
-        assetsListViewModel.getAssetsCompletionHandler.value = true
-        XCTAssertEqual(assetsCompletionHandlerResult, true)
         
         assetsListViewModel.activityIndicatorVisibility.value = false
         XCTAssertEqual(activityIndicatorVisibilityResult, false)
