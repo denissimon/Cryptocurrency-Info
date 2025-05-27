@@ -53,7 +53,7 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
     }
     
     private func setup() {
-        dataSource = viewModel.getDataSource()
+        dataSource = viewModel.dataSource
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         
@@ -66,9 +66,9 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
     
     private func bind(to viewModel: AssetsListViewModel, dataSource: AssetsListDataSource?) {
         viewModel.data.bind(self, queue: .main) { [weak self] data in
-            guard let self = self else { return }
-            self.dataSource?.updateData(data)
-            self.tableView.reloadData()
+            guard let self else { return }
+            dataSource?.updateData(data)
+            tableView.reloadData()
         }
         
         viewModel.makeToast.bind(self, queue: .main) { [weak self] message in
@@ -77,22 +77,20 @@ class AssetsListViewController: UIViewController, Storyboarded, Alertable {
         }
         
         viewModel.activityIndicatorVisibility.bind(self, queue: .main) { [weak self] value in
-            guard let self = self else { return }
+            guard let self else { return }
             if value {
-                self.makeToastActivity()
+                makeToastActivity()
             } else {
-                self.hideToastActivity()
+                hideToastActivity()
             }
         }
         
         dataSource?.didScrollToLastCell.subscribe(self) { [weak self] _ in
-            guard let self = self else { return }
-            if !self.viewModel.assetsAreLoadingFromServer {
-                self.viewModel.getAssets(page: self.viewModel.currentPage + 1)
-            }
+            guard let self else { return }
+            self.viewModel.getAssets(page: self.viewModel.currentPage + 1)
         }
         
-        dataSource?.didTapAssetDetails.subscribe(self, queue: .main) { [weak self] asset in
+        dataSource?.didTapAsset.subscribe(self, queue: .main) { [weak self] asset in
             self?.coordinator?.onAssetDetails(asset)
         }
     }

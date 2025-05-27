@@ -35,7 +35,7 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
     }
     
     private func setup() {
-        dataSource = viewModel.getDataSource()
+        dataSource = viewModel.dataSource
         tableView.dataSource = dataSource
         tableView.delegate = dataSource
         
@@ -46,9 +46,9 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
     
     private func bind(to viewModel: AssetDetailsViewModel) {
         viewModel.data.bind(self, queue: .main) { [weak self] data in
-            guard let self = self else { return }
-            self.dataSource?.updateData(data)
-            self.tableView.reloadData()
+            guard let self else { return }
+            dataSource?.updateData(data)
+            tableView.reloadData()
         }
         
         viewModel.makeToast.bind(self, queue: .main) { [weak self] message in
@@ -57,11 +57,11 @@ class AssetDetailsViewController: UIViewController, Storyboarded, Alertable {
         }
         
         viewModel.activityIndicatorVisibility.bind(self, queue: .main) { [weak self] value in
-            guard let self = self else { return }
+            guard let self else { return }
             if value {
-                self.makeToastActivity()
+                makeToastActivity()
             } else {
-                self.hideToastActivity()
+                hideToastActivity()
             }
         }
     }
