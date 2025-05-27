@@ -14,7 +14,7 @@ class AssetsListDataSource: NSObject {
     
     // Bindings
     let didScrollToLastCell: Event<Bool?> = Event()
-    let didTapAssetDetails: Event<Asset> = Event()
+    let didTapAsset: Event<Asset> = Event()
     
     init(with data: [Asset]) {
         super.init()
@@ -59,7 +59,7 @@ extension AssetsListDataSource: UITableViewDataSource {
 extension AssetsListDataSource: UITableViewDelegate {
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didTapAssetDetails.notify(data[indexPath.item])
+        didTapAsset.notify(data[indexPath.item])
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
