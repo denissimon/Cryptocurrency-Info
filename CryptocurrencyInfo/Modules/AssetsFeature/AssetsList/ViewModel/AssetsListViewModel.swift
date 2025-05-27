@@ -21,8 +21,15 @@ class AssetsListViewModel {
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
     
     private(set) var currentPage = 0
-    private(set) var assetsAreLoadingFromServer = false
-    private(set) var searchMode = false
+    
+    private var searchMode = false
+    
+    private var taskIsRunning = false
+    private var currentTask: Task<Void, Never>?
+    
+    var dataSource: AssetsListDataSource {
+        AssetsListDataSource(with: data.value)
+    }
     
     let screenTitle = NSLocalizedString("Today's Cryptocurrency Info", comment: "")
     
@@ -53,8 +60,8 @@ class AssetsListViewModel {
     
     private func bind() {
         SharedEvents.get.priceChanged.subscribe(self, queue: .main) { [weak self] updatedAsset in
-            guard let self = self, updatedAsset != nil else { return }
-            let data = self.data.value
+            guard let self, updatedAsset != nil else { return }
+            let data = data.value
             for asset in data {
                 if asset.symbol == updatedAsset!.symbol {
                     asset.price.amount = updatedAsset!.price.amount
@@ -72,19 +79,29 @@ class AssetsListViewModel {
         activityIndicatorVisibility.value = false
     }
     
-    func getDataSource() -> AssetsListDataSource {
-        AssetsListDataSource(with: data.value)
-    }
-    
     func getAssets(page: Int) {
         // If search mode is enabled and there are some results, we do not load new batches of assets
         guard searchMode == false || (searchMode && data.value.count == dataCopy.count) else { return }
         
-        assetsAreLoadingFromServer = true
+        Task {
+            await _getAssets(page: page).value
+        }
+    }
+    
+    private func _getAssets(page: Int) -> Task<Void, Never> {
+        if let currentTask, taskIsRunning {
+            return currentTask
+        }
+        
+        taskIsRunning = true
         activityIndicatorVisibility.value = true
         
-        Task {
+        currentTask?.cancel()
+        
+        let task = Task {
             let result = await assetRepository.getAssets(page: page)
+            
+            if Task.isCancelled { return }
             
             switch result {
             case .success(let assets):
@@ -110,16 +127,16 @@ class AssetsListViewModel {
                 }
             }
             
-            assetsAreLoadingFromServer = false
+            taskIsRunning = false
         }
+        
+        // Cache the current task to avoid sending network requests for each call
+        currentTask = task
+        return task
     }
     
     func clearData() {
         data.value.removeAll()
-    }
-    
-    func setAssetsAreLoadingFromServer(_ newValue: Bool) {
-        assetsAreLoadingFromServer = newValue
     }
     
     func searchAsset(_ searchText: String) {
@@ -145,5 +162,11 @@ class AssetsListViewModel {
     func resetSearch() {
         data.value = dataCopy
         searchMode = false
+    }
+    
+    func cancelCurrentTask() {
+        currentTask?.cancel()
+        currentTask = nil
+        taskIsRunning = false
     }
 }

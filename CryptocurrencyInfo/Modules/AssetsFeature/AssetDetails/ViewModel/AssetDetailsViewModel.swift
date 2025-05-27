@@ -19,6 +19,10 @@ class AssetDetailsViewModel {
     let makeToast: Observable<String> = Observable("")
     let activityIndicatorVisibility: Observable<Bool> = Observable(false)
     
+    var dataSource: AssetDetailsDataSource {
+        AssetDetailsDataSource(with: data.value)
+    }
+    
     init(asset: Asset, profileRepository: ProfileRepository, priceRepository: PriceRepository, currencyConversionService: CurrencyConversionService) {
         self.data.value.asset = asset
         self.profileRepository = profileRepository
@@ -31,10 +35,6 @@ class AssetDetailsViewModel {
             makeToast.value = msg
         }
         activityIndicatorVisibility.value = false
-    }
-    
-    func getDataSource() -> AssetDetailsDataSource {
-        AssetDetailsDataSource(with: data.value)
     }
     
     func getProfile() {
@@ -53,7 +53,7 @@ class AssetDetailsViewModel {
                     data.value = Details(asset: data.value.asset, profile: updatedProfile)
                     activityIndicatorVisibility.value = false
                 } else {
-                    self.showError()
+                    showError()
                 }
             case .failure(let error):
                 if error.error != nil {
@@ -90,35 +90,35 @@ class AssetDetailsViewModel {
         
         activityIndicatorVisibility.value = true
         
-        Task.detached {
-            async let profile = self.profileRepository.getProfile(symbol: symbol)
-            async let price = self.priceRepository.getPrice(symbol: symbol)
+        Task {
+            async let profile = profileRepository.getProfile(symbol: symbol)
+            async let price = priceRepository.getPrice(symbol: symbol)
             
             let details = await (profile: profile, price: price)
             
-            var profileToUpdate = self.data.value.profile
-            var assetToUpdate = self.data.value.asset
+            var profileToUpdate = data.value.profile
+            var assetToUpdate = data.value.asset
             
             var shouldTriggerPriceChangedEvent = false
             
             switch details.profile {
             case .success(let profile):
                 if let projectDetails = profile.projectDetails {
-                    profileToUpdate?.projectDetails = self.editLinksInProjectDetails(projectDetails)
+                    profileToUpdate?.projectDetails = editLinksInProjectDetails(projectDetails)
                 } else {
-                    self.showError()
+                    showError()
                 }
             case .failure(let error):
                 if error.error != nil {
-                    self.showError(error.error!.localizedDescription)
+                    showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.showError(NSLocalizedString("Profile data not found", comment: ""))
+                        showError(NSLocalizedString("Profile data not found", comment: ""))
                     } else {
-                        self.showError()
+                        showError()
                     }
                 } else {
-                    self.showError()
+                    showError()
                 }
                 return
             }
@@ -130,21 +130,21 @@ class AssetDetailsViewModel {
                     if AppConfiguration.Settings.selectedCurrency == .USD {
                         assetToUpdate!.price.amount = price.priceUsd
                     } else {
-                        await self.currencyConversionService.convertCurrency(&assetToUpdate!)
+                        await currencyConversionService.convertCurrency(&assetToUpdate!)
                     }
                     shouldTriggerPriceChangedEvent = true
                 }
             case .failure(let error):
                 if error.error != nil {
-                    self.showError(error.error!.localizedDescription)
+                    showError(error.error!.localizedDescription)
                 } else if error.statusCode != nil {
                     if error.statusCode! == 404 {
-                        self.showError(NSLocalizedString("Asset data not found", comment: ""))
+                        showError(NSLocalizedString("Asset data not found", comment: ""))
                     } else {
-                        self.showError()
+                        showError()
                     }
                 } else {
-                    self.showError()
+                    showError()
                 }
                 return
             }
@@ -153,9 +153,9 @@ class AssetDetailsViewModel {
                 SharedEvents.get.priceChanged.notify(assetToUpdate)
             }
             
-            self.data.value = Details(asset: assetToUpdate, profile: profileToUpdate)
+            data.value = Details(asset: assetToUpdate, profile: profileToUpdate)
             
-            self.activityIndicatorVisibility.value = false
+            activityIndicatorVisibility.value = false
         }
     }
 }
