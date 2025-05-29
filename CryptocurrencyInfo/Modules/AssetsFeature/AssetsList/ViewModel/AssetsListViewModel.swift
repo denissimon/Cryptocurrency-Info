@@ -84,11 +84,11 @@ class AssetsListViewModel {
         guard searchMode == false || (searchMode && data.value.count == dataCopy.count) else { return }
         
         Task {
-            await _getAssets(page: page).value
+            await getAssets(page: page).value
         }
     }
     
-    private func _getAssets(page: Int) -> Task<Void, Never> {
+    private func getAssets(page: Int) -> Task<Void, Never> {
         if let currentTask, taskIsRunning {
             return currentTask
         }
