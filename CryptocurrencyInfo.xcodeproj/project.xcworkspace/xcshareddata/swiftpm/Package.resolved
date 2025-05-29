@@ -1,13 +1,13 @@
 {
-  "originHash" : "a7044de751c7dab4d507398653fa6c8dfd42925ead6baf06babc03bf1179c2d1",
+  "originHash" : "bf30b4ccf4b74fc5d4de0b03f7800a01216618e41e26c7fabe8c84e54ddb3a1e",
   "pins" : [
     {
       "identity" : "swiftevents",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/denissimon/SwiftEvents",
       "state" : {
-        "revision" : "fcbbaa1a5f18edacfa5e55184701c2a87b25491a",
-        "version" : "2.2.1"
+        "revision" : "ff14a087b9ee1ff6ba11dee3e633083caa7ede8e",
+        "version" : "2.2.3"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/denissimon/URLSessionAdapter",
       "state" : {
-        "revision" : "82237705792a600387f4dfc06e36931d53278706",
-        "version" : "1.6.3"
+        "revision" : "7c161e0cb081f2b54e783385c492d9903149fc81",
+        "version" : "1.7.0"
       }
     }
   ],
