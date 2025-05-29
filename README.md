@@ -42,6 +42,7 @@ It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is
 - [SharedEvents][SharedEventsLink] - a NotificationCenter-like component
 - [Currency conversion service][CurrencyConversionServiceLink] - for displaying asset prices in different currencies (USD, EUR, etc.)
 - Configurable use of [UserDefaults][UserDefaultsLink] or [SwiftData][SwiftDataLink] example
+- [Cached Task][CachedTaskLink] to avoid making duplicate network requests
 - Advanced using of [Codable][CodableLink]
 - Localization
 - Unit tests
@@ -51,6 +52,7 @@ It has two modules: AssetsList and AssetDetails. The list of cryptocurrencies is
 [CurrencyConversionServiceLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Services/CurrencyConversionService.swift
 [UserDefaultsLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Data/Persistence/DBInteractor/Settings/UserDefaultsSettingsDBInteractor.swift
 [SwiftDataLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Data/Persistence/DBInteractor/Settings/SwiftDataSettingsDBInteractor.swift
+[CachedTaskLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetsList/ViewModel/AssetsListViewModel.swift
 [CodableLink]: https://github.com/denissimon/Cryptocurrency-Info/blob/master/CryptocurrencyInfo/Modules/AssetsFeature/AssetDetails/Models/Profile.swift
 
 ### Built with
