@@ -19,7 +19,12 @@ class DefaultAssetRepository: AssetRepository {
     private func getAssets(page: Int, completionHandler: @escaping (Result<Assets, NetworkError>) -> Void) {
         let endpoint = MessariAPI.assets(page: page)
         apiInteractor.request(endpoint, type: Assets.self) { result in
-            completionHandler(result)
+            switch result {
+            case .success(let response):
+                completionHandler(.success(response.decoded))
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
         }
     }
     

@@ -19,7 +19,12 @@ class DefaultProfileRepository: ProfileRepository {
     private func getProfile(symbol: String, completionHandler: @escaping (Result<Profile, NetworkError>) -> Void) {
         let endpoint = MessariAPI.profile(symbol: symbol)
         apiInteractor.request(endpoint, type: Profile.self) { result in
-            completionHandler(result)
+            switch result {
+            case .success(let response):
+                completionHandler(.success(response.decoded))
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
         }
     }
     
