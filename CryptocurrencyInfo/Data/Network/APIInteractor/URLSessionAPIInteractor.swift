@@ -16,7 +16,7 @@ class URLSessionAPIInteractor: APIInteractor {
         self.urlSessionAdapter = networkService
     }
     
-    func request(_ endpoint: EndpointType, completion: @escaping (Result<Data?, NetworkError>) -> Void) -> NetworkCancellable? {
+    func request(_ endpoint: EndpointType, completion: @escaping (Result<(data: Data?, response: URLResponse?), NetworkError>) -> Void) -> NetworkCancellable? {
         guard let request = RequestFactory.request(endpoint),
               let networkCancellable = urlSessionAdapter.request(request, completion: completion) else {
             completion(.failure(NetworkError()))
@@ -25,7 +25,7 @@ class URLSessionAPIInteractor: APIInteractor {
         return networkCancellable
     }
     
-    func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkCancellable? {
+    func request<T: Decodable>(_ endpoint: EndpointType, type: T.Type, completion: @escaping (Result<(decoded: T, response: URLResponse?), NetworkError>) -> Void) -> NetworkCancellable? {
         guard let request = RequestFactory.request(endpoint),
               let networkCancellable = urlSessionAdapter.request(request, type: type, completion: completion) else {
             completion(.failure(NetworkError()))
