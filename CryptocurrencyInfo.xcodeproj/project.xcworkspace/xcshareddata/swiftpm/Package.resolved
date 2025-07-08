@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/denissimon/URLSessionAdapter",
       "state" : {
-        "revision" : "880bb43c260f5599a159f71236ec27fe990f7f9c",
-        "version" : "1.9.0"
+        "branch" : "main",
+        "revision" : "7a046e894fabadf04255805f5705e00726e421b9"
       }
     }
   ],

@@ -1107,8 +1107,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/denissimon/URLSessionAdapter";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.3;
+				branch = main;
+				kind = branch;
 			};
 		};
 		410E776A2DB54F3C00CCE87F /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
